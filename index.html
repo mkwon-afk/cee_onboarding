@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Goldendeck — Onboarding Guides</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #F5F5F5;
+    color: #151515;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .logo { color: #EE0000; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: #6A6E73; font-size: 14px; margin-bottom: 48px; }
+  .cards { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .card {
+    background: #fff;
+    border: 1px solid #D2D2D2;
+    border-radius: 6px;
+    padding: 32px 36px;
+    width: 280px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.10); transform: translateY(-2px); }
+  .card .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+  .card.external .badge { background: #EE0000; color: #fff; }
+  .card.internal .badge { background: #151515; color: #EE0000; border: 1px solid #3C3F42; }
+  .card h2 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 13px; color: #6A6E73; line-height: 1.6; }
+  .card .arrow { margin-top: 24px; font-size: 13px; color: #EE0000; font-weight: 600; }
+  footer { margin-top: 48px; font-size: 12px; color: #6A6E73; }
+</style>
+</head>
+<body>
+  <div class="logo">Red Hat</div>
+  <div class="subtitle">CEE Goldendeck — Support Onboarding Guides</div>
+  <div class="cards">
+    <a href="cee-onboarding-external.html" class="card external">
+      <div class="badge">External · Customer</div>
+      <h2>Customer Guide</h2>
+      <p>How to get the most out of Red Hat Support — opening cases, severity levels, escalation, diagnostics, and managed services.</p>
+      <div class="arrow">Open guide →</div>
+    </a>
+    <a href="cee-onboarding-internal.html" class="card internal">
+      <div class="badge">Internal · Team</div>
+      <h2>Team Guide</h2>
+      <p>CEE org overview, team routing, Slack channels, contact info, MCS workflows, and key resources for new team members.</p>
+      <div class="arrow">Open guide →</div>
+    </a>
+  </div>
+  <footer>Maintained by CEE Program · Review quarterly</footer>
+</body>
+</html>
