@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Goldendeck — External (Customer)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #EE0000;
+    --dark: #151515;
+    --mid: #3C3F42;
+    --muted: #6A6E73;
+    --border: #D2D2D2;
+    --bg: #F5F5F5;
+    --white: #FFFFFF;
+    --info-bg: #EDF8FF;
+    --info-border: #73BCF7;
+    --warn-bg: #FFF8E1;
+    --warn-border: #F6D173;
+    --danger-bg: #FDECEA;
+    --danger-border: #C9190B;
+    --success-bg: #F3FAF2;
+    --success-border: #5BA352;
+    --nav-width: 220px;
+    --accent: #EE0000;
+  }
+
+  body {
+    font-family: 'RedHatDisplay', 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+  }
+  header .logo { color: var(--red); font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  header .sep { color: var(--muted); }
+  header .title { font-size: 14px; color: #C8C8C8; }
+  header .badge {
+    margin-left: auto;
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Layout ── */
+  .layout { display: flex; margin-top: 56px; min-height: calc(100vh - 56px); }
+
+  /* ── Sidebar ── */
+  nav {
+    width: var(--nav-width);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 56px; bottom: 0;
+    overflow-y: auto;
+    padding: 24px 0;
+  }
+  nav .nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 0 20px 10px;
+  }
+  nav a {
+    display: block;
+    padding: 9px 20px;
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 13px;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  nav a:hover { background: var(--bg); color: var(--dark); }
+  nav a.active { border-left-color: var(--red); color: var(--red); font-weight: 600; background: #FFF5F5; }
+
+  /* ── Main content ── */
+  main {
+    margin-left: var(--nav-width);
+    flex: 1;
+    padding: 40px 48px;
+    max-width: 960px;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 72px; scroll-margin-top: 80px; }
+  .section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .section-header h2 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .section-header .sub { color: var(--muted); font-size: 13px; }
+
+  h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin: 24px 0 12px; }
+
+  /* ── Cards grid ── */
+  .grid { display: grid; gap: 12px; margin-bottom: 20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-body { padding: 12px 14px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .card-body p + p { margin-top: 6px; }
+
+  /* ── Stats row ── */
+  .stats { display: flex; gap: 12px; margin-bottom: 20px; }
+  .stat {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 20px;
+    flex: 1;
+  }
+  .stat .value { font-size: 24px; font-weight: 700; color: var(--dark); }
+  .stat .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── Table ── */
+  .tbl-wrap { margin-bottom: 20px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 13px; }
+  thead th { background: var(--bg); text-align: left; padding: 10px 14px; font-weight: 600; color: var(--mid); border-bottom: 1px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--dark); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #FAFAFA; }
+  tbody tr.row-danger td { background: #FFF5F5; }
+  tbody tr.row-warn td { background: #FFFDF0; }
+  tbody tr.row-success td { background: #F3FAF2; }
+
+  /* ── Callouts ── */
+  .callout {
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+    line-height: 1.5;
+  }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: #004080; }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: #603000; }
+  .callout.danger { background: var(--danger-bg); border-color: var(--danger-border); color: #7D1007; }
+  .callout.success { background: var(--success-bg); border-color: var(--success-border); color: #1E4620; }
+
+  /* ── Pills ── */
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: auto;
+  }
+  .pill-success { background: #E6F4E6; color: #1E4620; }
+  .pill-info { background: #EDF8FF; color: #004080; }
+  .pill-warn { background: #FFF8E1; color: #603000; }
+  .pill-default { background: #F0F0F0; color: var(--mid); }
+
+  /* ── Divider ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  /* ── Body text ── */
+  .lead { font-size: 14px; color: var(--dark); margin-bottom: 20px; line-height: 1.7; }
+  .secondary { color: var(--muted); }
+  .small { font-size: 12px; }
+
+  /* ── Footer ── */
+  footer {
+    margin-left: var(--nav-width);
+    padding: 24px 48px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    nav { display: none; }
+    main { margin-left: 0; padding: 24px 20px; }
+    footer { margin-left: 0; }
+    .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .stats { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="logo">Red Hat</span>
+  <span class="sep">/</span>
+  <span class="title">CEE Goldendeck — Support Engagement Guide</span>
+  <span class="badge">External · Customer</span>
+</header>
+
+<div class="layout">
+
+<nav id="sidebar">
+  <div class="nav-label">Sections</div>
+  <a href="#welcome" class="active">Welcome</a>
+  <a href="#start">Getting Started</a>
+  <a href="#selfservice">Self-Service First</a>
+  <a href="#opencase">How to Open a Case</a>
+  <a href="#casedetails">Case Details</a>
+  <a href="#diagnostics">Diagnostics</a>
+  <a href="#severity">Severity Levels</a>
+  <a href="#managed">Managed Services</a>
+  <a href="#escalate">Escalation</a>
+  <a href="#resources">Key Resources</a>
+</nav>
+
+<main>
+
+<!-- WELCOME -->
+<section class="section" id="welcome">
+  <div class="section-header">
+    <h2>Welcome</h2>
+    <div class="sub">Your Red Hat Support Journey</div>
+  </div>
+  <p class="lead">This guide is designed to help you get the most out of your support experience with Red Hat. Following these best practices ensures faster resolution times, clearer communication, and a smoother overall support journey.</p>
+  <hr>
+  <h3>Red Hat Support at a Glance</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Technical Support (GSS)</div>
+      <div class="card-body">Product issues, technical troubleshooting, change windows, case management</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Customer Service</div>
+      <div class="card-body">Subscriptions, account access, user management, order inquiries</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Managed Cloud Services</div>
+      <div class="card-body">Dedicated support for ARO and ROSA managed OpenShift environments</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Customer Portal</div>
+      <div class="card-body">access.redhat.com — your primary hub for cases, documentation, and tools</div>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING STARTED -->
+<section class="section" id="start">
+  <div class="section-header">
+    <h2>Getting Started</h2>
+    <div class="sub">Begin your journey with Red Hat</div>
+  </div>
+  <p class="lead secondary">Before you open your first support case, complete these two onboarding steps.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Step</th><th>Action</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Check for your subscription confirmation email</td><td>Confirms your Red Hat subscription is active</td></tr>
+        <tr><td>2</td><td>Log in to the Customer Portal (access.redhat.com)</td><td>Access your subscriptions, cases, and documentation</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>What you can do on the Customer Portal</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">View Subscriptions</div>
+      <div class="card-body">See all active entitlements, expiration dates, and quantity details</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Manage Cases</div>
+      <div class="card-body">Open, track, and update support cases in one place</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Access Documentation</div>
+      <div class="card-body">Product docs, knowledge base articles, and solution guides</div>
+    </div>
+  </div>
+  <div class="callout info">
+    <strong>Personalize your portal:</strong> Update your profile at access.redhat.com to stay notified about product updates, security alerts, and new documentation relevant to your environment.
+  </div>
+</section>
+
+<!-- SELF SERVICE -->
+<section class="section" id="selfservice">
+  <div class="section-header">
+    <h2>Self-Service First</h2>
+    <div class="sub">Try these before opening a case</div>
+  </div>
+  <div class="callout info">Many issues can be resolved without opening a support case. Try these self-service tools first — they're available 24/7 with no wait time.</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ask Red Hat (Agent AI)</strong></td><td>AI-powered assistant in the portal — answers questions, guides troubleshooting</td></tr>
+        <tr><td><strong>Knowledge Base</strong></td><td>Search thousands of articles and solution documents</td></tr>
+        <tr><td><strong>Solution Engine</strong></td><td>Guided, step-by-step troubleshooting workflows</td></tr>
+        <tr><td><strong>Portal Labs</strong></td><td>Diagnostic and configuration tools you run against your environment</td></tr>
+        <tr><td><strong>Community Forum</strong></td><td>Peer-to-peer discussion, tips, and experience sharing</td></tr>
+        <tr><td><strong>Status Page</strong></td><td>Real-time Red Hat service health and known incidents</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="secondary small">If none of these resolve your issue, proceed to open a support case.</p>
+</section>
+
+<!-- HOW TO OPEN A CASE -->
+<section class="section" id="opencase">
+  <div class="section-header">
+    <h2>How to Open a Case</h2>
+    <div class="sub">Three ways to reach us</div>
+  </div>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">Option A — Portal <span class="pill pill-success" style="margin-left:auto">Recommended</span></div>
+      <div class="card-body">
+        <p>Go to <strong>access.redhat.com/support/cases</strong> → Open a New Case</p>
+        <p class="secondary" style="margin-top:6px">Fastest routing. Full case history. Attach files directly.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Option B — Phone</div>
+      <div class="card-body">
+        <p>Call your regional support hotline. For Sev 1, open online first then follow up by phone referencing your case number.</p>
+        <p class="secondary" style="margin-top:6px">Best for Severity 1 situations requiring immediate communication.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Option C — Chat (English)</div>
+      <div class="card-body">
+        <p>Live chat available via the Customer Portal in English.</p>
+        <p class="secondary" style="margin-top:6px">Good for quick questions or when you need to stay in a browser session.</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>Regional Phone Numbers</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Region</th><th>Phone</th><th>Email</th></tr></thead>
+      <tbody>
+        <tr><td>North America</td><td>1-888-REDHAT1 (1-888-733-4281)</td><td>—</td></tr>
+        <tr><td>Europe, Middle East &amp; Africa</td><td>00800 7334 2835</td><td>europe@redhat.com</td></tr>
+        <tr><td>Asia Pacific</td><td>+65 6490 4200</td><td>apac@redhat.com</td></tr>
+        <tr><td>Latin America</td><td>+54 11 4329 7300</td><td>info-latam@redhat.com</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout warn">Open <strong>one case per issue</strong> using an <strong>individual Customer Portal account</strong> — group accounts are not supported. For account management issues (subscriptions, user access, orders), use the <strong>Customer Service Webform</strong> instead.</div>
+</section>
+
+<!-- CASE DETAILS -->
+<section class="section" id="casedetails">
+  <div class="section-header">
+    <h2>Case Details</h2>
+    <div class="sub">What to include for fast resolution</div>
+  </div>
+  <p class="lead secondary">Providing thorough details upfront is the single biggest factor in faster case resolution. Here is exactly what to include.</p>
+  <h3>Environment Details</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td>Platform version</td><td>RHEL 9.2, OpenShift 4.14, Satellite 6.12</td></tr>
+        <tr><td>Product version</td><td>JBoss EAP 7.4, Ansible Automation Platform 2.4</td></tr>
+        <tr><td>Third-party products</td><td>Any vendor software involved in the issue</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>Issue Details</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>What to provide</th></tr></thead>
+      <tbody>
+        <tr><td>Timestamps</td><td>When the issue first appeared and any recurrence pattern</td></tr>
+        <tr><td>Error messages</td><td>Exact text — copy/paste, not paraphrased</td></tr>
+        <tr><td>Steps to reproduce</td><td>A numbered sequence that reliably triggers the issue</td></tr>
+        <tr><td>Multi-vendor details</td><td>Vendor name, their case number, and vendor contact email if applicable</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>Attachments</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Recommended Files</div>
+      <div class="card-body">
+        <p>SOSreport — system state snapshot for RHEL</p>
+        <p>vmcore — kernel crash dump (required for panic RCA)</p>
+        <p>Log files — application and system logs around the incident window</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Uploading Large Files</div>
+      <div class="card-body">
+        <p>Attach files directly to your case on the portal.</p>
+        <p class="secondary" style="margin-top:6px">If the file cannot be attached via the portal, use the Red Hat FTP site: <strong>access.redhat.com/solutions/2112</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="callout info">Respond promptly to any follow-up requests from your support engineer — additional details are often needed to avoid delays.</div>
+</section>
+
+<!-- DIAGNOSTICS -->
+<section class="section" id="diagnostics">
+  <div class="section-header">
+    <h2>Diagnostics</h2>
+    <div class="sub">Gathering the right data before you call</div>
+  </div>
+  <p class="lead secondary">Collecting the right diagnostic data before (or immediately after) opening a case dramatically reduces back-and-forth. Match your situation to the correct tool.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Situation</th><th>Tool</th><th>Reference</th></tr></thead>
+      <tbody>
+        <tr><td>General RHEL issue</td><td>SOSreport</td><td>access.redhat.com/solutions/3592</td></tr>
+        <tr><td>System panic / kernel crash</td><td>vmcore (via kdump)</td><td>access.redhat.com/solutions/6038</td></tr>
+        <tr><td>Hung / unresponsive system</td><td>sysrq data</td><td>access.redhat.com/solutions/2023</td></tr>
+        <tr><td>Red Hat Satellite 5.x</td><td>spacewalk-debug</td><td>access.redhat.com/solutions/11047</td></tr>
+        <tr><td>Red Hat Satellite 6.x</td><td>foreman-debug</td><td>access.redhat.com/solutions/1177823</td></tr>
+        <tr><td>Red Hat Enterprise Virtualization</td><td>log collector</td><td>access.redhat.com/solutions/61546</td></tr>
+        <tr><td>JBoss EAP 6</td><td>JDR (JBoss Diagnostic Reporter)</td><td>access.redhat.com/solutions/221103</td></tr>
+        <tr><td>OpenStack Platform</td><td>Log files</td><td>access.redhat.com/solutions/2055933</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout danger"><strong>For system panics:</strong> enabling and testing <strong>kdump</strong> is strongly advised. Without a vmcore, root cause analysis for kernel panics is not possible.</div>
+  <hr>
+  <h3>Remote Support Sessions</h3>
+  <p class="secondary">For complex issues, your support engineer can request a remote session — allowing real-time collaboration between you and one or more Red Hat engineers. Sessions are run securely and help accelerate diagnosis significantly.</p>
+  <p class="small secondary" style="margin-top:8px">To request a session proactively: <strong>access.redhat.com/articles/255443</strong></p>
+</section>
+
+<!-- SEVERITY -->
+<section class="section" id="severity">
+  <div class="section-header">
+    <h2>Severity Levels</h2>
+    <div class="sub">Choosing the right priority</div>
+  </div>
+  <div class="callout warn"><strong>Important:</strong> Choosing a severity level higher than appropriate may delay routing to the right team. Match your severity to the actual business impact.</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Severity</th><th>Label</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr class="row-danger"><td><strong>1 — Urgent</strong></td><td>Complete outage</td><td>Production systems not functioning. No workaround available. Full service impact.</td></tr>
+        <tr class="row-warn"><td><strong>2 — High</strong></td><td>Production severely degraded</td><td>High business impact. No workaround. Key feature unavailable.</td></tr>
+        <tr><td><strong>3 — Medium</strong></td><td>No critical loss</td><td>Medium to low impact in production or development. Workaround may exist.</td></tr>
+        <tr><td><strong>4 — Low</strong></td><td>General / Documentation</td><td>Minimal business impact. How-to questions, doc errors, feature requests.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>After-Hours &amp; Weekend Support</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Severity 1 <span class="pill pill-success">Premium</span></div>
+      <div class="card-body">24×7 coverage included by default. Red Hat will contact you around the clock until resolved.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Severity 2 <span class="pill pill-info">Premium</span></div>
+      <div class="card-body">24×7 coverage available <strong>by request</strong>. Ask your support engineer to enable after-hours follow-up when opening or updating the case.</div>
+    </div>
+  </div>
+  <div class="callout info">When requesting after-hours coverage, provide contact information for the individual(s) who will be working evening and weekend hours so the Red Hat team can reach them directly.</div>
+</section>
+
+<!-- MANAGED SERVICES -->
+<section class="section" id="managed">
+  <div class="section-header">
+    <h2>Managed Services</h2>
+    <div class="sub">ARO &amp; ROSA</div>
+  </div>
+  <p class="lead secondary">If you are running a managed OpenShift environment on a major cloud provider, your support model is a joint responsibility between Red Hat and the cloud provider.</p>
+  <hr>
+  <h3>Azure Red Hat OpenShift (ARO)</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">What is ARO?</div>
+      <div class="card-body">A jointly managed OpenShift cluster on Azure, operated by Microsoft and Red Hat together</div>
+    </div>
+    <div class="card">
+      <div class="card-header">SLA &amp; Severity Levels</div>
+      <div class="card-body">Review the Service Level Agreement; severity levels align with Azure and Red Hat policies</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Case Handling</div>
+      <div class="card-body">Cases may be filed on either the Azure portal or the Red Hat Customer Portal; teams coordinate internally</div>
+    </div>
+  </div>
+  <hr>
+  <h3>Red Hat OpenShift Service on AWS (ROSA)</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">ROSA Lifecycle</div>
+      <div class="card-body">Full cluster lifecycle support — from provisioning through decommissioning</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Support Process</div>
+      <div class="card-body">Open cases via the Red Hat Customer Portal; Red Hat and AWS coordinate for platform-level issues</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Escalation Best Practices</div>
+      <div class="card-body">Document impact clearly and follow the standard escalation path when SLAs are at risk</div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCALATION -->
+<section class="section" id="escalate">
+  <div class="section-header">
+    <h2>Escalation</h2>
+    <div class="sub">When and how to escalate</div>
+  </div>
+  <p class="lead">If your issue is not progressing as expected, or the business impact has increased, you can escalate at any time — escalation is a feature, not a failure.</p>
+  <hr>
+  <h3>When to Escalate</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>No meaningful update after a reasonable period at current severity</td><td>Request escalation in the case comments</td></tr>
+        <tr><td>Business impact has grown since case was opened</td><td>Update severity level and notify your support engineer</td></tr>
+        <tr><td>SLA breach is imminent or has occurred</td><td>Contact support engineer directly or use the escalation path</td></tr>
+        <tr><td>Multiple teams need to coordinate and progress has stalled</td><td>Ask for a cross-team escalation meeting</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>Management Escalation</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Step 1 — In the Portal</div>
+      <div class="card-body">
+        <p>Open your case and click the <strong>"Request Management Escalation"</strong> button.</p>
+        <p class="secondary" style="margin-top:6px">This immediately flags the case for management attention and triggers an SLA review.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Step 2 — Follow Up by Phone</div>
+      <div class="card-body">
+        <p>Call the technical support hotline for your region and ask to speak to a <strong>Delivery Manager</strong>.</p>
+        <p class="secondary" style="margin-top:6px">Reference: access.redhat.com/support/policy/mgt_escalation</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>Remote Support Sessions</h3>
+  <p class="secondary">For complex issues, your support engineer may request a remote session. You will receive a secure connection link. Sessions are recorded with your consent and help accelerate diagnosis significantly.</p>
+  <p class="small secondary" style="margin-top:8px">Request a session proactively: <strong>access.redhat.com/articles/255443</strong></p>
+</section>
+
+<!-- KEY RESOURCES -->
+<section class="section" id="resources">
+  <div class="section-header">
+    <h2>Key Resources</h2>
+    <div class="sub">Curated Customer Portal reading list</div>
+  </div>
+  <p class="lead secondary">These Customer Portal articles are your onboarding reading list. All links require your Red Hat subscription login unless marked Public.</p>
+
+  <h3>Before your first support case</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>How to engage Red Hat Support</td><td>access.redhat.com/start/how-to-engage-red-hat-support</td><td>Step-by-step walkthrough of opening, managing, and closing a case on the portal</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Guidelines for a Successful Support Engagement</td><td>access.redhat.com/articles/7126161</td><td>Collaborative support model and the one-issue-per-ticket rule</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>Severity level definitions &amp; SLA</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA table — use this when a customer disputes severity or timing</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>When and how to request management escalation, what the Delivery Manager role does</td><td><span class="pill pill-success">Public</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>If you run into a technical issue</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>How to collect a SOSreport (RHEL)</td><td>access.redhat.com/solutions/3592</td><td>Most common first attachment requested for RHEL cases</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>How to capture a vmcore (kernel panic)</td><td>access.redhat.com/solutions/6038</td><td>Required for any kernel crash case — without this, root cause analysis is not possible</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>Remote support session guide</td><td>access.redhat.com/articles/255443</td><td>How to initiate and participate in a remote session</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>Upload files to Red Hat FTP</td><td>access.redhat.com/solutions/2112</td><td>Use when attachments are too large for the portal case</td><td><span class="pill pill-default">Subscription</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>For managed cloud customers (ARO / ROSA)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>ARO support responsibility matrix</td><td>docs.microsoft.com/azure/openshift</td><td>Defines the Red Hat vs Microsoft responsibility boundary — critical for case routing</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>ROSA Pre-Foundational Readiness Course</td><td>Available in LMS</td><td>The managed cloud workflow is only documented in LMS training — not in the general guide</td><td><span class="pill pill-warn">LMS login</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout info"><strong>Strategy note:</strong> This guide curates; the Portal delivers. Article content is never duplicated here — it is owned by the Portal team and updated independently. If a link breaks, notify your section owner to update it.</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  CEE Goldendeck — External Customer Guide &nbsp;·&nbsp; Maintained by CEE Program &nbsp;·&nbsp; Review quarterly
+</footer>
+
+<script>
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scroll
+  links.forEach(l => {
+    l.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(l.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

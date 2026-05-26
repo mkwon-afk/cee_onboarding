@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEE Goldendeck — Internal (Team)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #EE0000;
+    --dark: #151515;
+    --mid: #3C3F42;
+    --muted: #6A6E73;
+    --border: #D2D2D2;
+    --bg: #F5F5F5;
+    --white: #FFFFFF;
+    --info-bg: #EDF8FF;
+    --info-border: #73BCF7;
+    --warn-bg: #FFF8E1;
+    --warn-border: #F6D173;
+    --danger-bg: #FDECEA;
+    --danger-border: #C9190B;
+    --success-bg: #F3FAF2;
+    --success-border: #5BA352;
+    --nav-width: 220px;
+  }
+
+  body {
+    font-family: 'RedHatDisplay', 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+  }
+  header .logo { color: var(--red); font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+  header .sep { color: var(--muted); }
+  header .title { font-size: 14px; color: #C8C8C8; }
+  header .badge {
+    margin-left: auto;
+    background: #3C3F42;
+    color: white;
+    border: 1px solid #6A6E73;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .layout { display: flex; margin-top: 56px; min-height: calc(100vh - 56px); }
+
+  nav {
+    width: var(--nav-width);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 56px; bottom: 0;
+    overflow-y: auto;
+    padding: 24px 0;
+  }
+  nav .nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 0 20px 10px;
+  }
+  nav a {
+    display: block;
+    padding: 9px 20px;
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 13px;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  nav a:hover { background: var(--bg); color: var(--dark); }
+  nav a.active { border-left-color: var(--red); color: var(--red); font-weight: 600; background: #FFF5F5; }
+
+  main {
+    margin-left: var(--nav-width);
+    flex: 1;
+    padding: 40px 48px;
+    max-width: 960px;
+  }
+
+  .section { margin-bottom: 72px; scroll-margin-top: 80px; }
+  .section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .section-header h2 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .section-header .sub { color: var(--muted); font-size: 13px; }
+
+  h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin: 24px 0 12px; }
+
+  .grid { display: grid; gap: 12px; margin-bottom: 20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .card-header {
+    padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--dark);
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-body { padding: 12px 14px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .card-body p + p { margin-top: 6px; }
+
+  .stats { display: flex; gap: 12px; margin-bottom: 20px; }
+  .stat { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 16px 20px; flex: 1; }
+  .stat .value { font-size: 24px; font-weight: 700; color: var(--dark); }
+  .stat .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .tbl-wrap { margin-bottom: 20px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 13px; }
+  thead th { background: var(--bg); text-align: left; padding: 10px 14px; font-weight: 600; color: var(--mid); border-bottom: 1px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--dark); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #FAFAFA; }
+
+  .callout { border-radius: 4px; padding: 12px 16px; font-size: 13px; margin-bottom: 20px; border-left: 4px solid; line-height: 1.5; }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: #004080; }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: #603000; }
+  .callout.danger { background: var(--danger-bg); border-color: var(--danger-border); color: #7D1007; }
+  .callout.success { background: var(--success-bg); border-color: var(--success-border); color: #1E4620; }
+
+  .pill { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .pill-success { background: #E6F4E6; color: #1E4620; }
+  .pill-info { background: #EDF8FF; color: #004080; }
+  .pill-warn { background: #FFF8E1; color: #603000; }
+  .pill-default { background: #F0F0F0; color: var(--mid); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  .lead { font-size: 14px; color: var(--dark); margin-bottom: 20px; line-height: 1.7; }
+  .secondary { color: var(--muted); }
+  .small { font-size: 12px; }
+
+  /* Internal-specific: ownership tag */
+  .owner-tag {
+    display: inline-block;
+    font-size: 11px;
+    background: #151515;
+    color: #EE0000;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  footer { margin-left: var(--nav-width); padding: 24px 48px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); background: var(--white); }
+
+  @media (max-width: 768px) {
+    nav { display: none; }
+    main { margin-left: 0; padding: 24px 20px; }
+    footer { margin-left: 0; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .stats { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="logo">Red Hat</span>
+  <span class="sep">/</span>
+  <span class="title">CEE Goldendeck — Team Onboarding Guide</span>
+  <span class="badge">Internal · Team</span>
+</header>
+
+<div class="layout">
+
+<nav id="sidebar">
+  <div class="nav-label">Sections</div>
+  <a href="#overview" class="active">CEE at a Glance</a>
+  <a href="#gss">Global Support Services</a>
+  <a href="#cs">Global Customer Service</a>
+  <a href="#cloud">Cloud Services (MCS)</a>
+  <a href="#resources">Key Resources</a>
+</nav>
+
+<main>
+
+<!-- CEE AT A GLANCE -->
+<section class="section" id="overview">
+  <div class="section-header">
+    <h2>CEE at a Glance</h2>
+    <div class="sub">Who makes up the Customer Experience Engineering org?</div>
+  </div>
+  <p class="lead secondary">The Customer Experience Engineering (CEE) organization is Red Hat's customer-facing support umbrella, spanning five specialized teams.</p>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">Technical Support (GSS)</div>
+      <div class="card-body">Global Support Services — technical troubleshooting, product issues, case management</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Customer Service</div>
+      <div class="card-body">Account management, subscriptions, user access, order inquiries — 24/5, multilingual</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Managed Cloud Services (MCS)</div>
+      <div class="card-body">Cloud-native support for ARO, ROSA, and FedRAMP-regulated environments</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Secure Global Support (SGS)</div>
+      <div class="card-body">Specialized secure support for regulated industries and government customers</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Solutions Support Delivery</div>
+      <div class="card-body">Complex solution architecture and delivery support for enterprise customers</div>
+    </div>
+  </div>
+  <div class="callout info">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
+</section>
+
+<!-- GLOBAL SUPPORT SERVICES -->
+<section class="section" id="gss">
+  <div class="section-header">
+    <h2>Global Support Services</h2>
+    <div class="sub">Technical Support (GSS)</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="value">24/7</div><div class="label">Global coverage</div></div>
+    <div class="stat"><div class="value">GSS</div><div class="label">Team identifier</div></div>
+    <div class="stat"><div class="value">#gss-extended</div><div class="label">Slack channel</div></div>
+  </div>
+  <hr>
+  <h3>When to reach out to Technical Support (GSS)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Customers experiencing technical issues with Red Hat products</td><td>Any severity</td></tr>
+        <tr><td>Red Hat products are not working as expected</td><td>Any severity</td></tr>
+        <tr><td>Third-party vendor needs Red Hat input or validation</td><td>Coordinate with vendor</td></tr>
+        <tr><td>Seeking insight on the status of an open case</td><td>Any open case</td></tr>
+        <tr><td>Proactively notifying support of a future change window</td><td>Informational</td></tr>
+        <tr><td>Requesting a support exception for a pending entitlement</td><td>Any severity</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>How to reach Technical Support (GSS)</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">Global Email</div>
+      <div class="card-body">gss-list@redhat.com</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Leadership Email</div>
+      <div class="card-body">gss-leadership@redhat.com</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Slack</div>
+      <div class="card-body">#gss-extended</div>
+    </div>
+  </div>
+  <hr>
+  <h3>Proactive Support Engagement</h3>
+  <div class="callout info">
+    <strong>Scheduled maintenance window?</strong> Open a Severity 3 case two weeks early. Begin the summary with <strong>"Proactive:"</strong> and include activities, start/end date and time, duration, diagnostic files (SOSreport), and primary contact information. If issues arise during the window, call the support hotline, provide the case number, and raise severity as needed.
+  </div>
+  <div class="callout warn">Always check the <strong>Supportability Matrix</strong> before engaging GSS to confirm the issue falls within supported scope.</div>
+</section>
+
+<!-- GLOBAL CUSTOMER SERVICE -->
+<section class="section" id="cs">
+  <div class="section-header">
+    <h2>Global Customer Service</h2>
+    <div class="sub">Account &amp; Subscription Support</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="value">24/5</div><div class="label">Coverage hours</div></div>
+    <div class="stat"><div class="value">1 day</div><div class="label">Email response target</div></div>
+    <div class="stat"><div class="value">5 regions</div><div class="label">Global footprint</div></div>
+  </div>
+  <hr>
+  <h3>Who they are</h3>
+  <p class="secondary small">Customer Support Specialists located across APAC, EMEA, NASA, and India. The team handles support in Korean, Mandarin, Cantonese, Japanese, German, Italian, Spanish, French, Portuguese, and English. They also handle chat support and translation.</p>
+  <hr>
+  <h3>When to route to Customer Service</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Account management topic</th></tr></thead>
+      <tbody>
+        <tr><td>Contact information updates</td></tr>
+        <tr><td>User management &amp; access permissions</td></tr>
+        <tr><td>Subscription transfers</td></tr>
+        <tr><td>Trial requests</td></tr>
+        <tr><td>General order inquiries</td></tr>
+        <tr><td>General Presale &amp; Leads creation to Sales</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>How to reach Customer Service</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Slack</div>
+      <div class="card-body">
+        <p>Customer Service: <strong>#cee-customer-service</strong></p>
+        <p>Chat Team: <strong>#cee-chat-support</strong></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Webform &amp; Resources</div>
+      <div class="card-body">
+        <p>access.redhat.com/support (Customer Service Webform)</p>
+        <p>CS Mini Series Vol 4 — Contacting CS Best Practices</p>
+        <p>Ticketing system: SCT Salesforce Lightning</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD SERVICES -->
+<section class="section" id="cloud">
+  <div class="section-header">
+    <h2>Cloud Services (MCS)</h2>
+    <div class="sub">Managed Cloud &amp; FedRAMP</div>
+  </div>
+  <p class="lead secondary">The Managed Cloud Services (MCS) team specializes in supporting Red Hat's cloud-native offerings, with a focus on FedRAMP-regulated environments and joint support workflows with cloud partners.</p>
+  <hr>
+  <h3>Azure Red Hat OpenShift (ARO)</h3>
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-header">Support Workflow</div>
+      <div class="card-body">Microsoft + Red Hat joint support model. Cases may originate on either Microsoft or Red Hat portals.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Supportability Matrix</div>
+      <div class="card-body">Responsibility split documented at docs.microsoft.com/azure/openshift. LMS training links available internally.</div>
+    </div>
+  </div>
+  <hr>
+  <h3>Red Hat OpenShift on AWS (ROSA)</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">ROSA Lifecycle</div>
+      <div class="card-body">Full lifecycle support from cluster creation through decommission</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Support Workflow</div>
+      <div class="card-body">AWS + Red Hat joint support. LMS training available.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Supportability Matrix</div>
+      <div class="card-body">Defines Red Hat vs AWS responsibility boundary for ROSA clusters</div>
+    </div>
+  </div>
+  <div class="callout info">For Q&amp;A and collaboration on MCS topics, go to <strong>#mcs-global</strong> on Slack.</div>
+</section>
+
+<!-- KEY RESOURCES -->
+<section class="section" id="resources">
+  <div class="section-header">
+    <h2>Key Resources</h2>
+    <div class="sub">Curated Portal articles for team onboarding</div>
+  </div>
+  <p class="lead secondary">The most important Customer Portal and internal resources for CEE team onboarding. Articles marked "Subscription" need a Red Hat employee or customer account.</p>
+
+  <h3>Support engagement — foundational</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Resource</th><th>URL</th><th>Purpose</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>Guidelines for a Successful Support Engagement (Confirmed Stateside)</td><td>access.redhat.com/articles/7126161</td><td>Collaborative support model, one-issue-per-ticket rule — use in training for regulated customers</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>Severity level policy</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA and severity definitions — the source of truth when disputes arise</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>How customers should engage support</td><td>access.redhat.com/start/how-to-engage-red-hat-support</td><td>What customers are told to do — every support team member should know this flow</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>Escalation process including the Delivery Manager role — reference when managing escalations</td><td><span class="pill pill-success">Public</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Internal team resources</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Resource</th><th>Location</th><th>Purpose</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>GSS Red Hat One Preso – 2025</td><td>Internal Drive</td><td>High-level GSS/CS/CAP/EMT overview — note: catered to a sales audience, not onboarding</td><td><span class="pill pill-default">Internal</span></td></tr>
+        <tr><td>CS Mini Series Vol 4 – Contacting CS Best Practice</td><td>Internal Drive</td><td>Best practices for engaging Customer Service — should be part of all internal onboarding</td><td><span class="pill pill-default">Internal</span></td></tr>
+        <tr><td>CS Mini Series Team Scope Introduction (video)</td><td>Internal Drive</td><td>CS scope overview — recognized as a valuable onboarding resource not yet integrated</td><td><span class="pill pill-default">Internal</span></td></tr>
+        <tr><td>ARO Pre-Foundational Readiness Course</td><td>LMS</td><td>Managed cloud support workflow for ARO — only available via LMS, not in the general guide</td><td><span class="pill pill-warn">LMS login</span></td></tr>
+        <tr><td>ROSA Pre-Foundational Readiness Course</td><td>LMS</td><td>Managed cloud support workflow for ROSA — only available via LMS, not in the general guide</td><td><span class="pill pill-warn">LMS login</span></td></tr>
+        <tr><td>CEE NotebookLM</td><td>Internal</td><td>First stop for team contacts, routing questions, and supportability policies</td><td><span class="pill pill-default">Internal</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout warn"><strong>Known gap:</strong> The ARO and ROSA managed cloud workflows are currently only documented in LMS training — they are missing from the general onboarding guide. One goal of this canvas is to surface those workflows inline so new team members do not need a separate LMS course to find them.</div>
+
+  <hr>
+  <h3>How this guide connects to the Customer Portal</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>This guide section</th><th>Portal page it feeds</th><th>What the quarterly brief covers</th></tr></thead>
+      <tbody>
+        <tr><td>Global Support Services (GSS)</td><td>access.redhat.com/support</td><td>Case opening flow, severity guidance, escalation path, diagnostics</td></tr>
+        <tr><td>Global Customer Service</td><td>access.redhat.com/support/customer-service</td><td>CS scope, contact routing, FAQ accuracy, CS vs Technical Support distinction</td></tr>
+        <tr><td>Cloud Services (MCS)</td><td>access.redhat.com/support (managed cloud section)</td><td>ARO/ROSA workflow, joint support model, LMS course gaps</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout success"><strong>The model:</strong> CEE owns the knowledge. The Portal team publishes it. This guide is reviewed quarterly by section owners who produce a brief for the Portal team identifying what needs updating.</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  CEE Goldendeck — Internal Team Guide &nbsp;·&nbsp; Maintained by CEE Managers by section &nbsp;·&nbsp; Review quarterly
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  links.forEach(l => {
+    l.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(l.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
