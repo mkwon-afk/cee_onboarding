@@ -1,0 +1,286 @@
+<style>
+.cee-wrap { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#151515; max-width:860px; }
+.cee-wrap h2 { font-size:18px; font-weight:700; margin:32px 0 4px; padding-bottom:12px; border-bottom:1px solid #D2D2D2; }
+.cee-wrap h3 { font-size:14px; font-weight:600; margin:20px 0 10px; }
+.cee-wrap p { margin-bottom:14px; }
+.cee-wrap hr { border:none; border-top:1px solid #D2D2D2; margin:20px 0; }
+.cee-sub { color:#6A6E73; font-size:12px; margin-bottom:16px; margin-top:-2px; }
+.cee-grid { display:grid; gap:10px; margin-bottom:16px; }
+.cee-g2 { grid-template-columns:1fr 1fr; }
+.cee-g3 { grid-template-columns:1fr 1fr 1fr; }
+.cee-card { border:1px solid #D2D2D2; border-radius:4px; overflow:hidden; }
+.cee-ch { padding:9px 12px; font-size:12px; font-weight:600; background:#F5F5F5; border-bottom:1px solid #D2D2D2; display:flex; align-items:center; gap:6px; }
+.cee-cb { padding:10px 12px; font-size:12px; color:#6A6E73; line-height:1.5; }
+.cee-tbl { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:16px; border:1px solid #D2D2D2; border-radius:4px; }
+.cee-tbl th { background:#F5F5F5; text-align:left; padding:8px 12px; font-weight:600; color:#3C3F42; border-bottom:1px solid #D2D2D2; font-size:11px; text-transform:uppercase; letter-spacing:0.04em; }
+.cee-tbl td { padding:8px 12px; border-bottom:1px solid #D2D2D2; vertical-align:top; }
+.cee-tbl tr:last-child td { border-bottom:none; }
+.cee-tbl tr.rd td { background:#FFF5F5; }
+.cee-tbl tr.yw td { background:#FFFDF0; }
+.cee-box { border-radius:4px; padding:10px 14px; font-size:12px; margin-bottom:16px; border-left:4px solid; line-height:1.5; }
+.cee-info { background:#EDF8FF; border-color:#73BCF7; color:#004080; }
+.cee-warn { background:#FFF8E1; border-color:#F6D173; color:#603000; }
+.cee-danger { background:#FDECEA; border-color:#C9190B; color:#7D1007; }
+.cee-success { background:#F3FAF2; border-color:#5BA352; color:#1E4620; }
+.cee-pill { display:inline-block; font-size:10px; font-weight:600; padding:1px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+.cee-pill-g { background:#E6F4E6; color:#1E4620; }
+.cee-pill-b { background:#EDF8FF; color:#004080; }
+.cee-pill-y { background:#FFF8E1; color:#603000; }
+.cee-pill-d { background:#F0F0F0; color:#3C3F42; }
+.cee-toc { background:#F5F5F5; border:1px solid #D2D2D2; border-radius:4px; padding:14px 18px; margin-bottom:28px; font-size:12px; }
+.cee-toc a { color:#EE0000; text-decoration:none; margin-right:16px; }
+.cee-toc a:hover { text-decoration:underline; }
+.cee-banner { background:#151515; color:#fff; padding:14px 20px; border-radius:4px; margin-bottom:24px; display:flex; align-items:center; gap:12px; }
+.cee-banner .logo { color:#EE0000; font-weight:700; font-size:16px; }
+.cee-banner .ttl { font-size:13px; color:#C8C8C8; }
+.cee-banner .badge { margin-left:auto; background:#EE0000; color:#fff; font-size:10px; font-weight:700; padding:2px 9px; border-radius:3px; text-transform:uppercase; letter-spacing:0.05em; }
+.cee-sec { margin-bottom:40px; }
+</style>
+
+<div class="cee-wrap">
+
+  <div class="cee-banner">
+    <span class="logo">Red Hat</span>
+    <span class="ttl">CEE Goldendeck — Customer Support Engagement Guide</span>
+    <span class="badge">External · Customer</span>
+  </div>
+
+  <div class="cee-toc">
+    <strong style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#6A6E73;">Jump to:</strong><br><br>
+    <a href="#cee-welcome">Welcome</a>
+    <a href="#cee-start">Getting Started</a>
+    <a href="#cee-self">Self-Service</a>
+    <a href="#cee-open">Open a Case</a>
+    <a href="#cee-details">Case Details</a>
+    <a href="#cee-diag">Diagnostics</a>
+    <a href="#cee-sev">Severity</a>
+    <a href="#cee-managed">Managed Services</a>
+    <a href="#cee-esc">Escalation</a>
+    <a href="#cee-res">Key Resources</a>
+  </div>
+
+  <!-- WELCOME -->
+  <div class="cee-sec" id="cee-welcome">
+    <h2>Welcome</h2>
+    <div class="cee-sub">Your Red Hat Support Journey</div>
+    <p>This guide is designed to help you get the most out of your support experience with Red Hat. Following these best practices ensures faster resolution times, clearer communication, and a smoother overall support journey.</p>
+    <hr>
+    <h3>Red Hat Support at a Glance</h3>
+    <div class="cee-grid cee-g2">
+      <div class="cee-card"><div class="cee-ch">Technical Support (GSS)</div><div class="cee-cb">Product issues, technical troubleshooting, change windows, case management</div></div>
+      <div class="cee-card"><div class="cee-ch">Customer Service</div><div class="cee-cb">Subscriptions, account access, user management, order inquiries</div></div>
+      <div class="cee-card"><div class="cee-ch">Managed Cloud Services</div><div class="cee-cb">Dedicated support for ARO and ROSA managed OpenShift environments</div></div>
+      <div class="cee-card"><div class="cee-ch">Customer Portal</div><div class="cee-cb">access.redhat.com — your primary hub for cases, documentation, and tools</div></div>
+    </div>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="cee-sec" id="cee-start">
+    <h2>Getting Started</h2>
+    <div class="cee-sub">Begin your journey with Red Hat</div>
+    <p style="color:#6A6E73;">Before you open your first support case, complete these two onboarding steps.</p>
+    <table class="cee-tbl">
+      <thead><tr><th>Step</th><th>Action</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Check for your subscription confirmation email</td><td>Confirms your Red Hat subscription is active</td></tr>
+        <tr><td>2</td><td>Log in to the Customer Portal (access.redhat.com)</td><td>Access your subscriptions, cases, and documentation</td></tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>What you can do on the Customer Portal</h3>
+    <div class="cee-grid cee-g3">
+      <div class="cee-card"><div class="cee-ch">View Subscriptions</div><div class="cee-cb">See all active entitlements, expiration dates, and quantity details</div></div>
+      <div class="cee-card"><div class="cee-ch">Manage Cases</div><div class="cee-cb">Open, track, and update support cases in one place</div></div>
+      <div class="cee-card"><div class="cee-ch">Access Documentation</div><div class="cee-cb">Product docs, knowledge base articles, and solution guides</div></div>
+    </div>
+    <div class="cee-box cee-info"><strong>Personalize your portal:</strong> Update your profile at access.redhat.com to stay notified about product updates, security alerts, and new documentation relevant to your environment.</div>
+  </div>
+
+  <!-- SELF SERVICE -->
+  <div class="cee-sec" id="cee-self">
+    <h2>Self-Service First</h2>
+    <div class="cee-sub">Try these before opening a case</div>
+    <div class="cee-box cee-info">Many issues can be resolved without opening a support case. Try these self-service tools first — they're available 24/7 with no wait time.</div>
+    <table class="cee-tbl">
+      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ask Red Hat (Agent AI)</strong></td><td>AI-powered assistant in the portal — answers questions, guides troubleshooting</td></tr>
+        <tr><td><strong>Knowledge Base</strong></td><td>Search thousands of articles and solution documents</td></tr>
+        <tr><td><strong>Solution Engine</strong></td><td>Guided, step-by-step troubleshooting workflows</td></tr>
+        <tr><td><strong>Portal Labs</strong></td><td>Diagnostic and configuration tools you run against your environment</td></tr>
+        <tr><td><strong>Community Forum</strong></td><td>Peer-to-peer discussion, tips, and experience sharing</td></tr>
+        <tr><td><strong>Status Page</strong></td><td>Real-time Red Hat service health and known incidents</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HOW TO OPEN A CASE -->
+  <div class="cee-sec" id="cee-open">
+    <h2>How to Open a Case</h2>
+    <div class="cee-sub">Three ways to reach us</div>
+    <div class="cee-grid cee-g3">
+      <div class="cee-card"><div class="cee-ch">Option A — Portal <span class="cee-pill cee-pill-g" style="margin-left:auto">Recommended</span></div><div class="cee-cb"><p>Go to <strong>access.redhat.com/support/cases</strong> → Open a New Case</p><p style="margin-top:6px;color:#6A6E73;">Fastest routing. Full case history. Attach files directly.</p></div></div>
+      <div class="cee-card"><div class="cee-ch">Option B — Phone</div><div class="cee-cb"><p>Call your regional support hotline. For Sev 1, open online first then follow up by phone with your case number.</p></div></div>
+      <div class="cee-card"><div class="cee-ch">Option C — Chat (English)</div><div class="cee-cb"><p>Live chat available via the Customer Portal in English. Good for quick questions.</p></div></div>
+    </div>
+    <hr>
+    <h3>Regional Phone Numbers</h3>
+    <table class="cee-tbl">
+      <thead><tr><th>Region</th><th>Phone</th><th>Email</th></tr></thead>
+      <tbody>
+        <tr><td>North America</td><td>1-888-REDHAT1 (1-888-733-4281)</td><td>—</td></tr>
+        <tr><td>Europe, Middle East &amp; Africa</td><td>00800 7334 2835</td><td>europe@redhat.com</td></tr>
+        <tr><td>Asia Pacific</td><td>+65 6490 4200</td><td>apac@redhat.com</td></tr>
+        <tr><td>Latin America</td><td>+54 11 4329 7300</td><td>info-latam@redhat.com</td></tr>
+      </tbody>
+    </table>
+    <div class="cee-box cee-warn">Open <strong>one case per issue</strong> using an <strong>individual Customer Portal account</strong>. For account issues (subscriptions, user access, orders), use the <strong>Customer Service Webform</strong> instead.</div>
+  </div>
+
+  <!-- CASE DETAILS -->
+  <div class="cee-sec" id="cee-details">
+    <h2>Case Details</h2>
+    <div class="cee-sub">What to include for fast resolution</div>
+    <p style="color:#6A6E73;">Providing thorough details upfront is the single biggest factor in faster case resolution.</p>
+    <h3>Environment Details</h3>
+    <table class="cee-tbl">
+      <thead><tr><th>Field</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td>Platform version</td><td>RHEL 9.2, OpenShift 4.14, Satellite 6.12</td></tr>
+        <tr><td>Product version</td><td>JBoss EAP 7.4, Ansible Automation Platform 2.4</td></tr>
+        <tr><td>Third-party products</td><td>Any vendor software involved in the issue</td></tr>
+      </tbody>
+    </table>
+    <h3>Issue Details</h3>
+    <table class="cee-tbl">
+      <thead><tr><th>Field</th><th>What to provide</th></tr></thead>
+      <tbody>
+        <tr><td>Timestamps</td><td>When the issue first appeared and any recurrence pattern</td></tr>
+        <tr><td>Error messages</td><td>Exact text — copy/paste, not paraphrased</td></tr>
+        <tr><td>Steps to reproduce</td><td>A numbered sequence that reliably triggers the issue</td></tr>
+        <tr><td>Multi-vendor details</td><td>Vendor name, their case number, and vendor contact email if applicable</td></tr>
+      </tbody>
+    </table>
+    <h3>Attachments</h3>
+    <div class="cee-grid cee-g2">
+      <div class="cee-card"><div class="cee-ch">Recommended Files</div><div class="cee-cb"><p>SOSreport — system state snapshot for RHEL</p><p>vmcore — kernel crash dump (required for panic RCA)</p><p>Log files — application and system logs around the incident window</p></div></div>
+      <div class="cee-card"><div class="cee-ch">Uploading Large Files</div><div class="cee-cb"><p>Attach directly to your case on the portal, or use the Red Hat FTP site: <strong>access.redhat.com/solutions/2112</strong></p></div></div>
+    </div>
+    <div class="cee-box cee-info">Respond promptly to any follow-up requests from your support engineer — additional details are often needed to avoid delays.</div>
+  </div>
+
+  <!-- DIAGNOSTICS -->
+  <div class="cee-sec" id="cee-diag">
+    <h2>Diagnostics</h2>
+    <div class="cee-sub">Gathering the right data before you call</div>
+    <p style="color:#6A6E73;">Collecting the right diagnostic data before opening a case dramatically reduces back-and-forth.</p>
+    <table class="cee-tbl">
+      <thead><tr><th>Situation</th><th>Tool</th><th>Reference</th></tr></thead>
+      <tbody>
+        <tr><td>General RHEL issue</td><td>SOSreport</td><td>access.redhat.com/solutions/3592</td></tr>
+        <tr><td>System panic / kernel crash</td><td>vmcore (via kdump)</td><td>access.redhat.com/solutions/6038</td></tr>
+        <tr><td>Hung / unresponsive system</td><td>sysrq data</td><td>access.redhat.com/solutions/2023</td></tr>
+        <tr><td>Red Hat Satellite 5.x</td><td>spacewalk-debug</td><td>access.redhat.com/solutions/11047</td></tr>
+        <tr><td>Red Hat Satellite 6.x</td><td>foreman-debug</td><td>access.redhat.com/solutions/1177823</td></tr>
+        <tr><td>Red Hat Enterprise Virtualization</td><td>log collector</td><td>access.redhat.com/solutions/61546</td></tr>
+        <tr><td>JBoss EAP 6</td><td>JDR (JBoss Diagnostic Reporter)</td><td>access.redhat.com/solutions/221103</td></tr>
+        <tr><td>OpenStack Platform</td><td>Log files</td><td>access.redhat.com/solutions/2055933</td></tr>
+      </tbody>
+    </table>
+    <div class="cee-box cee-danger"><strong>For system panics:</strong> enabling and testing <strong>kdump</strong> is strongly advised. Without a vmcore, root cause analysis for kernel panics is not possible.</div>
+  </div>
+
+  <!-- SEVERITY -->
+  <div class="cee-sec" id="cee-sev">
+    <h2>Severity Levels</h2>
+    <div class="cee-sub">Choosing the right priority</div>
+    <div class="cee-box cee-warn"><strong>Important:</strong> Choosing a severity level higher than appropriate may delay routing to the right team. Match your severity to the actual business impact.</div>
+    <table class="cee-tbl">
+      <thead><tr><th>Severity</th><th>Label</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr class="rd"><td><strong>1 — Urgent</strong></td><td>Complete outage</td><td>Production systems not functioning. No workaround available. Full service impact.</td></tr>
+        <tr class="yw"><td><strong>2 — High</strong></td><td>Production severely degraded</td><td>High business impact. No workaround. Key feature unavailable.</td></tr>
+        <tr><td><strong>3 — Medium</strong></td><td>No critical loss</td><td>Medium to low impact in production or development. Workaround may exist.</td></tr>
+        <tr><td><strong>4 — Low</strong></td><td>General / Documentation</td><td>Minimal business impact. How-to questions, doc errors, feature requests.</td></tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>After-Hours &amp; Weekend Support</h3>
+    <div class="cee-grid cee-g2">
+      <div class="cee-card"><div class="cee-ch">Severity 1 <span class="cee-pill cee-pill-g" style="margin-left:auto">Premium</span></div><div class="cee-cb">24×7 coverage included by default. Red Hat will contact you around the clock until resolved.</div></div>
+      <div class="cee-card"><div class="cee-ch">Severity 2 <span class="cee-pill cee-pill-b" style="margin-left:auto">Premium</span></div><div class="cee-cb">24×7 coverage available <strong>by request</strong>. Ask your support engineer to enable after-hours follow-up.</div></div>
+    </div>
+  </div>
+
+  <!-- MANAGED SERVICES -->
+  <div class="cee-sec" id="cee-managed">
+    <h2>Managed Services</h2>
+    <div class="cee-sub">ARO &amp; ROSA</div>
+    <p style="color:#6A6E73;">If you are running a managed OpenShift environment on a major cloud provider, your support model is a joint responsibility between Red Hat and the cloud provider.</p>
+    <hr>
+    <h3>Azure Red Hat OpenShift (ARO)</h3>
+    <div class="cee-grid cee-g3">
+      <div class="cee-card"><div class="cee-ch">What is ARO?</div><div class="cee-cb">A jointly managed OpenShift cluster on Azure, operated by Microsoft and Red Hat together</div></div>
+      <div class="cee-card"><div class="cee-ch">SLA &amp; Severity Levels</div><div class="cee-cb">Severity levels align with Azure and Red Hat policies; review the Service Level Agreement</div></div>
+      <div class="cee-card"><div class="cee-ch">Case Handling</div><div class="cee-cb">Cases may be filed on either the Azure portal or the Red Hat Customer Portal; teams coordinate internally</div></div>
+    </div>
+    <hr>
+    <h3>Red Hat OpenShift Service on AWS (ROSA)</h3>
+    <div class="cee-grid cee-g3">
+      <div class="cee-card"><div class="cee-ch">ROSA Lifecycle</div><div class="cee-cb">Full cluster lifecycle support — from provisioning through decommissioning</div></div>
+      <div class="cee-card"><div class="cee-ch">Support Process</div><div class="cee-cb">Open cases via the Red Hat Customer Portal; Red Hat and AWS coordinate for platform-level issues</div></div>
+      <div class="cee-card"><div class="cee-ch">Escalation Best Practices</div><div class="cee-cb">Document impact clearly and follow the standard escalation path when SLAs are at risk</div></div>
+    </div>
+  </div>
+
+  <!-- ESCALATION -->
+  <div class="cee-sec" id="cee-esc">
+    <h2>Escalation</h2>
+    <div class="cee-sub">When and how to escalate</div>
+    <p>If your issue is not progressing as expected, or the business impact has increased, you can escalate at any time — escalation is a feature, not a failure.</p>
+    <table class="cee-tbl">
+      <thead><tr><th>Signal</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>No meaningful update after a reasonable period at current severity</td><td>Request escalation in the case comments</td></tr>
+        <tr><td>Business impact has grown since case was opened</td><td>Update severity level and notify your support engineer</td></tr>
+        <tr><td>SLA breach is imminent or has occurred</td><td>Contact support engineer directly or use the escalation path</td></tr>
+        <tr><td>Multiple teams need to coordinate and progress has stalled</td><td>Ask for a cross-team escalation meeting</td></tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>Management Escalation</h3>
+    <div class="cee-grid cee-g2">
+      <div class="cee-card"><div class="cee-ch">Step 1 — In the Portal</div><div class="cee-cb"><p>Open your case and click <strong>"Request Management Escalation"</strong>. This immediately flags the case for management attention.</p></div></div>
+      <div class="cee-card"><div class="cee-ch">Step 2 — Follow Up by Phone</div><div class="cee-cb"><p>Call your regional support hotline and ask to speak to a <strong>Delivery Manager</strong>.</p><p style="margin-top:6px;color:#6A6E73;">Reference: access.redhat.com/support/policy/mgt_escalation</p></div></div>
+    </div>
+  </div>
+
+  <!-- KEY RESOURCES -->
+  <div class="cee-sec" id="cee-res">
+    <h2>Key Resources</h2>
+    <div class="cee-sub">Curated Customer Portal reading list</div>
+    <p style="color:#6A6E73;">These Customer Portal articles are your onboarding reading list. Links marked Public are accessible without login.</p>
+    <h3>Before your first support case</h3>
+    <table class="cee-tbl">
+      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>How to engage Red Hat Support</td><td>access.redhat.com/start/how-to-engage-red-hat-support</td><td>Step-by-step walkthrough of opening, managing, and closing a case</td><td><span class="cee-pill cee-pill-g">Public</span></td></tr>
+        <tr><td>Guidelines for a Successful Support Engagement</td><td>access.redhat.com/articles/7126161</td><td>Collaborative support model and the one-issue-per-ticket rule</td><td><span class="cee-pill cee-pill-d">Subscription</span></td></tr>
+        <tr><td>Severity level definitions &amp; SLA</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA table — use this when a customer disputes severity or timing</td><td><span class="cee-pill cee-pill-g">Public</span></td></tr>
+        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>When and how to request management escalation</td><td><span class="cee-pill cee-pill-g">Public</span></td></tr>
+      </tbody>
+    </table>
+    <h3>If you run into a technical issue</h3>
+    <table class="cee-tbl">
+      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>How to collect a SOSreport (RHEL)</td><td>access.redhat.com/solutions/3592</td><td>Most common first attachment requested for RHEL cases</td><td><span class="cee-pill cee-pill-d">Subscription</span></td></tr>
+        <tr><td>How to capture a vmcore (kernel panic)</td><td>access.redhat.com/solutions/6038</td><td>Required for any kernel crash case</td><td><span class="cee-pill cee-pill-d">Subscription</span></td></tr>
+        <tr><td>Remote support session guide</td><td>access.redhat.com/articles/255443</td><td>How to initiate and participate in a remote session</td><td><span class="cee-pill cee-pill-d">Subscription</span></td></tr>
+        <tr><td>Upload files to Red Hat FTP</td><td>access.redhat.com/solutions/2112</td><td>Use when attachments are too large for the portal case</td><td><span class="cee-pill cee-pill-d">Subscription</span></td></tr>
+      </tbody>
+    </table>
+    <div class="cee-box cee-info"><strong>Full guide:</strong> This is the customer-facing view. The complete interactive version lives at <a href="https://mkwon-afk.github.io/cee_onboarding/cee-onboarding-external.html" style="color:#004080;">mkwon-afk.github.io/cee_onboarding</a> — maintained by CEE, reviewed quarterly.</div>
+  </div>
+
+</div>

@@ -1,0 +1,210 @@
+<style>
+.ceei-wrap { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#151515; max-width:860px; }
+.ceei-wrap h2 { font-size:18px; font-weight:700; margin:32px 0 4px; padding-bottom:12px; border-bottom:1px solid #D2D2D2; }
+.ceei-wrap h3 { font-size:14px; font-weight:600; margin:20px 0 10px; }
+.ceei-wrap p { margin-bottom:14px; }
+.ceei-wrap hr { border:none; border-top:1px solid #D2D2D2; margin:20px 0; }
+.ceei-sub { color:#6A6E73; font-size:12px; margin-bottom:16px; margin-top:-2px; }
+.ceei-grid { display:grid; gap:10px; margin-bottom:16px; }
+.ceei-g2 { grid-template-columns:1fr 1fr; }
+.ceei-g3 { grid-template-columns:1fr 1fr 1fr; }
+.ceei-card { border:1px solid #D2D2D2; border-radius:4px; overflow:hidden; }
+.ceei-ch { padding:9px 12px; font-size:12px; font-weight:600; background:#F5F5F5; border-bottom:1px solid #D2D2D2; }
+.ceei-cb { padding:10px 12px; font-size:12px; color:#6A6E73; line-height:1.5; }
+.ceei-cb p + p { margin-top:6px; }
+.ceei-stats { display:flex; gap:10px; margin-bottom:16px; }
+.ceei-stat { border:1px solid #D2D2D2; border-radius:4px; padding:14px 18px; flex:1; background:#fff; }
+.ceei-stat .v { font-size:22px; font-weight:700; color:#151515; }
+.ceei-stat .l { font-size:11px; color:#6A6E73; margin-top:2px; }
+.ceei-tbl { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:16px; border:1px solid #D2D2D2; border-radius:4px; }
+.ceei-tbl th { background:#F5F5F5; text-align:left; padding:8px 12px; font-weight:600; color:#3C3F42; border-bottom:1px solid #D2D2D2; font-size:11px; text-transform:uppercase; letter-spacing:0.04em; }
+.ceei-tbl td { padding:8px 12px; border-bottom:1px solid #D2D2D2; vertical-align:top; }
+.ceei-tbl tr:last-child td { border-bottom:none; }
+.ceei-box { border-radius:4px; padding:10px 14px; font-size:12px; margin-bottom:16px; border-left:4px solid; line-height:1.5; }
+.ceei-info { background:#EDF8FF; border-color:#73BCF7; color:#004080; }
+.ceei-warn { background:#FFF8E1; border-color:#F6D173; color:#603000; }
+.ceei-success { background:#F3FAF2; border-color:#5BA352; color:#1E4620; }
+.ceei-pill { display:inline-block; font-size:10px; font-weight:600; padding:1px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+.ceei-pill-g { background:#E6F4E6; color:#1E4620; }
+.ceei-pill-y { background:#FFF8E1; color:#603000; }
+.ceei-pill-d { background:#F0F0F0; color:#3C3F42; }
+.ceei-toc { background:#F5F5F5; border:1px solid #D2D2D2; border-radius:4px; padding:14px 18px; margin-bottom:28px; font-size:12px; }
+.ceei-toc a { color:#EE0000; text-decoration:none; margin-right:16px; }
+.ceei-toc a:hover { text-decoration:underline; }
+.ceei-banner { background:#151515; color:#fff; padding:14px 20px; border-radius:4px; margin-bottom:24px; display:flex; align-items:center; gap:12px; }
+.ceei-banner .logo { color:#EE0000; font-weight:700; font-size:16px; }
+.ceei-banner .ttl { font-size:13px; color:#C8C8C8; }
+.ceei-banner .badge { margin-left:auto; background:#3C3F42; color:#fff; border:1px solid #6A6E73; font-size:10px; font-weight:700; padding:2px 9px; border-radius:3px; text-transform:uppercase; letter-spacing:0.05em; }
+.ceei-sec { margin-bottom:40px; }
+</style>
+
+<div class="ceei-wrap">
+
+  <div class="ceei-banner">
+    <span class="logo">Red Hat</span>
+    <span class="ttl">CEE Goldendeck — Team Onboarding Guide</span>
+    <span class="badge">Internal · Team</span>
+  </div>
+
+  <div class="ceei-toc">
+    <strong style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#6A6E73;">Jump to:</strong><br><br>
+    <a href="#ceei-overview">CEE at a Glance</a>
+    <a href="#ceei-gss">Global Support Services</a>
+    <a href="#ceei-cs">Global Customer Service</a>
+    <a href="#ceei-cloud">Cloud Services (MCS)</a>
+    <a href="#ceei-res">Key Resources</a>
+  </div>
+
+  <!-- CEE AT A GLANCE -->
+  <div class="ceei-sec" id="ceei-overview">
+    <h2>CEE at a Glance</h2>
+    <div class="ceei-sub">Who makes up the Customer Experience Engineering org?</div>
+    <p style="color:#6A6E73;">The Customer Experience Engineering (CEE) organization is Red Hat's customer-facing support umbrella, spanning five specialized teams.</p>
+    <div class="ceei-grid ceei-g3">
+      <div class="ceei-card"><div class="ceei-ch">Technical Support (GSS)</div><div class="ceei-cb">Global Support Services — technical troubleshooting, product issues, case management</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Customer Service</div><div class="ceei-cb">Account management, subscriptions, user access, order inquiries — 24/5, multilingual</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Managed Cloud Services (MCS)</div><div class="ceei-cb">Cloud-native support for ARO, ROSA, and FedRAMP-regulated environments</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Secure Global Support (SGS)</div><div class="ceei-cb">Specialized secure support for regulated industries and government customers</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Solutions Support Delivery</div><div class="ceei-cb">Complex solution architecture and delivery support for enterprise customers</div></div>
+    </div>
+    <div class="ceei-box ceei-info">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
+  </div>
+
+  <!-- GLOBAL SUPPORT SERVICES -->
+  <div class="ceei-sec" id="ceei-gss">
+    <h2>Global Support Services</h2>
+    <div class="ceei-sub">Technical Support (GSS)</div>
+    <div class="ceei-stats">
+      <div class="ceei-stat"><div class="v">24/7</div><div class="l">Global coverage</div></div>
+      <div class="ceei-stat"><div class="v">GSS</div><div class="l">Team identifier</div></div>
+      <div class="ceei-stat"><div class="v">#gss-extended</div><div class="l">Slack channel</div></div>
+    </div>
+    <hr>
+    <h3>When to reach out to Technical Support (GSS)</h3>
+    <table class="ceei-tbl">
+      <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Customers experiencing technical issues with Red Hat products</td><td>Any severity</td></tr>
+        <tr><td>Red Hat products are not working as expected</td><td>Any severity</td></tr>
+        <tr><td>Third-party vendor needs Red Hat input or validation</td><td>Coordinate with vendor</td></tr>
+        <tr><td>Seeking insight on the status of an open case</td><td>Any open case</td></tr>
+        <tr><td>Proactively notifying support of a future change window</td><td>Informational</td></tr>
+        <tr><td>Requesting a support exception for a pending entitlement</td><td>Any severity</td></tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>How to reach Technical Support (GSS)</h3>
+    <div class="ceei-grid ceei-g3">
+      <div class="ceei-card"><div class="ceei-ch">Global Email</div><div class="ceei-cb">gss-list@redhat.com</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Leadership Email</div><div class="ceei-cb">gss-leadership@redhat.com</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Slack</div><div class="ceei-cb">#gss-extended</div></div>
+    </div>
+    <hr>
+    <h3>Proactive Support Engagement</h3>
+    <div class="ceei-box ceei-info"><strong>Scheduled maintenance window?</strong> Open a Severity 3 case two weeks early. Begin the summary with <strong>"Proactive:"</strong> and include activities, start/end date and time, duration, diagnostic files (SOSreport), and primary contact information. If issues arise during the window, call the support hotline, provide the case number, and raise severity as needed.</div>
+    <div class="ceei-box ceei-warn">Always check the <strong>Supportability Matrix</strong> before engaging GSS to confirm the issue falls within supported scope.</div>
+  </div>
+
+  <!-- GLOBAL CUSTOMER SERVICE -->
+  <div class="ceei-sec" id="ceei-cs">
+    <h2>Global Customer Service</h2>
+    <div class="ceei-sub">Account &amp; Subscription Support</div>
+    <div class="ceei-stats">
+      <div class="ceei-stat"><div class="v">24/5</div><div class="l">Coverage hours</div></div>
+      <div class="ceei-stat"><div class="v">1 day</div><div class="l">Email response target</div></div>
+      <div class="ceei-stat"><div class="v">5 regions</div><div class="l">Global footprint</div></div>
+    </div>
+    <hr>
+    <h3>Who they are</h3>
+    <p style="font-size:12px;color:#6A6E73;">Customer Support Specialists located across APAC, EMEA, NASA, and India. The team handles support in Korean, Mandarin, Cantonese, Japanese, German, Italian, Spanish, French, Portuguese, and English. They also handle chat support and translation.</p>
+    <hr>
+    <h3>When to route to Customer Service</h3>
+    <table class="ceei-tbl">
+      <thead><tr><th>Account management topic</th></tr></thead>
+      <tbody>
+        <tr><td>Contact information updates</td></tr>
+        <tr><td>User management &amp; access permissions</td></tr>
+        <tr><td>Subscription transfers</td></tr>
+        <tr><td>Trial requests</td></tr>
+        <tr><td>General order inquiries</td></tr>
+        <tr><td>General Presale &amp; Leads creation to Sales</td></tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>How to reach Customer Service</h3>
+    <div class="ceei-grid ceei-g2">
+      <div class="ceei-card"><div class="ceei-ch">Slack</div><div class="ceei-cb"><p>Customer Service: <strong>#cee-customer-service</strong></p><p>Chat Team: <strong>#cee-chat-support</strong></p></div></div>
+      <div class="ceei-card"><div class="ceei-ch">Webform &amp; Resources</div><div class="ceei-cb"><p>access.redhat.com/support (Customer Service Webform)</p><p>CS Mini Series Vol 4 — Contacting CS Best Practices</p><p>Ticketing system: SCT Salesforce Lightning</p></div></div>
+    </div>
+  </div>
+
+  <!-- CLOUD SERVICES -->
+  <div class="ceei-sec" id="ceei-cloud">
+    <h2>Cloud Services (MCS)</h2>
+    <div class="ceei-sub">Managed Cloud &amp; FedRAMP</div>
+    <p style="color:#6A6E73;">The Managed Cloud Services (MCS) team specializes in supporting Red Hat's cloud-native offerings, with a focus on FedRAMP-regulated environments and joint support workflows with cloud partners.</p>
+    <hr>
+    <h3>Azure Red Hat OpenShift (ARO)</h3>
+    <div class="ceei-grid ceei-g2">
+      <div class="ceei-card"><div class="ceei-ch">Support Workflow</div><div class="ceei-cb">Microsoft + Red Hat joint support model. Cases may originate on either Microsoft or Red Hat portals.</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Supportability Matrix</div><div class="ceei-cb">Responsibility split documented at docs.microsoft.com/azure/openshift. LMS training links available internally.</div></div>
+    </div>
+    <hr>
+    <h3>Red Hat OpenShift on AWS (ROSA)</h3>
+    <div class="ceei-grid ceei-g3">
+      <div class="ceei-card"><div class="ceei-ch">ROSA Lifecycle</div><div class="ceei-cb">Full lifecycle support from cluster creation through decommission</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Support Workflow</div><div class="ceei-cb">AWS + Red Hat joint support. LMS training available.</div></div>
+      <div class="ceei-card"><div class="ceei-ch">Supportability Matrix</div><div class="ceei-cb">Defines Red Hat vs AWS responsibility boundary for ROSA clusters</div></div>
+    </div>
+    <div class="ceei-box ceei-info">For Q&amp;A and collaboration on MCS topics, go to <strong>#mcs-global</strong> on Slack.</div>
+  </div>
+
+  <!-- KEY RESOURCES -->
+  <div class="ceei-sec" id="ceei-res">
+    <h2>Key Resources</h2>
+    <div class="ceei-sub">Curated Portal articles and internal resources for team onboarding</div>
+    <p style="color:#6A6E73;">The most important Customer Portal and internal resources for CEE team onboarding.</p>
+
+    <h3>Support engagement — foundational</h3>
+    <table class="ceei-tbl">
+      <thead><tr><th>Resource</th><th>URL / Location</th><th>Purpose</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>Guidelines for a Successful Support Engagement</td><td>access.redhat.com/articles/7126161</td><td>Collaborative support model, one-issue-per-ticket rule</td><td><span class="ceei-pill ceei-pill-d">Subscription</span></td></tr>
+        <tr><td>Severity level policy</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA and severity definitions — source of truth when disputes arise</td><td><span class="ceei-pill ceei-pill-g">Public</span></td></tr>
+        <tr><td>How customers should engage support</td><td>access.redhat.com/start/how-to-engage-red-hat-support</td><td>What customers are told to do — every support team member should know this flow</td><td><span class="ceei-pill ceei-pill-g">Public</span></td></tr>
+        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>Escalation process including the Delivery Manager role</td><td><span class="ceei-pill ceei-pill-g">Public</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Internal team resources</h3>
+    <table class="ceei-tbl">
+      <thead><tr><th>Resource</th><th>Location</th><th>Purpose</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>GSS Red Hat One Preso – 2025</td><td>Internal Drive</td><td>High-level GSS/CS/CAP/EMT overview — note: catered to a sales audience, not onboarding</td><td><span class="ceei-pill ceei-pill-d">Internal</span></td></tr>
+        <tr><td>CS Mini Series Vol 4 – Contacting CS Best Practice</td><td>Internal Drive</td><td>Best practices for engaging Customer Service — should be part of all internal onboarding</td><td><span class="ceei-pill ceei-pill-d">Internal</span></td></tr>
+        <tr><td>CS Mini Series Team Scope Introduction (video)</td><td>Internal Drive</td><td>CS scope overview — recognized as valuable but not yet integrated into onboarding</td><td><span class="ceei-pill ceei-pill-d">Internal</span></td></tr>
+        <tr><td>ARO Pre-Foundational Readiness Course</td><td>LMS</td><td>Managed cloud support workflow for ARO — only available via LMS</td><td><span class="ceei-pill ceei-pill-y">LMS login</span></td></tr>
+        <tr><td>ROSA Pre-Foundational Readiness Course</td><td>LMS</td><td>Managed cloud support workflow for ROSA — only available via LMS</td><td><span class="ceei-pill ceei-pill-y">LMS login</span></td></tr>
+        <tr><td>CEE NotebookLM</td><td>Internal</td><td>First stop for team contacts, routing questions, and supportability policies</td><td><span class="ceei-pill ceei-pill-d">Internal</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ceei-box ceei-warn"><strong>Known gap:</strong> The ARO and ROSA managed cloud workflows are currently only documented in LMS training — missing from the general onboarding guide. One goal of this project is to surface those workflows inline.</div>
+
+    <hr>
+    <h3>How this guide connects to the Customer Portal</h3>
+    <table class="ceei-tbl">
+      <thead><tr><th>Guide section</th><th>Portal page it feeds</th><th>What the quarterly brief covers</th></tr></thead>
+      <tbody>
+        <tr><td>Global Support Services (GSS)</td><td>access.redhat.com/support</td><td>Case opening flow, severity guidance, escalation path, diagnostics</td></tr>
+        <tr><td>Global Customer Service</td><td>access.redhat.com/support/customer-service</td><td>CS scope, contact routing, FAQ accuracy, CS vs Technical Support distinction</td></tr>
+        <tr><td>Cloud Services (MCS)</td><td>access.redhat.com/support (managed cloud section)</td><td>ARO/ROSA workflow, joint support model, LMS course gaps</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ceei-box ceei-success"><strong>The model:</strong> CEE owns the knowledge. The Portal team publishes it. This guide is reviewed quarterly by section owners who produce a brief for the Portal team identifying what needs updating.</div>
+
+    <div class="ceei-box ceei-info"><strong>Full interactive guide:</strong> <a href="https://mkwon-afk.github.io/cee_onboarding/cee-onboarding-internal.html" style="color:#004080;">mkwon-afk.github.io/cee_onboarding</a> — maintained by CEE managers by section, reviewed quarterly.</div>
+  </div>
+
+</div>
