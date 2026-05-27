@@ -1,0 +1,178 @@
+<style>
+.prj { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:16px; line-height:1.7; color:#151515; max-width:860px; }
+.prj-banner { background:#151515; border-radius:4px; padding:28px 32px; margin-bottom:24px; }
+.prj-banner .ey { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#EE0000; margin-bottom:10px; }
+.prj-banner h1 { font-size:24px; font-weight:700; color:#fff; margin-bottom:12px; line-height:1.3; }
+.prj-banner .meta { font-size:13px; color:#6A6E73; display:flex; gap:20px; flex-wrap:wrap; }
+.prj-nav { background:#fff; border:1px solid #D2D2D2; border-radius:4px; padding:0; margin-bottom:24px; display:flex; flex-wrap:wrap; overflow:hidden; }
+.prj-nav a { color:#EE0000; text-decoration:none; font-size:13px; font-weight:600; padding:12px 18px; border-right:1px solid #D2D2D2; white-space:nowrap; }
+.prj-nav a:last-child { border-right:none; }
+.prj-nav a:hover { background:#FFF5F5; }
+.prj-sec { margin-bottom:36px; }
+.prj-label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#EE0000; margin-bottom:8px; }
+.prj-sec h2 { font-size:20px; font-weight:700; color:#151515; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid #D2D2D2; }
+.prj-sec p { color:#3C3F42; margin-bottom:12px; font-size:15px; }
+.prj-quote { background:#fff; border-left:4px solid #EE0000; padding:14px 18px; border-radius:0 4px 4px 0; margin:18px 0; font-size:16px; font-weight:600; color:#151515; }
+.prj-g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:14px; }
+.prj-g2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+.prj-card { background:#fff; border:1px solid #D2D2D2; border-radius:4px; padding:18px; }
+.prj-card .num { font-size:26px; font-weight:700; color:#EE0000; line-height:1; margin-bottom:10px; }
+.prj-card .ct { font-size:14px; font-weight:600; color:#151515; margin-bottom:6px; }
+.prj-card .cd { font-size:13px; color:#6A6E73; line-height:1.6; }
+.prj-card .ch { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; }
+.prj-card.ext .ch { color:#EE0000; }
+.prj-card.int .ch { color:#3C3F42; }
+.prj-card.full { grid-column:span 2; }
+.prj-flow { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0; background:#fff; border:1px solid #D2D2D2; border-radius:4px; overflow:hidden; margin-top:14px; }
+.prj-step { padding:18px 14px; border-right:1px solid #D2D2D2; text-align:center; }
+.prj-step:last-child { border-right:none; }
+.prj-step .sn { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#6A6E73; margin-bottom:8px; }
+.prj-step .st { font-size:14px; font-weight:600; color:#151515; margin-bottom:6px; }
+.prj-step .sd { font-size:12px; color:#6A6E73; line-height:1.5; }
+.prj-dod { list-style:none; margin-top:14px; }
+.prj-dod li { display:flex; align-items:flex-start; gap:12px; padding:12px 16px; background:#fff; border:1px solid #D2D2D2; border-radius:4px; margin-bottom:8px; font-size:15px; color:#3C3F42; }
+.prj-dod li .box { width:18px; height:18px; border:2px solid #D2D2D2; border-radius:3px; flex-shrink:0; margin-top:2px; }
+.prj-team { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.prj-tc { background:#fff; border:1px solid #D2D2D2; border-radius:4px; padding:14px 18px; flex:1; min-width:140px; }
+.prj-tc .tr { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:#6A6E73; margin-bottom:5px; }
+.prj-tc .tn { font-size:15px; font-weight:600; color:#151515; }
+.prj-status { display:flex; gap:28px; flex-wrap:wrap; background:#fff; border:1px solid #D2D2D2; border-radius:4px; padding:16px 20px; margin-bottom:16px; }
+.prj-si .sl { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#6A6E73; margin-bottom:4px; }
+.prj-si .sv { font-size:14px; font-weight:600; color:#151515; }
+.prj-active { background:#F3FAF2; color:#1E4620; border:1px solid #5BA352; font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; display:inline-block; }
+.prj-link { display:inline-block; margin-top:18px; background:#EE0000; color:#fff; padding:10px 22px; border-radius:3px; text-decoration:none; font-size:14px; font-weight:700; }
+.prj-group-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#6A6E73; margin-bottom:8px; }
+</style>
+
+<div class="prj">
+
+  <div class="prj-banner">
+    <div class="ey">CEE Initiative · Project Document</div>
+    <h1>CEE Goldendeck — One Source of Truth for Support Onboarding</h1>
+    <div class="meta">
+      <span>Sponsors: John Ko, Winston Li, Jill Orofino</span>
+      <span>Project leads: Min Kwon &amp; Michael Napolis (MCS)</span>
+      <span>Working group: Ashley Lee, Anne Gaertner</span>
+      <span>Started May 2026</span>
+      <span>Reviewed quarterly</span>
+    </div>
+  </div>
+
+  <div class="prj-status">
+    <div class="prj-si"><div class="sl">Status</div><div class="sv"><span class="prj-active">Active</span></div></div>
+    <div class="prj-si"><div class="sl">Phase</div><div class="sv">v1 — Building ownership model</div></div>
+    <div class="prj-si"><div class="sl">Deliverable</div><div class="sv">CEE Goldendeck (web + Source + PDF)</div></div>
+    <div class="prj-si"><div class="sl">Review cadence</div><div class="sv">Quarterly</div></div>
+  </div>
+
+  <div class="prj-nav">
+    <a href="#prj-01">01 · Problem</a>
+    <a href="#prj-02">02 · Why Now</a>
+    <a href="#prj-03">03 · Objective</a>
+    <a href="#prj-04">04 · Scope</a>
+    <a href="#prj-05">05 · Governance</a>
+    <a href="#prj-06">06 · Done</a>
+    <a href="#prj-07">07 · Team</a>
+  </div>
+
+  <div class="prj-sec" id="prj-01">
+    <div class="prj-label">01 · Problem Statement</div>
+    <h2>There is no single source of truth for CEE</h2>
+    <p>CEE has no single authoritative resource explaining how customers engage with Red Hat Support. What exists today is a collection of independently created decks, high-level XE content, LMS courses, KB articles, and team-specific guides — maintained by different owners, stored in different places, and updated on no consistent schedule. Some resources contain outdated branding. Some are scoped only to a specific team or region. None of them are owned end-to-end by CEE.</p>
+    <div class="prj-quote">"What do I send them?" — there is currently no definitive answer to this question for a new customer or a new team member.</div>
+  </div>
+
+  <div class="prj-sec" id="prj-02">
+    <div class="prj-label">02 · Why Now</div>
+    <h2>Three forces making this urgent</h2>
+    <div class="prj-g3">
+      <div class="prj-card"><div class="num">01</div><div class="ct">Marketing touchpoint</div><div class="cd">The marketing team is actively sending onboarding emails to customers. If CEE's knowledge is not connected to that program, we are missing the highest-value touchpoint in the customer lifecycle.</div></div>
+      <div class="prj-card"><div class="num">02</div><div class="ct">Scattered content, hard to maintain</div><div class="cd">Contents live in different places — Drive, LMS, KB, team decks. No single location means no consistent maintenance, no knowledge management, and no path to AI integrations like Ask Red Hat or NotebookLM.</div></div>
+      <div class="prj-card"><div class="num">03</div><div class="ct">Aging resources</div><div class="cd">The existing resources are aging. Some still display the retired Shadowman logo. Without an ownership model, the gap between what is published and what is accurate will only grow.</div></div>
+    </div>
+  </div>
+
+  <div class="prj-sec" id="prj-03">
+    <div class="prj-label">03 · Project Objective</div>
+    <h2>Create and maintain a single CEE-owned onboarding resource</h2>
+    <p>The CEE Goldendeck is the authoritative source of truth for how Red Hat Support works — for both customers and internal teams. It is a living document with named section owners, a quarterly review cycle, and a defined process for its knowledge to reach the Customer Portal and marketing programs.</p>
+  </div>
+
+  <div class="prj-sec" id="prj-04">
+    <div class="prj-label">04 · Scope</div>
+    <h2>What this covers</h2>
+    <div class="prj-g2">
+      <div class="prj-card ext"><div class="ch">External — Customer-facing</div><div class="cd">How to engage support, open cases, choose severity, run diagnostics, escalate, and navigate managed services (ARO/ROSA).</div></div>
+      <div class="prj-card int"><div class="ch">Internal — Team-facing</div><div class="cd">CEE org structure, team routing, Slack contacts, MCS workflows, and the content pipeline from CEE to the Customer Portal.</div></div>
+      <div class="prj-card full"><div class="ch">Dedicated home · Multiple formats</div><div class="cd">A single permanent location for CEE onboarding content that branches into whatever format is needed — interactive web guide, Source page embed, PDF, email copy, and eventual Ask Red Hat integration and marketing content feeds.</div></div>
+    </div>
+  </div>
+
+  <div class="prj-sec" id="prj-05">
+    <div class="prj-label">05 · Governance Model</div>
+    <h2>How it stays current</h2>
+    <div class="prj-flow">
+      <div class="prj-step"><div class="sn">Step 1</div><div class="st">Name an owner</div><div class="sd">Each CEE team nominates one person to own their section</div></div>
+      <div class="prj-step"><div class="sn">Quarterly</div><div class="st">Review &amp; flag</div><div class="sd">Owner reads their section and gives an ack or nack on accuracy</div></div>
+      <div class="prj-step"><div class="sn">Quarterly</div><div class="st">Portal brief</div><div class="sd">Owner writes a short brief for the Portal team on what needs updating</div></div>
+      <div class="prj-step"><div class="sn">As needed</div><div class="st">Marketing sync</div><div class="sd">Changes affecting customers are flagged to the marketing team</div></div>
+    </div>
+  </div>
+
+  <div class="prj-sec" id="prj-06">
+    <div class="prj-label">06 · Definition of Done — v1</div>
+    <h2>What success looks like</h2>
+    <ul class="prj-dod">
+      <li><span class="box"></span>Named owner confirmed for each CEE team section</li>
+      <li><span class="box"></span>All sections reviewed and approved by respective owners</li>
+      <li><span class="box"></span>Dedicated place established — live on GitHub Pages, embedded on Source</li>
+      <li><span class="box"></span>Quarterly review cadence established with owners</li>
+    </ul>
+  </div>
+
+  <div class="prj-sec" id="prj-07">
+    <div class="prj-label">07 · Project Team</div>
+    <h2>Who is driving this</h2>
+
+    <div style="margin-bottom:16px;">
+      <div class="prj-group-label">Sponsors</div>
+      <div class="prj-team">
+        <div class="prj-tc"><div class="tr">CSE</div><div class="tn">John Ko</div></div>
+        <div class="prj-tc"><div class="tr">TAM</div><div class="tn">Winston Li</div></div>
+        <div class="prj-tc"><div class="tr">CS</div><div class="tn">Jill Orofino</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div class="prj-group-label">Project Leads</div>
+      <div class="prj-team">
+        <div class="prj-tc"><div class="tr">CEE Program</div><div class="tn">Min Kwon</div></div>
+        <div class="prj-tc"><div class="tr">MCS</div><div class="tn">Michael Napolis</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div class="prj-group-label">Working Group</div>
+      <div class="prj-team">
+        <div class="prj-tc"><div class="tr">CEE</div><div class="tn">Ashley Lee</div></div>
+        <div class="prj-tc"><div class="tr">CEE</div><div class="tn">Anne Gaertner</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div class="prj-group-label">Stakeholders</div>
+      <div class="prj-team">
+        <div class="prj-tc"><div class="tr">CSE</div><div class="tn">Sehee Oh</div></div>
+        <div class="prj-tc"><div class="tr">CSE</div><div class="tn">Karina Chugh</div></div>
+        <div class="prj-tc"><div class="tr">TAM</div><div class="tn">Nick Su</div></div>
+        <div class="prj-tc"><div class="tr">TAM</div><div class="tn">Ravikumar</div></div>
+        <div class="prj-tc"><div class="tr">TAM</div><div class="tn">Shijoe</div></div>
+        <div class="prj-tc"><div class="tr">Secured Support</div><div class="tn">Jason</div></div>
+        <div class="prj-tc"><div class="tr">EMT / CAP</div><div class="tn">Paula</div></div>
+      </div>
+    </div>
+
+    <a class="prj-link" href="https://mkwon-afk.github.io/cee_onboarding/">View the guide →</a>
+  </div>
+
+</div>
