@@ -150,6 +150,14 @@
   .secondary { color: var(--muted); }
   .small { font-size: 12px; }
 
+  /* Org breadcrumb */
+  .breadcrumb {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .breadcrumb strong { color: var(--red); }
+
   /* Internal-specific: ownership tag */
   .owner-tag {
     display: inline-block;
@@ -188,9 +196,13 @@
 <nav id="sidebar">
   <div class="nav-label">Sections</div>
   <a href="#overview" class="active">CEE at a Glance</a>
-  <a href="#gss" style="padding-left:28px; font-size:12px;">↳ Global Support Services</a>
-  <a href="#cs">Global Customer Service</a>
-  <a href="#cloud">Cloud Services (MCS)</a>
+  <div class="nav-label" style="margin-top:16px;">Secure Global Support</div>
+  <a href="#gss" style="padding-left:20px; font-size:12px;">Global Support Services (GSS)</a>
+  <a href="#cs" style="padding-left:20px; font-size:12px;">Customer Service (CSS)</a>
+  <a href="#cloud" style="padding-left:20px; font-size:12px;">Cloud Services (MCS)</a>
+  <div class="nav-label" style="margin-top:16px;">Solutions Support Delivery</div>
+  <a href="#ess" style="padding-left:20px; font-size:12px;">Enhanced Solution Support (ESS)</a>
+  <div class="nav-label" style="margin-top:16px;">Reference</div>
   <a href="#resources">Key Resources</a>
 </nav>
 
@@ -251,29 +263,44 @@
     </div>
   </div>
 
-  <h3>CEE Sub-teams</h3>
-  <div class="grid grid-3">
+  <h3>Secure Global Support</h3>
+  <p class="secondary small" style="margin-bottom:12px;">Owns account-level, non-technical, and secure/regulated customer support delivery. CSS sits within CEE under this parent org.</p>
+  <div class="grid grid-3" style="margin-bottom:24px;">
     <div class="card">
-      <div class="card-header">Technical Support (GSS)</div>
-      <div class="card-body">Global Support Services — technical troubleshooting, product issues, case management</div>
+      <div class="card-header">Customer Service (CSS)</div>
+      <div class="card-body">
+        <div class="breadcrumb">Secure Global Support › CEE › CSS</div>
+        Account management, subscriptions, user access, case translation, chat — 24/5, multilingual across 10 languages.
+      </div>
     </div>
     <div class="card">
-      <div class="card-header">Customer Service</div>
-      <div class="card-body">Account management, subscriptions, user access, order inquiries — 24/5, multilingual</div>
+      <div class="card-header">Technical Support (GSS)</div>
+      <div class="card-body">
+        <div class="breadcrumb">Secure Global Support › GSS</div>
+        Technical troubleshooting, product issues, change windows, case management — 24/7 global coverage.
+      </div>
     </div>
     <div class="card">
       <div class="card-header">Managed Cloud Services (MCS)</div>
-      <div class="card-body">Cloud-native support for ARO, ROSA, and FedRAMP-regulated environments</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Secure Global Support (SGS)</div>
-      <div class="card-body">Specialized secure support for regulated industries and government customers</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Solutions Support Delivery</div>
-      <div class="card-body">Complex solution architecture and delivery support for enterprise customers</div>
+      <div class="card-body">
+        <div class="breadcrumb">Secure Global Support › MCS</div>
+        Cloud-native support for ARO, ROSA, and FedRAMP-regulated environments.
+      </div>
     </div>
   </div>
+
+  <h3>Solutions Support Delivery</h3>
+  <p class="secondary small" style="margin-bottom:12px;">Owns complex, proactive, and solution-architecture support for enterprise and premium customers.</p>
+  <div class="grid grid-3" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-header">Enhanced Solution Support (ESS)</div>
+      <div class="card-body">
+        <div class="breadcrumb">Solutions Support Delivery › ESS</div>
+        Proactive, enhanced support for customers with complex technical needs and premium entitlements.
+      </div>
+    </div>
+  </div>
+
   <div class="callout info">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
 </section>
 
@@ -330,7 +357,8 @@
 <!-- GLOBAL CUSTOMER SERVICE -->
 <section class="section" id="cs">
   <div class="section-header">
-    <h2>Global Customer Service</h2>
+    <div class="breadcrumb" style="margin-bottom:6px;">Secure Global Support › Customer Experience &amp; Engagement (CEE) › Customer Service (CSS)</div>
+    <h2>Customer Service (CSS)</h2>
     <div class="sub">Account &amp; Subscription Support</div>
   </div>
   <div class="stats">
@@ -375,6 +403,50 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ENHANCED SOLUTION SUPPORT -->
+<section class="section" id="ess">
+  <div class="section-header">
+    <div class="breadcrumb" style="margin-bottom:6px;">Solutions Support Delivery › Enhanced Solution Support (ESS)</div>
+    <h2>Enhanced Solution Support (ESS)</h2>
+    <div class="sub">Solutions Support Delivery</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="value">Premium</div><div class="label">Customer tier</div></div>
+    <div class="stat"><div class="value">Proactive</div><div class="label">Engagement model</div></div>
+    <div class="stat"><div class="value">Enterprise</div><div class="label">Primary audience</div></div>
+  </div>
+  <hr>
+  <h3>Who they are</h3>
+  <p class="secondary small">Enhanced Solution Support (ESS) is part of Solutions Support Delivery and provides a higher-touch, proactive support experience for customers with complex technical environments and premium support entitlements. ESS engineers work closely with customers to anticipate issues, guide architecture decisions, and accelerate resolutions.</p>
+  <hr>
+  <h3>When to route to ESS</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Customer has a premium or enhanced support entitlement</td><td>Verify entitlement before routing</td></tr>
+        <tr><td>Complex, multi-product solution architecture questions</td><td>ESS provides proactive guidance</td></tr>
+        <tr><td>Recurring technical issues requiring a dedicated engagement plan</td><td>ESS builds ongoing remediation plans</td></tr>
+        <tr><td>Customer requires a named technical account contact</td><td>ESS manages named account relationships</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h3>How ESS differs from GSS</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>GSS (Technical Support)</th><th>ESS (Enhanced Solution Support)</th></tr></thead>
+      <tbody>
+        <tr><td>Trigger</td><td>Customer opens a case</td><td>Proactive and reactive engagement</td></tr>
+        <tr><td>Scope</td><td>Break-fix, technical troubleshooting</td><td>Architecture guidance, issue prevention</td></tr>
+        <tr><td>Customer tier</td><td>All support tiers</td><td>Premium / Enterprise entitlements</td></tr>
+        <tr><td>Parent org</td><td>Secure Global Support</td><td>Solutions Support Delivery</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout info">If you are unsure whether a customer qualifies for ESS engagement, check their entitlement in the CRM before routing.</div>
 </section>
 
 <!-- CLOUD SERVICES -->
