@@ -290,6 +290,27 @@
     font-size: 11px; font-weight: 800; flex-shrink: 0;
   }
 
+  /* Section reference footer */
+  .section-refs {
+    margin-top: 32px; padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  }
+  .section-refs-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--muted); margin-right: 4px;
+    white-space: nowrap;
+  }
+  .section-ref-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 10px; border-radius: 20px;
+    background: #f5f5f5; border: 1px solid var(--border);
+    color: var(--red); font-size: 12px; font-weight: 600;
+    text-decoration: none; white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .section-ref-link:hover { background: #fee; border-color: var(--red); }
+
   /* Performance bar */
   .cs-perf-bar {
     display: flex; gap: 0; border: 1px solid var(--border);
@@ -779,8 +800,9 @@
 
   <div class="callout info" style="margin-top:24px;">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
 
-  <div style="margin-top:16px; font-size:13px; color:var(--muted);">
-    📎 Source: <a href="https://docs.google.com/presentation/d/1ATg0ZaWgUtXurhMzS5KFl_FhupuN-ElybkaYjZB-h9Y/edit?slide=id.g3497daef669_0_8892#slide=id.g3497daef669_0_8892" target="_blank" style="color:var(--red); font-weight:600;">CEE Overview Slide Deck ↗</a>
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
+    <a class="section-ref-link" href="https://docs.google.com/presentation/d/1ATg0ZaWgUtXurhMzS5KFl_FhupuN-ElybkaYjZB-h9Y/edit?slide=id.g3497daef669_0_8892#slide=id.g3497daef669_0_8892" target="_blank">CEE Overview Slide Deck ↗</a>
   </div>
 </section>
 
@@ -981,6 +1003,10 @@
     </div>
 
   </div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
+  </div>
 </section>
 
 <!-- GLOBAL SUPPORT SERVICES -->
@@ -1029,6 +1055,10 @@
       <div class="card-header">Slack</div>
       <div class="card-body">#gss-extended</div>
     </div>
+  </div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
   </div>
 </section>
 
@@ -1186,7 +1216,10 @@
     </div>
   </div>
 
-  <!-- History Timeline -->
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
+    <a class="section-ref-link" href="https://source.redhat.com/departments/products_and_global_engineering/cee_customer_service/for_non_cs_associates_wiki/customer_service_escalation_path" target="_blank">CS Escalation Path ↗</a>
+  </div>
 </section>
 
 <!-- GLOBAL SECURE SUPPORT -->
@@ -1283,6 +1316,10 @@
       <div class="card-body">CSS customers access support via a <strong>secured, isolated portal</strong>. Routing is managed through the dedicated CSS support channel upon entitlement verification.</div>
     </div>
   </div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
+  </div>
 </section>
 
 <!-- SOLUTIONS SUPPORT DELIVERY / ESS -->
@@ -1338,6 +1375,10 @@
     </table>
   </div>
   <div class="callout info">If you are unsure whether a customer qualifies for ESS engagement, check their entitlement in the CRM before routing.</div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
+  </div>
 </section>
 
 <!-- CLOUD SERVICES -->
@@ -1391,6 +1432,10 @@
       <div class="card-header">Customer Portal</div>
       <div class="card-body">Open cases via access.redhat.com/support — MCS cases are routed internally. LMS training available for ARO and ROSA workflows.</div>
     </div>
+  </div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
   </div>
 </section>
 
@@ -1496,6 +1541,10 @@
 
   <div class="callout warn" style="margin-top:20px;">
     <strong>Closed Loop:</strong> After every escalation, CAP runs a retrospective to identify root causes and drive systemic improvements across Red Hat — preventing the same issue from recurring.
+  </div>
+
+  <div class="section-refs">
+    <span class="section-refs-label">📎 References</span>
   </div>
 </section>
 
