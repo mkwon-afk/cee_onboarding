@@ -276,6 +276,20 @@
     letter-spacing: 0.12em; color: var(--muted); margin-bottom: 12px;
   }
 
+  /* Consistent 3-question sub-headers */
+  .fn-q-header {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; color: var(--dark);
+    margin: 28px 0 14px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .fn-q-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    font-size: 11px; font-weight: 800; flex-shrink: 0;
+  }
+
   /* Performance bar */
   .cs-perf-bar {
     display: flex; gap: 0; border: 1px solid var(--border);
@@ -970,30 +984,34 @@
   <div class="section-header">
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 01</div>
     <h2>Global Technical Support (GSS)</h2>
-    <div class="sub">Technical Support</div>
+    <div class="sub">Technical troubleshooting · Case management · 24/7 global coverage</div>
   </div>
-  <div class="stats">
+
+  <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up GSS?</div>
+  <div class="stats" style="margin-bottom:20px;">
     <div class="stat"><div class="value">24/7</div><div class="label">Global coverage</div></div>
+    <div class="stat"><div class="value">8</div><div class="label">Global regions</div></div>
     <div class="stat"><div class="value">GSS</div><div class="label">Team identifier</div></div>
-    <div class="stat"><div class="value">#gss-extended</div><div class="label">Slack channel</div></div>
   </div>
-  <hr>
-  <h3>When to reach out to Technical Support (GSS)</h3>
-  <div class="tbl-wrap">
+  <p class="secondary small" style="margin-bottom:20px;">Global Support Services engineers are Red Hat's frontline technical support specialists. They handle break-fix support, case management, and cross-team coordination for all Red Hat products. Subject matter experts are available 24×7×365 across all regions.</p>
+
+  <div class="fn-q-header"><span class="fn-q-num">02</span> When should I reach out to GSS?</div>
+  <div class="tbl-wrap" style="margin-bottom:20px;">
     <table>
       <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Customers experiencing technical issues with Red Hat products</td><td>Any severity</td></tr>
-        <tr><td>Red Hat products are not working as expected</td><td>Any severity</td></tr>
+        <tr><td>Customer experiencing technical issues with Red Hat products</td><td>Any severity</td></tr>
+        <tr><td>Red Hat products not working as expected</td><td>Any severity</td></tr>
         <tr><td>Third-party vendor needs Red Hat input or validation</td><td>Coordinate with vendor</td></tr>
-        <tr><td>Seeking insight on the status of an open case</td><td>Any open case</td></tr>
-        <tr><td>Proactively notifying support of a future change window</td><td>Informational</td></tr>
+        <tr><td>Seeking status update on an open case</td><td>Any open case</td></tr>
+        <tr><td>Notifying support of a planned maintenance window</td><td>Open Sev 3 proactively, 2 weeks prior</td></tr>
         <tr><td>Requesting a support exception for a pending entitlement</td><td>Any severity</td></tr>
       </tbody>
     </table>
   </div>
-  <hr>
-  <h3>How to reach Technical Support (GSS)</h3>
+  <div class="callout warn" style="margin-bottom:20px;">Always check the <strong>Supportability Matrix</strong> before engaging GSS to confirm the issue falls within supported scope.</div>
+
+  <div class="fn-q-header"><span class="fn-q-num">03</span> How do I reach out to GSS?</div>
   <div class="grid grid-3">
     <div class="card">
       <div class="card-header">Global Email</div>
@@ -1008,12 +1026,6 @@
       <div class="card-body">#gss-extended</div>
     </div>
   </div>
-  <hr>
-  <h3>Proactive Support Engagement</h3>
-  <div class="callout info">
-    <strong>Scheduled maintenance window?</strong> Open a Severity 3 case two weeks early. Begin the summary with <strong>"Proactive:"</strong> and include activities, start/end date and time, duration, diagnostic files (SOSreport), and primary contact information. If issues arise during the window, call the support hotline, provide the case number, and raise severity as needed.
-  </div>
-  <div class="callout warn">Always check the <strong>Supportability Matrix</strong> before engaging GSS to confirm the issue falls within supported scope.</div>
 </section>
 
 <!-- GLOBAL CUSTOMER SERVICE -->
@@ -1024,6 +1036,7 @@
     <div class="sub">Account &amp; Subscription Support — 40 specialists · 12 countries · 10 languages</div>
   </div>
 
+  <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up Customer Service?</div>
   <!-- Performance stats -->
   <div class="cs-perf-bar">
     <div class="cs-perf-item cs-perf-item--red">
@@ -1135,6 +1148,21 @@
     </div>
   </div>
 
+  <div class="fn-q-header" style="margin-top:32px;"><span class="fn-q-num">02</span> When should I reach out to Customer Service?</div>
+  <div class="tbl-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead><tr><th>Topic</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Account Management</strong></td><td>Platform assistance, account deactivation, PII deletion, access &amp; permissions</td></tr>
+        <tr><td><strong>User Management</strong></td><td>User roles, updating user info, support case access configuration</td></tr>
+        <tr><td><strong>Subscription Management</strong></td><td>Purchasing, renewal, transfer, activation, SKU relief, trial requests</td></tr>
+        <tr><td><strong>Case Translation</strong></td><td>Non-English customers in EMEA, Canada, LATAM needing FR/DE/IT/ES/PT support</td></tr>
+        <tr><td><strong>Chat Support</strong></td><td>Technical queries and case updates via live chat</td></tr>
+        <tr><td><strong>Presale &amp; Leads</strong></td><td>General presale questions and leads creation to Sales</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- Quarterly Volume -->
   <div class="cs-section-label" style="margin-top:32px;">Average Quarterly Volume</div>
   <div class="cs-vol-row">
@@ -1160,8 +1188,7 @@
     </div>
   </div>
 
-  <!-- How to reach -->
-  <div class="cs-section-label" style="margin-top:32px;">How to Reach</div>
+  <div class="fn-q-header" style="margin-top:32px;"><span class="fn-q-num">03</span> How do I reach out to Customer Service?</div>
   <div class="grid grid-2" style="margin-bottom:24px;">
     <div class="card">
       <div class="card-header">Slack</div>
@@ -1214,6 +1241,7 @@
     <div class="sub">Red Hat Confirmed Sovereign Support — Regulated &amp; Government</div>
   </div>
 
+  <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up Global Secure Support?</div>
   <!-- Proven foundation pillars — slide 10 -->
   <div class="cs-section-label">A Proven Foundation, Not an Experiment</div>
   <div class="css-pillars">
@@ -1271,8 +1299,7 @@
     </div>
   </div>
 
-  <!-- Routing guidance -->
-  <h3 style="margin-top:28px;">When to route to CSS</h3>
+  <div class="fn-q-header" style="margin-top:32px;"><span class="fn-q-num">02</span> When should I reach out to CSS?</div>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
@@ -1285,7 +1312,17 @@
       </tbody>
     </table>
   </div>
-  <div class="callout info">For routing questions on regulated customer support, reach out via the internal CEE NotebookLM or the <strong>#cee-customer-service</strong> Slack channel.</div>
+  <div class="fn-q-header" style="margin-top:28px;"><span class="fn-q-num">03</span> How do I reach out to CSS?</div>
+  <div class="grid grid-2" style="margin-bottom:4px;">
+    <div class="card">
+      <div class="card-header">Internal Routing</div>
+      <div class="card-body">Reach out via the <strong>CEE NotebookLM</strong> or <strong>#cee-customer-service</strong> Slack channel to confirm CSS eligibility and get the correct contact.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Customer Portal</div>
+      <div class="card-body">CSS customers access support via a <strong>secured, isolated portal</strong>. Routing is managed through the dedicated CSS support channel upon entitlement verification.</div>
+    </div>
+  </div>
 </section>
 
 <!-- SOLUTIONS SUPPORT DELIVERY / ESS -->
@@ -1295,16 +1332,15 @@
     <h2>Solutions Support Delivery (ESS)</h2>
     <div class="sub">Enhanced Solution Support</div>
   </div>
-  <div class="stats">
+  <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up Solutions Support Delivery?</div>
+  <div class="stats" style="margin-bottom:16px;">
     <div class="stat"><div class="value">Premium</div><div class="label">Customer tier</div></div>
     <div class="stat"><div class="value">Proactive</div><div class="label">Engagement model</div></div>
     <div class="stat"><div class="value">Enterprise</div><div class="label">Primary audience</div></div>
   </div>
-  <hr>
-  <h3>Who they are</h3>
-  <p class="secondary small">Enhanced Solution Support (ESS) is part of Solutions Support Delivery and provides a higher-touch, proactive support experience for customers with complex technical environments and premium support entitlements. ESS engineers work closely with customers to anticipate issues, guide architecture decisions, and accelerate resolutions.</p>
-  <hr>
-  <h3>When to route to ESS</h3>
+  <p class="secondary small" style="margin-bottom:20px;">Enhanced Solution Support (ESS) provides a higher-touch, proactive support experience for customers with complex technical environments and premium support entitlements. ESS engineers anticipate issues, guide architecture decisions, and accelerate resolutions — going beyond break-fix into active partnership.</p>
+
+  <div class="fn-q-header"><span class="fn-q-num">02</span> When should I reach out to ESS?</div>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
@@ -1316,8 +1352,20 @@
       </tbody>
     </table>
   </div>
-  <hr>
-  <h3>How ESS differs from GSS</h3>
+  <div class="fn-q-header" style="margin-top:24px;"><span class="fn-q-num">03</span> How do I reach out to ESS?</div>
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">Verify Entitlement First</div>
+      <div class="card-body">Check the customer's subscription tier in the CRM. ESS is available only for <strong>Premium / Enhanced</strong> entitlements.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Route via Account Team</div>
+      <div class="card-body">Contact the customer's Account Manager or CSM to initiate an ESS engagement. For internal routing questions, use the <strong>#cee-ess</strong> Slack channel.</div>
+    </div>
+  </div>
+
+  <div class="cs-section-label">ESS vs. GSS — Key Differences</div>
+  <h3 style="display:none;">How ESS differs from GSS</h3>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Dimension</th><th>GSS (Technical Support)</th><th>ESS (Enhanced Solution Support)</th></tr></thead>
@@ -1337,38 +1385,53 @@
   <div class="section-header">
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 03</div>
     <h2>Managed Cloud Services (MCS)</h2>
-    <div class="sub">Managed Cloud &amp; FedRAMP</div>
+    <div class="sub">Cloud-native support · ARO · ROSA · FedRAMP</div>
   </div>
-  <p class="lead secondary">The Managed Cloud Services (MCS) team specializes in supporting Red Hat's cloud-native offerings, with a focus on FedRAMP-regulated environments and joint support workflows with cloud partners.</p>
-  <hr>
-  <h3>Azure Red Hat OpenShift (ARO)</h3>
+
+  <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up MCS?</div>
+  <p class="secondary small" style="margin-bottom:16px;">The Managed Cloud Services (MCS) team specialises in supporting Red Hat's cloud-native offerings, with a focus on FedRAMP-regulated environments and joint support workflows with cloud partners (Microsoft and AWS).</p>
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">Azure Red Hat OpenShift (ARO)</div>
+      <div class="card-body">
+        <p>Microsoft + Red Hat joint support model. Cases may originate on either portal.</p>
+        <p class="secondary small" style="margin-top:6px;">Responsibility split: docs.microsoft.com/azure/openshift</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Red Hat OpenShift on AWS (ROSA)</div>
+      <div class="card-body">
+        <p>AWS + Red Hat joint support. Full cluster lifecycle — from provisioning through decommission.</p>
+        <p class="secondary small" style="margin-top:6px;">Defines Red Hat vs AWS responsibility boundary for ROSA clusters</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fn-q-header"><span class="fn-q-num">02</span> When should I reach out to MCS?</div>
+  <div class="tbl-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Customer is running ARO on Microsoft Azure</td><td>Joint support — may involve Microsoft portal</td></tr>
+        <tr><td>Customer is running ROSA on AWS</td><td>Joint support — Red Hat + AWS coordinate</td></tr>
+        <tr><td>FedRAMP-regulated cloud environment support needed</td><td>MCS owns FedRAMP workflows</td></tr>
+        <tr><td>Cloud-native workload support or joint responsibility questions</td><td>Check supportability matrix first</td></tr>
+        <tr><td>Cluster lifecycle support (provisioning, upgrades, decommission)</td><td>ROSA full lifecycle coverage</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fn-q-header"><span class="fn-q-num">03</span> How do I reach out to MCS?</div>
   <div class="grid grid-2">
     <div class="card">
-      <div class="card-header">Support Workflow</div>
-      <div class="card-body">Microsoft + Red Hat joint support model. Cases may originate on either Microsoft or Red Hat portals.</div>
+      <div class="card-header">Slack</div>
+      <div class="card-body">#mcs-global</div>
     </div>
     <div class="card">
-      <div class="card-header">Supportability Matrix</div>
-      <div class="card-body">Responsibility split documented at docs.microsoft.com/azure/openshift. LMS training links available internally.</div>
+      <div class="card-header">Customer Portal</div>
+      <div class="card-body">Open cases via access.redhat.com/support — MCS cases are routed internally. LMS training available for ARO and ROSA workflows.</div>
     </div>
   </div>
-  <hr>
-  <h3>Red Hat OpenShift on AWS (ROSA)</h3>
-  <div class="grid grid-3">
-    <div class="card">
-      <div class="card-header">ROSA Lifecycle</div>
-      <div class="card-body">Full lifecycle support from cluster creation through decommission</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Support Workflow</div>
-      <div class="card-body">AWS + Red Hat joint support. LMS training available.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Supportability Matrix</div>
-      <div class="card-body">Defines Red Hat vs AWS responsibility boundary for ROSA clusters</div>
-    </div>
-  </div>
-  <div class="callout info">For Q&amp;A and collaboration on MCS topics, go to <strong>#mcs-global</strong> on Slack.</div>
 </section>
 
 <!-- ESCALATION — CAP / XE -->
