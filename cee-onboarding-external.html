@@ -199,6 +199,35 @@
   .secondary { color: var(--muted); }
   .small { font-size: 12px; }
 
+  /* ── Escalation lifecycle flow ── */
+  .esc-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 8px;
+  }
+  .esc-step {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .esc-step--close { background: #151515; }
+  .esc-step--close .esc-step-label { color: white; }
+  .esc-step--close .esc-step-body { color: rgba(255,255,255,0.6); }
+  .esc-step--close .esc-step-num { color: var(--red); }
+  .esc-step-num { font-size: 18px; font-weight: 800; color: var(--red); line-height: 1; }
+  .esc-step-label { font-size: 12px; font-weight: 700; color: var(--dark); }
+  .esc-step-body { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .esc-arrow { display: flex; align-items: center; font-size: 16px; color: var(--border); padding: 0 4px; }
+  @media (max-width: 768px) {
+    .esc-flow { flex-direction: column; }
+    .esc-arrow { transform: rotate(90deg); align-self: center; }
+  }
+
   /* ── Footer ── */
   footer {
     margin-left: var(--nav-width);
@@ -542,42 +571,108 @@
     <h2>Escalation</h2>
     <div class="sub">When and how to escalate</div>
   </div>
-  <p class="lead">If your issue is not progressing as expected, or the business impact has increased, you can escalate at any time — escalation is a feature, not a failure.</p>
-  <hr>
-  <h3>When to Escalate</h3>
+  <p class="lead">Escalation is a feature, not a failure. If your case is not progressing as expected or business impact has increased, the Red Hat Escalation Management Team is ready to step in — coordinating the right resources and driving your issue to resolution.</p>
+
+  <!-- When to escalate -->
+  <h3>When to escalate</h3>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Signal</th><th>Action</th></tr></thead>
       <tbody>
-        <tr><td>No meaningful update after a reasonable period at current severity</td><td>Request escalation in the case comments</td></tr>
-        <tr><td>Business impact has grown since case was opened</td><td>Update severity level and notify your support engineer</td></tr>
-        <tr><td>SLA breach is imminent or has occurred</td><td>Contact support engineer directly or use the escalation path</td></tr>
-        <tr><td>Multiple teams need to coordinate and progress has stalled</td><td>Ask for a cross-team escalation meeting</td></tr>
+        <tr><td>No meaningful update after a reasonable period at current severity</td><td>Request escalation via the portal (RME)</td></tr>
+        <tr><td>Business impact has grown since the case was opened</td><td>Update severity and request escalation</td></tr>
+        <tr><td>SLA breach is imminent or has occurred</td><td>Use RME button or call the Escalation Hotline (Premium)</td></tr>
+        <tr><td>Multiple teams need to coordinate and progress has stalled</td><td>Request a cross-team escalation meeting via RME</td></tr>
       </tbody>
     </table>
   </div>
-  <hr>
-  <h3>Management Escalation</h3>
-  <div class="grid grid-2">
+
+  <!-- Prerequisites -->
+  <h3>Before you escalate — checklist</h3>
+  <div class="grid grid-3" style="margin-bottom:20px;">
     <div class="card">
-      <div class="card-header">Step 1 — In the Portal</div>
+      <div class="card-header">&#10003; &nbsp;Support case open</div>
+      <div class="card-body">A support case must exist before an escalation can be requested. Open one at <strong>access.redhat.com/support/cases</strong> if you haven't already.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">&#10003; &nbsp;Severity set correctly</div>
+      <div class="card-body">Severity must reflect actual business impact. Overstating severity does not yield faster results and may delay routing to the right team.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">&#10003; &nbsp;Problem clearly defined</div>
+      <div class="card-body">Document a clear problem description, business impact, and the environments affected. This is what the escalation team acts on.</div>
+    </div>
+  </div>
+
+  <!-- How to escalate -->
+  <h3>How to request an escalation</h3>
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">Option 1 — Request Management Escalation (RME) <span class="pill pill-success">Recommended</span></div>
       <div class="card-body">
-        <p>Open your case and click the <strong>"Request Management Escalation"</strong> button.</p>
-        <p class="secondary" style="margin-top:6px">This immediately flags the case for management attention and triggers an SLA review.</p>
+        <p>Open your support case on the Customer Portal and click <strong>"Request an escalation"</strong>.</p>
+        <p class="secondary" style="margin-top:8px;">Use RME when the support case workflow is not meeting expectations or your case needs heightened attention. The Escalation Management Team will engage the right resources and coordinate efforts across Red Hat.</p>
       </div>
     </div>
     <div class="card">
-      <div class="card-header">Step 2 — Follow Up by Phone</div>
+      <div class="card-header">Option 2 — Escalation Hotline <span class="pill pill-warn">Premium · Sev 1 only</span></div>
       <div class="card-body">
-        <p>Call the technical support hotline for your region and ask to speak to a <strong>Delivery Manager</strong>.</p>
-        <p class="secondary" style="margin-top:6px">Reference: access.redhat.com/support/policy/mgt_escalation</p>
+        <p>For mission-critical <strong>Severity 1</strong> issues with a <strong>Premium subscription</strong>, call the dedicated 24×7 Escalation Hotline:</p>
+        <p style="font-size:18px; font-weight:700; color:var(--red); margin-top:10px;">+1 919-890-8001</p>
+        <p class="secondary" style="margin-top:8px;">Have your case number ready. This line is for serious interruptions to business-critical operations only.</p>
       </div>
     </div>
   </div>
-  <hr>
-  <h3>Remote Support Sessions</h3>
-  <p class="secondary">For complex issues, your support engineer may request a remote session. You will receive a secure connection link. Sessions are recorded with your consent and help accelerate diagnosis significantly.</p>
-  <p class="small secondary" style="margin-top:8px">Request a session proactively: <strong>access.redhat.com/articles/255443</strong></p>
+
+  <!-- Escalation lifecycle -->
+  <h3>What happens after you escalate</h3>
+  <div class="esc-flow">
+    <div class="esc-step">
+      <div class="esc-step-num">1</div>
+      <div class="esc-step-label">Before kickoff</div>
+      <div class="esc-step-body">Red Hat reviews background, business impact, and case history</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step">
+      <div class="esc-step-num">2</div>
+      <div class="esc-step-label">Kickoff</div>
+      <div class="esc-step-body">Action plan built · Teams aligned · Comms channels established · Success criteria defined</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step">
+      <div class="esc-step-num">3</div>
+      <div class="esc-step-label">Active management</div>
+      <div class="esc-step-body">Plan executed · Regular updates provided · RCA documentation initiated</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step esc-step--close">
+      <div class="esc-step-num">4</div>
+      <div class="esc-step-label">Closure</div>
+      <div class="esc-step-body">Exit criteria met · Final RCA shared · Recommendations provided</div>
+    </div>
+  </div>
+
+  <!-- Advocates -->
+  <h3 style="margin-top:28px;">Additional escalation advocates</h3>
+  <p class="secondary small" style="margin-bottom:12px;">In parallel with RME, you can engage these contacts as internal advocates within Red Hat.</p>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">Technical Account Manager (TAM)</div>
+      <div class="card-body">Your named TAM can escalate internally and coordinate across teams. Available within TAM business hours.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Customer Success Executive (CSE)</div>
+      <div class="card-body">Your CSE can apply executive-level visibility to a stalled escalation and ensure cross-team accountability.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Sales Team</div>
+      <div class="card-body">Your Red Hat account team can escalate to the appropriate leadership when business relationship impact is at stake.</div>
+    </div>
+  </div>
+
+  <div class="callout info" style="margin-top:4px;">
+    <strong>Remote sessions:</strong> For complex issues, your support engineer may offer a secure remote session to diagnose together in real time. Request one proactively at <strong>access.redhat.com/articles/255443</strong>.
+  </div>
 </section>
 
 <!-- KEY RESOURCES -->
