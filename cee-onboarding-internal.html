@@ -66,8 +66,8 @@
 
   nav {
     width: var(--nav-width);
-    background: var(--white);
-    border-right: 1px solid var(--border);
+    background: var(--dark);
+    border-right: none;
     position: fixed;
     top: 56px; bottom: 0;
     overflow-y: auto;
@@ -78,20 +78,20 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--muted);
+    color: #6A6E73;
     padding: 0 20px 10px;
   }
   nav a {
     display: block;
     padding: 9px 20px;
-    color: var(--mid);
+    color: #C8C8C8;
     text-decoration: none;
     font-size: 13px;
     border-left: 3px solid transparent;
     transition: all 0.15s;
   }
-  nav a:hover { background: var(--bg); color: var(--dark); }
-  nav a.active { border-left-color: var(--red); color: var(--red); font-weight: 600; background: #FFF5F5; }
+  nav a:hover { background: rgba(255,255,255,0.07); color: white; }
+  nav a.active { border-left-color: var(--red); color: white; font-weight: 600; background: rgba(238,0,0,0.12); }
 
   main {
     margin-left: var(--nav-width);
