@@ -404,6 +404,77 @@
     .cs-vol-row { grid-template-columns: 1fr 1fr; }
   }
 
+  /* ── CEE Offering — Big Picture ── */
+  .offering-regions {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: 4px;
+    overflow: hidden; margin-bottom: 4px;
+  }
+  .offering-region {
+    background: var(--white); padding: 14px 14px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .offering-region-num {
+    font-size: 22px; font-weight: 800; color: var(--red); line-height: 1;
+  }
+  .offering-region-name { font-size: 11px; font-weight: 600; color: var(--mid); line-height: 1.4; }
+
+  .offering-how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px; margin-bottom: 4px;
+  }
+  .offering-how-card {
+    background: var(--bg); border-radius: 4px;
+    padding: 16px 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .offering-how-card--accent { border-top: 3px solid var(--red); background: #FFF8F8; }
+  .offering-how-card--dark { background: var(--dark); grid-column: span 3; }
+  .offering-how-card--dark .offering-how-title { color: white; }
+  .offering-how-card--dark .offering-how-body { color: rgba(255,255,255,0.65); }
+  .offering-how-title { font-size: 12px; font-weight: 700; color: var(--dark); }
+  .offering-how-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .offering-how-items { display: flex; flex-direction: column; gap: 6px; }
+  .offering-how-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--mid); }
+  .offering-how-icon { color: var(--red); font-size: 8px; flex-shrink: 0; }
+
+  .offering-mcsec-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 4px;
+  }
+  .offering-mcsec-card {
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 22px 20px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .offering-mcsec-card--dark {
+    background: var(--dark); border-color: var(--dark);
+  }
+  .offering-mcsec-badge {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    letter-spacing: 0.1em; color: var(--red);
+    background: #FFF0F0; border-radius: 3px;
+    padding: 3px 8px; width: fit-content; margin-bottom: 4px;
+  }
+  .offering-mcsec-badge--light {
+    background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
+  }
+  .offering-mcsec-title { font-size: 15px; font-weight: 800; color: var(--dark); }
+  .offering-mcsec-tag { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .offering-mcsec-footer {
+    font-size: 11px; color: var(--muted); line-height: 1.5;
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+  }
+  .offering-mcsec-card--dark .offering-mcsec-footer { border-top-color: rgba(255,255,255,0.1); }
+
+  @media (max-width: 768px) {
+    .offering-regions { grid-template-columns: repeat(2, 1fr); }
+    .offering-how-grid { grid-template-columns: 1fr; }
+    .offering-how-card--dark { grid-column: span 1; }
+    .offering-mcsec-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── Global Secure Support (CSS) visuals ── */
   .css-pillars {
     display: grid; grid-template-columns: repeat(4, 1fr);
@@ -560,6 +631,7 @@
 <nav id="sidebar">
   <div class="nav-label">Overview</div>
   <a href="#overview" class="active">CEE at a Glance</a>
+  <a href="#offering">CEE Offering — Big Picture</a>
   <div class="nav-label" style="margin-top:16px;">CEE Functions</div>
   <a href="#gss">Global Technical Support (GSS)</a>
   <a href="#cs">Global Customer Service (CS)</a>
@@ -641,6 +713,133 @@
   </div>
 
   <div class="callout info" style="margin-top:24px;">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
+</section>
+
+<!-- CEE OFFERING — BIG PICTURE -->
+<section class="section" id="offering">
+  <div class="section-header">
+    <h2>CEE Offering — Big Picture</h2>
+    <div class="sub">Worldwide reach · Multiple channels · Mission-critical solutions</div>
+  </div>
+
+  <!-- Slide 7: Worldwide locations -->
+  <div class="cs-section-label">Worldwide Support Locations — 24×7×365</div>
+  <div class="offering-regions">
+    <div class="offering-region">
+      <div class="offering-region-num">1</div>
+      <div class="offering-region-name">USA &amp; Canada</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">2</div>
+      <div class="offering-region-name">Latin America</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">3</div>
+      <div class="offering-region-name">Northern &amp; Western Europe</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">4</div>
+      <div class="offering-region-name">Eastern Europe</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">5</div>
+      <div class="offering-region-name">Middle East</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">6</div>
+      <div class="offering-region-name">India, Sri Lanka, Bangladesh &amp; Pakistan</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">7</div>
+      <div class="offering-region-name">North Asia-Pacific</div>
+    </div>
+    <div class="offering-region">
+      <div class="offering-region-num">8</div>
+      <div class="offering-region-name">South Asia-Pacific</div>
+    </div>
+  </div>
+
+  <!-- Slide 8: How to work with support -->
+  <div class="cs-section-label" style="margin-top:36px;">How to Work with Red Hat Support</div>
+  <div class="offering-how-grid">
+
+    <div class="offering-how-card offering-how-card--accent">
+      <div class="offering-how-title">Support Channels</div>
+      <div class="offering-how-items">
+        <div class="offering-how-item">
+          <div class="offering-how-icon">&#9654;</div>
+          <div>Chat online</div>
+        </div>
+        <div class="offering-how-item">
+          <div class="offering-how-icon">&#9654;</div>
+          <div>By phone</div>
+        </div>
+        <div class="offering-how-item">
+          <div class="offering-how-icon">&#9654;</div>
+          <div>Troubleshoot remotely</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offering-how-card">
+      <div class="offering-how-title">Self-Service on the Portal</div>
+      <div class="offering-how-items">
+        <div class="offering-how-item"><div class="offering-how-icon">&#9654;</div><div>Solution Engine</div></div>
+        <div class="offering-how-item"><div class="offering-how-icon">&#9654;</div><div>Customer Portal Labs</div></div>
+        <div class="offering-how-item"><div class="offering-how-icon">&#9654;</div><div>Knowledge Base</div></div>
+        <div class="offering-how-item"><div class="offering-how-icon">&#9654;</div><div>Community Discussions</div></div>
+        <div class="offering-how-item"><div class="offering-how-icon">&#9654;</div><div>Ask Red Hat</div></div>
+      </div>
+    </div>
+
+    <div class="offering-how-card">
+      <div class="offering-how-title">Proactive Cases</div>
+      <div class="offering-how-body">Let Red Hat know about planned after-hours work (upgrades, maintenance windows). If issues arise, the team is already prepared — faster engagement, smoother updates.</div>
+    </div>
+
+    <div class="offering-how-card">
+      <div class="offering-how-title">Multivendor Support</div>
+      <div class="offering-how-body">TSANet and the Red Hat partner certification programme empower Red Hat to handle issues across our products and other vendors' solutions — your multivendor environment is supported.</div>
+    </div>
+
+    <div class="offering-how-card offering-how-card--dark">
+      <div class="offering-how-title">Product Enhancement Flow</div>
+      <div class="offering-how-body">Every support case is an opportunity to improve the product. The team provides vital customer feedback to engineering — turning issues into lasting improvements.</div>
+    </div>
+
+  </div>
+
+  <!-- Slide 9: Sovereignty & Mission Critical -->
+  <div class="cs-section-label" style="margin-top:36px;">Sovereignty &amp; Mission Critical Support Solutions</div>
+  <div class="offering-mcsec-grid">
+
+    <div class="offering-mcsec-card">
+      <div class="offering-mcsec-badge">ESS</div>
+      <div class="offering-mcsec-title">Enhanced Solution Support</div>
+      <div class="offering-mcsec-tag">Telco &nbsp;·&nbsp; Gov &nbsp;·&nbsp; Enhanced Response</div>
+      <ul class="cs-checklist" style="margin-top:12px;">
+        <li>15-minute response times for Severity 1 &amp; 2</li>
+        <li>Restoration within hours, resolution within days</li>
+        <li>Near real-time expert assistance via phone, web, or remote call</li>
+        <li>Dedicated support team with knowledge of customer environment</li>
+      </ul>
+      <div class="offering-mcsec-footer">Mission-critical support with faster SLAs, restoration and resolution guarantees — backed by service credits.</div>
+    </div>
+
+    <div class="offering-mcsec-card offering-mcsec-card--dark">
+      <div class="offering-mcsec-badge offering-mcsec-badge--light">CSS-EU</div>
+      <div class="offering-mcsec-title" style="color:white;">Confirmed Sovereign Support (EU)</div>
+      <div class="offering-mcsec-tag" style="color:rgba(255,255,255,0.5);">Regulated industries &nbsp;·&nbsp; EU27</div>
+      <ul class="cs-checklist" style="margin-top:12px;">
+        <li style="color:rgba(255,255,255,0.8);">In-region, security-vetted engineers — 24/7 support within EU/US</li>
+        <li style="color:rgba(255,255,255,0.8);">All diagnostic logs confined to in-region infrastructure</li>
+        <li style="color:rgba(255,255,255,0.8);">Ticket metadata controlled by RBAC with encryption at rest</li>
+        <li style="color:rgba(255,255,255,0.8);">Isolated RBAC case management with regionalized identity governance</li>
+      </ul>
+      <div class="offering-mcsec-footer" style="color:rgba(255,255,255,0.6);">Verifiable operational autonomy for highly regulated industries — built on a decade of proven US sovereign support.</div>
+    </div>
+
+  </div>
 </section>
 
 <!-- GLOBAL SUPPORT SERVICES -->
