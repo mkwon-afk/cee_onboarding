@@ -150,6 +150,65 @@
   .secondary { color: var(--muted); }
   .small { font-size: 12px; }
 
+  /* Org lineage strip */
+  .org-lineage {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .org-node {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .org-node span { font-weight: 400; color: var(--muted); font-size: 11px; }
+  .org-node--muted { background: var(--bg); color: var(--mid); }
+  .org-node--active { background: var(--dark); color: white; }
+  .org-node--active span { color: rgba(255,255,255,0.6); }
+  .org-arrow {
+    font-size: 18px;
+    color: var(--border);
+    padding: 0 2px;
+    background: var(--bg);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 5 Functions strip */
+  .fn-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .fn-cell {
+    padding: 16px 14px;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .fn-cell:last-child { border-right: none; }
+  .fn-cell--active { background: #FFF5F5; border-top: 2px solid var(--red); }
+  .fn-num { font-size: 20px; font-weight: 800; color: var(--red); line-height: 1; }
+  .fn-name { font-size: 12px; font-weight: 600; color: var(--dark); line-height: 1.3; }
+  .fn-id { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  @media (max-width: 768px) {
+    .fn-strip { grid-template-columns: 1fr 1fr; }
+    .org-lineage { flex-direction: column; }
+    .org-arrow { transform: rotate(90deg); padding: 2px 0; }
+  }
+
   /* CEE Mission flow */
   .mission-flow {
     display: flex;
@@ -272,40 +331,22 @@
 <section class="section" id="overview">
   <div class="section-header">
     <h2>CEE at a Glance</h2>
-    <div class="sub">Who makes up the Customer Experience Engineering org?</div>
-  </div>
-  <p class="lead secondary">The Customer Experience Engineering (CEE) organization is Red Hat's customer-facing support umbrella, spanning five specialized teams.</p>
-
-  <h3>Where CEE sits in Experience Engineering</h3>
-  <div class="callout info">
-    CEE is one of five teams under <strong>Experience Engineering</strong>, which reports to <strong>Paul Lyons</strong> — part of the Office of the CTO led by <strong>Chris Wright</strong>, SVP &amp; Chief Technology Officer.
-  </div>
-  <div class="grid grid-3" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-header">Customer Experience &amp; Engagement (CEE)</div>
-      <div class="card-body">Technical support, case management, and customer experience across all Red Hat products</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Critical Accounts Program (CAP)</div>
-      <div class="card-body">Proactive risk identification and escalation management for strategic accounts</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Customer Content Services (CCS)</div>
-      <div class="card-body">Technical content, documentation, and knowledge management for customer journeys</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Sustaining Engineering (SE)</div>
-      <div class="card-body">Product lifecycle support and engineering continuity for long-term releases</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Ecosystem Engineering</div>
-      <div class="card-body">Partner and ecosystem integrations across the Red Hat product portfolio</div>
-    </div>
+    <div class="sub">Customer Experience &amp; Engagement — Red Hat</div>
   </div>
 
-  <h3>CEE Mission</h3>
-  <p class="secondary small" style="margin-bottom:16px; color: var(--red); font-size:13px;">Combining technical skills across the team to enhance the customer experience and empower associates</p>
-  <div class="mission-flow">
+  <!-- Org lineage -->
+  <div class="org-lineage">
+    <div class="org-node org-node--muted">Office of the CTO<br><span>Chris Wright</span></div>
+    <div class="org-arrow">›</div>
+    <div class="org-node org-node--muted">Experience Engineering<br><span>Paul Lyons</span></div>
+    <div class="org-arrow">›</div>
+    <div class="org-node org-node--active">Customer Experience &amp;<br>Engagement (CEE)</div>
+  </div>
+
+  <!-- CEE Mission flow -->
+  <div style="margin-bottom:8px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Mission</div>
+  <p style="margin-bottom:14px; font-size:13px; color:var(--red); font-weight:500;">Combining technical skills across the team to enhance the customer experience and empower associates</p>
+  <div class="mission-flow" style="margin-bottom:36px;">
     <div class="mission-panel mission-panel--gray">
       <div class="mission-panel-title">See problem</div>
       <div class="mission-panel-body">CEE's technical expertise ensures swift identification of issues.</div>
@@ -322,32 +363,37 @@
     </div>
   </div>
 
-  <h3>CEE's 5 Functions</h3>
-  <p class="secondary small" style="margin-bottom:12px;">CEE comprises five specialized functions, each with a distinct scope and customer segment.</p>
-  <div class="grid grid-3" style="margin-bottom:24px;">
-    <div class="card">
-      <div class="card-header">01 &nbsp;·&nbsp; Global Technical Support <span class="pill pill-default" style="float:right;">GSS</span></div>
-      <div class="card-body">Technical troubleshooting, product issues, change windows, and case management — 24/7 global coverage.</div>
+  <!-- 5 Functions visual strip -->
+  <div style="margin-bottom:8px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">5 Functions</div>
+  <div class="fn-strip">
+    <div class="fn-cell">
+      <div class="fn-num">01</div>
+      <div class="fn-name">Global Technical Support</div>
+      <div class="fn-id">GSS</div>
     </div>
-    <div class="card">
-      <div class="card-header">02 &nbsp;·&nbsp; Global Customer Service <span class="pill pill-default" style="float:right;">CS</span></div>
-      <div class="card-body">Account management, subscriptions, user access, case translation, and chat — 24/5, multilingual across 10 languages.</div>
+    <div class="fn-cell">
+      <div class="fn-num">02</div>
+      <div class="fn-name">Global Customer Service</div>
+      <div class="fn-id">CS</div>
     </div>
-    <div class="card">
-      <div class="card-header">03 &nbsp;·&nbsp; Managed Cloud Services <span class="pill pill-default" style="float:right;">MCS</span></div>
-      <div class="card-body">Cloud-native support for ARO, ROSA, and FedRAMP-regulated environments.</div>
+    <div class="fn-cell">
+      <div class="fn-num">03</div>
+      <div class="fn-name">Managed Cloud Services</div>
+      <div class="fn-id">MCS</div>
     </div>
-    <div class="card">
-      <div class="card-header">04 &nbsp;·&nbsp; Global Secure Support <span class="pill pill-default" style="float:right;">CSS</span></div>
-      <div class="card-body">Specialized secure support for regulated industries and government customers.</div>
+    <div class="fn-cell">
+      <div class="fn-num">04</div>
+      <div class="fn-name">Global Secure Support</div>
+      <div class="fn-id">CSS</div>
     </div>
-    <div class="card">
-      <div class="card-header">05 &nbsp;·&nbsp; Solutions Support Delivery <span class="pill pill-default" style="float:right;">ESS</span></div>
-      <div class="card-body">Proactive, enhanced support for enterprise customers with complex technical needs and premium entitlements.</div>
+    <div class="fn-cell fn-cell--active">
+      <div class="fn-num">05</div>
+      <div class="fn-name">Solutions Support Delivery</div>
+      <div class="fn-id">ESS</div>
     </div>
   </div>
 
-  <div class="callout info">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
+  <div class="callout info" style="margin-top:24px;">Use <strong>CEE NotebookLM</strong> as your first stop to find team contacts, reach the right group, and navigate supportability policies.</div>
 </section>
 
 <!-- GLOBAL SUPPORT SERVICES -->
