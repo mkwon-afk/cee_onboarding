@@ -404,6 +404,57 @@
     .cs-vol-row { grid-template-columns: 1fr 1fr; }
   }
 
+  /* ── SLA Table ── */
+  .sla-table-wrap { overflow-x: auto; margin-bottom: 12px; }
+  .sla-table {
+    width: 100%; border-collapse: collapse;
+    border: 1px solid var(--border); border-radius: 4px;
+    font-size: 14px; background: var(--white);
+  }
+  .sla-table thead tr { background: var(--dark); }
+  .sla-th-label { width: 140px; }
+  .sla-th {
+    padding: 12px 16px; font-size: 13px; font-weight: 700;
+    color: rgba(255,255,255,0.85); text-align: center;
+    letter-spacing: 0.02em; border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .sla-th--accent {
+    background: var(--red); color: white;
+    border-right: none;
+  }
+  .sla-row-label {
+    padding: 11px 14px; font-size: 12px; font-weight: 700;
+    color: var(--mid); background: var(--bg);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top; line-height: 1.4;
+  }
+  .sla-table tbody td {
+    padding: 11px 16px; text-align: center;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--dark); vertical-align: middle;
+    line-height: 1.4;
+  }
+  .sla-table tbody tr:last-child td { border-bottom: none; }
+  .sla-col--accent { background: #FFF8F8; }
+  .sla-highlight { font-weight: 700; color: var(--red); }
+  .sla-none { color: var(--muted); font-size: 12px; }
+  .sla-note { font-size: 11px; color: var(--muted); display: block; margin-top: 2px; }
+  .sla-row-sovereign td { background: #F5F5F5; }
+  .sla-row-sovereign .sla-col--accent { background: #FFF0F0; }
+
+  .sla-sovereign-strip {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    background: var(--dark); border-radius: 4px;
+    padding: 12px 16px; margin-bottom: 32px;
+  }
+  .sla-sovereign-item {
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.07); border-radius: 3px;
+    padding: 4px 10px;
+  }
+
   /* ── CEE Offering — Big Picture ── */
   .offering-regions {
     display: grid; grid-template-columns: repeat(4, 1fr);
@@ -720,6 +771,78 @@
   <div class="section-header">
     <h2>CEE Offering — Big Picture</h2>
     <div class="sub">Worldwide reach · Multiple channels · Mission-critical solutions</div>
+  </div>
+
+  <!-- Slide 6: SLA by subscription -->
+  <div class="cs-section-label">Service Level Agreement by Subscription</div>
+  <div class="sla-table-wrap">
+    <table class="sla-table">
+      <thead>
+        <tr>
+          <th class="sla-th-label"></th>
+          <th class="sla-th">Standard</th>
+          <th class="sla-th">Premium</th>
+          <th class="sla-th sla-th--accent">Enhanced Solution Support</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sla-row-label">Access</td>
+          <td>Web &amp; phone<br><span class="sla-note">Business hours</span></td>
+          <td>Web &amp; phone<br><span class="sla-note">24/7</span></td>
+          <td class="sla-col--accent">Web &amp; dedicated phone<br><span class="sla-note">24/7</span></td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Cases</td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+          <td class="sla-col--accent">Unlimited</td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Initial Response<br><span class="sla-note">Sev 1 / 2</span></td>
+          <td>1 or 4 hours</td>
+          <td>1 or 2 hours</td>
+          <td class="sla-col--accent sla-highlight"><strong>15 minutes</strong></td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Restoration<br><span class="sla-note">Sev 1</span></td>
+          <td><span class="sla-none">No SLA</span></td>
+          <td>4 hours</td>
+          <td class="sla-col--accent sla-highlight"><strong>Within hours</strong></td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Restoration<br><span class="sla-note">Sev 2</span></td>
+          <td><span class="sla-none">No SLA</span></td>
+          <td>8 hours</td>
+          <td class="sla-col--accent">8 hours</td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Resolution<br><span class="sla-note">Sev 1</span></td>
+          <td><span class="sla-none">No SLA</span></td>
+          <td>20 days</td>
+          <td class="sla-col--accent sla-highlight"><strong>Within days</strong></td>
+        </tr>
+        <tr>
+          <td class="sla-row-label">Resolution<br><span class="sla-note">Sev 2</span></td>
+          <td><span class="sla-none">No SLA</span></td>
+          <td>40 days</td>
+          <td class="sla-col--accent">40 days</td>
+        </tr>
+        <tr class="sla-row-sovereign">
+          <td class="sla-row-label">Sovereign Support<br><span class="sla-note">Products</span></td>
+          <td>All Products</td>
+          <td>OpenShift · OpenStack</td>
+          <td class="sla-col--accent"><strong>All Products</strong><br><span class="sla-note">OpenShift Virt · RHEL (CY26)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sla-sovereign-strip">
+    <div class="sla-sovereign-item">&#10003;&nbsp; Support from regional citizens</div>
+    <div class="sla-sovereign-item">&#10003;&nbsp; Public sector requirements</div>
+    <div class="sla-sovereign-item">&#10003;&nbsp; In-region data storage</div>
+    <div class="sla-sovereign-item">&#10003;&nbsp; Secured portal</div>
+    <div class="sla-sovereign-item">&#10003;&nbsp; Regulatory compliance</div>
   </div>
 
   <!-- Slide 7: Worldwide locations -->
