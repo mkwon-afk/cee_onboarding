@@ -1321,47 +1321,65 @@
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up MCS?</div>
-  <p class="secondary small" style="margin-bottom:16px;">The Managed Cloud Services (MCS) team specialises in supporting Red Hat's cloud-native offerings, with a focus on FedRAMP-regulated environments and joint support workflows with cloud partners (Microsoft and AWS).</p>
+  <p class="secondary small" style="margin-bottom:16px;">A specialised team dedicated to supporting Red Hat's Public Cloud Platform as a Service (PaaS) and Software as a Service (SaaS) offerings — working jointly with cloud partners Microsoft and AWS.</p>
   <div class="grid grid-2" style="margin-bottom:20px;">
     <div class="card">
       <div class="card-header">Azure Red Hat OpenShift (ARO)</div>
-      <div class="card-body">
-        <p>Microsoft + Red Hat joint support model. Cases may originate on either portal.</p>
-        <p class="secondary small" style="margin-top:6px;">Responsibility split: docs.microsoft.com/azure/openshift</p>
-      </div>
+      <div class="card-body">Microsoft + Red Hat joint support model. Cases may originate on either portal.</div>
     </div>
     <div class="card">
       <div class="card-header">Red Hat OpenShift on AWS (ROSA)</div>
-      <div class="card-body">
-        <p>AWS + Red Hat joint support. Full cluster lifecycle — from provisioning through decommission.</p>
-        <p class="secondary small" style="margin-top:6px;">Defines Red Hat vs AWS responsibility boundary for ROSA clusters</p>
-      </div>
+      <div class="card-body">AWS + Red Hat joint support. Full cluster lifecycle — from provisioning through decommission.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">OpenShift Dedicated (OSD)</div>
+      <div class="card-body">Fully managed OpenShift clusters hosted on public cloud infrastructure.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">FedRAMP</div>
+      <div class="card-body">Federal Risk and Authorization Management Program — MCS owns FedRAMP-regulated cloud support workflows.</div>
     </div>
   </div>
+  <div class="callout info" style="margin-bottom:20px;">Full team info: <a href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery" target="_blank" style="color:var(--red);font-weight:600;">MCS Source Page ↗</a></div>
 
   <div class="fn-q-header"><span class="fn-q-num">02</span> When should I reach out to MCS?</div>
   <div class="tbl-wrap" style="margin-bottom:20px;">
     <table>
-      <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Product / Scenario</th><th>Resources</th></tr></thead>
       <tbody>
-        <tr><td>Customer is running ARO on Microsoft Azure</td><td>Joint support — may involve Microsoft portal</td></tr>
-        <tr><td>Customer is running ROSA on AWS</td><td>Joint support — Red Hat + AWS coordinate</td></tr>
-        <tr><td>FedRAMP-regulated cloud environment support needed</td><td>MCS owns FedRAMP workflows</td></tr>
-        <tr><td>Cloud-native workload support or joint responsibility questions</td><td>Check supportability matrix first</td></tr>
-        <tr><td>Cluster lifecycle support (provisioning, upgrades, decommission)</td><td>ROSA full lifecycle coverage</td></tr>
+        <tr>
+          <td><strong>ARO</strong> — Azure Red Hat OpenShift</td>
+          <td>
+            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D62453782" target="_blank" style="color:var(--red);">ARO Support Workflow (LMS) ↗</a><br>
+            <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">ARO Supportability Matrix ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>ROSA</strong> — Red Hat OpenShift on AWS</td>
+          <td>
+            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D73154594" target="_blank" style="color:var(--red);">ROSA Support Workflow (LMS) ↗</a><br>
+            <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA Supportability Matrix ↗</a>
+          </td>
+        </tr>
+        <tr><td><strong>OSD</strong> — OpenShift Dedicated</td><td>Reach out via <strong>#mcs-global</strong></td></tr>
+        <tr><td><strong>FedRAMP</strong> — regulated cloud environments</td><td>MCS owns FedRAMP support workflows</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">03</span> How do I reach out to MCS?</div>
-  <div class="grid grid-2">
+  <div class="grid grid-3" style="margin-bottom:20px;">
     <div class="card">
       <div class="card-header">Slack</div>
-      <div class="card-body">#mcs-global</div>
+      <div class="card-body"><strong>#mcs-global</strong> — for Q&amp;A and collaboration on MCS topics.</div>
     </div>
     <div class="card">
-      <div class="card-header">Customer Portal</div>
-      <div class="card-body">Open cases via access.redhat.com/support — MCS cases are routed internally. LMS training available for ARO and ROSA workflows.</div>
+      <div class="card-header">Management Escalation</div>
+      <div class="card-body"><a href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery/managed_cloud_services_support_delivery_wiki/for_stakeholders_cee_managed_cloud_services_mcs_escalation_path" target="_blank" style="color:var(--red);font-weight:600;">MCS Escalation Path ↗</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">ACE</div>
+      <div class="card-body"><a href="https://docs.google.com/presentation/d/1YxF8CsPJSSkb5gTYXbzHbEh-Tcg7hUMwfdRoKJTfo3o/edit?slide=id.g152f0dbd431_7_0#slide=id.g152f0dbd431_7_0" target="_blank" style="color:var(--red);font-weight:600;">ACE Guide ↗</a> — Active Customer Escalation tool.</div>
     </div>
   </div>
 
@@ -1373,6 +1391,9 @@
 
   <div class="section-refs">
     <span class="section-refs-label">📎 References</span>
+    <a class="section-ref-link" href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery" target="_blank">MCS Source Page ↗</a>
+    <a class="section-ref-link" href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D62453782" target="_blank">ARO LMS ↗</a>
+    <a class="section-ref-link" href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D73154594" target="_blank">ROSA LMS ↗</a>
   </div>
 </section>
 
