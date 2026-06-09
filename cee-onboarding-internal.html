@@ -290,6 +290,25 @@
     font-size: 11px; font-weight: 800; flex-shrink: 0;
   }
 
+  /* Working document bar */
+  .working-doc-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; border-radius: 6px;
+    background: #fffbf0; border: 1px dashed #e8c84a;
+    margin-bottom: 24px; font-size: 13px;
+  }
+  .working-doc-icon { font-size: 15px; }
+  .working-doc-label {
+    font-weight: 700; color: #7a6000; flex: 1;
+    text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px;
+  }
+  .working-doc-link {
+    color: var(--red); font-weight: 600; text-decoration: none;
+    padding: 4px 10px; border: 1px solid var(--red);
+    border-radius: 20px; font-size: 12px; white-space: nowrap;
+  }
+  .working-doc-link:hover { background: var(--red); color: #fff; }
+
   /* Self help placeholder */
   .self-help-placeholder {
     padding: 20px 24px; border: 2px dashed var(--border);
@@ -746,6 +765,11 @@
     <h2>CEE at a Glance</h2>
     <div class="sub">Customer Experience &amp; Engagement — Red Hat</div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
+  </div>
 
   <!-- Org lineage -->
   <div class="org-lineage">
@@ -819,6 +843,11 @@
   <div class="section-header">
     <h2>CEE Offering — Big Picture</h2>
     <div class="sub">Worldwide reach · Multiple channels · Mission-critical solutions</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <!-- Slide 6: SLA by subscription -->
@@ -1024,6 +1053,11 @@
     <h2>Global Technical Support (GSS)</h2>
     <div class="sub">Technical troubleshooting · Case management · 24/7 global coverage</div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
+  </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up GSS?</div>
   <div class="stats" style="margin-bottom:20px;">
@@ -1082,6 +1116,11 @@
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 02</div>
     <h2>Global Customer Service (CS)</h2>
     <div class="sub">Account &amp; Subscription Support — 40 specialists · 12 countries · 10 languages</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up Customer Service?</div>
@@ -1147,6 +1186,11 @@
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 04</div>
     <h2>Global Secure Support (CSS)</h2>
     <div class="sub">Red Hat Confirmed Sovereign Support — Regulated &amp; Government</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up Global Secure Support?</div>
@@ -1285,6 +1329,11 @@
       <div class="card-body">Contact the customer's Account Manager or CSM to initiate an ESS engagement. For internal routing questions, use the <strong>#cee-ess</strong> Slack channel.</div>
     </div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
+  </div>
 
   <div class="cs-section-label">ESS vs. GSS — Key Differences</div>
   <h3 style="display:none;">How ESS differs from GSS</h3>
@@ -1318,6 +1367,11 @@
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 03</div>
     <h2>Managed Cloud Services (MCS)</h2>
     <div class="sub">Cloud-native support · ARO · ROSA · FedRAMP</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up MCS?</div>
@@ -1403,6 +1457,11 @@
     <div class="xe-badge">XE — Not part of CEE</div>
     <h2>Escalation Management</h2>
     <div class="sub">Critical Accounts Program (CAP) — Experience Engineering</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <div class="callout info" style="margin-bottom:24px;">
@@ -1525,6 +1584,11 @@
         <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>Escalation process including the Delivery Manager role — reference when managing escalations</td><td><span class="pill pill-success">Public</span></td></tr>
       </tbody>
     </table>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
 
   <h3>Internal team resources</h3>
