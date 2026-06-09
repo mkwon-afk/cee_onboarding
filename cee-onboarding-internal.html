@@ -269,6 +269,71 @@
     .mission-connector { padding: 8px 0; min-width: auto; background: none; text-align: center; }
   }
 
+  /* XE badge — marks content outside CEE */
+  .xe-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #5a3e8a;
+    background: #f0ebfa;
+    border: 1px solid #c9b8e8;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  /* Escalation lifecycle flow */
+  .esc-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 8px;
+  }
+  .esc-step {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .esc-step--close {
+    background: #151515;
+  }
+  .esc-step--close .esc-step-label { color: white; }
+  .esc-step--close .esc-step-body { color: rgba(255,255,255,0.6); }
+  .esc-step--close .esc-step-num { color: var(--red); }
+  .esc-step-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--red);
+    line-height: 1;
+  }
+  .esc-step-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .esc-step-body {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .esc-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--border);
+    padding: 0 4px;
+  }
+  @media (max-width: 768px) {
+    .esc-flow { flex-direction: column; }
+    .esc-arrow { transform: rotate(90deg); align-self: center; }
+  }
+
   /* Org breadcrumb */
   .breadcrumb {
     font-size: 11px;
@@ -321,6 +386,8 @@
   <a href="#cloud">Managed Cloud Services (MCS)</a>
   <a href="#gss-css">Global Secure Support (CSS)</a>
   <a href="#ess">Solutions Support Delivery (ESS)</a>
+  <div class="nav-label" style="margin-top:16px;">Related — XE</div>
+  <a href="#escalation">Escalation (CAP)</a>
   <div class="nav-label" style="margin-top:16px;">Reference</div>
   <a href="#resources">Key Resources</a>
 </nav>
@@ -603,6 +670,111 @@
     </div>
   </div>
   <div class="callout info">For Q&amp;A and collaboration on MCS topics, go to <strong>#mcs-global</strong> on Slack.</div>
+</section>
+
+<!-- ESCALATION — CAP / XE -->
+<section class="section" id="escalation">
+  <div class="section-header">
+    <div class="xe-badge">XE — Not part of CEE</div>
+    <h2>Escalation Management</h2>
+    <div class="sub">Critical Accounts Program (CAP) — Experience Engineering</div>
+  </div>
+
+  <div class="callout info" style="margin-bottom:24px;">
+    The <strong>Critical Accounts Program (CAP)</strong> is part of <strong>Experience Engineering (XE)</strong>, not CEE — but its escalation workflow is the primary path when CEE cases need heightened attention. Every CEE associate should know when and how to trigger it.
+  </div>
+
+  <!-- What is an escalation -->
+  <h3>What is an escalation?</h3>
+  <p class="secondary small" style="margin-bottom:20px;">A request for heightened awareness or assistance on a difficult case from a customer with concerns centred around their experience. These are often business-critical and need faster resolution. Escalation management coordinates the right resources and verifies problems are addressed at the correct level.</p>
+
+  <!-- Lifecycle flow -->
+  <h3>Escalation lifecycle</h3>
+  <div class="esc-flow">
+    <div class="esc-step">
+      <div class="esc-step-num">1</div>
+      <div class="esc-step-label">Before kickoff</div>
+      <div class="esc-step-body">Background research · Business impact · Diligence on the escalation</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step">
+      <div class="esc-step-num">2</div>
+      <div class="esc-step-label">Kickoff</div>
+      <div class="esc-step-body">Build action plan · Align teams · Exec comms · Define success criteria</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step">
+      <div class="esc-step-num">3</div>
+      <div class="esc-step-label">Ongoing engagement</div>
+      <div class="esc-step-body">Execute plan · Manage comms · RCA progress · Adjust course as needed</div>
+    </div>
+    <div class="esc-arrow">›</div>
+    <div class="esc-step esc-step--close">
+      <div class="esc-step-num">4</div>
+      <div class="esc-step-label">Closure</div>
+      <div class="esc-step-body">Exit criteria met · Final RCA · Trigger Closed Loop program</div>
+    </div>
+  </div>
+
+  <!-- Prerequisites -->
+  <h3 style="margin-top:28px;">Before triggering an escalation</h3>
+  <div class="grid grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">1 · Open case</div>
+      <div class="card-body">A support case must be open before an escalation can be requested.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">2 · Severity set</div>
+      <div class="card-body">Severity must reflect actual business impact. Overstating severity does not yield better results.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">3 · Problem defined</div>
+      <div class="card-body">Clear problem statement, business impact, and affected environments must be documented.</div>
+    </div>
+  </div>
+
+  <!-- Paths to escalate -->
+  <h3>Paths to escalate</h3>
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">For Red Hatters (internal)</div>
+      <div class="card-body">
+        <p><strong>ACE</strong> — Active Customer Escalation tool</p>
+        <p><strong>Slack</strong> — <code>#escalation</code></p>
+        <p><strong>Shadowbot</strong> — internal escalation bot</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">For customers</div>
+      <div class="card-body">
+        <p><strong>RME</strong> — Click "Request an escalation" in the support case (Request Management Escalation)</p>
+        <p><strong>Escalation Hotline</strong> — Severity 1, Premium subscription only<br>
+        <strong style="color:var(--red);">+1 919-890-8001</strong> (24×7)</p>
+        <p>Engage your <strong>TAM</strong>, Customer Success Executive, or Sales team as an internal advocate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAP practice overview -->
+  <h3>CAP approach: Reactive → Proactive → Preemptive</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-header">Reactive</div>
+      <div class="card-body">Global team specialising in escalation handling and critical situation management — 24×5 availability.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Proactive</div>
+      <div class="card-body">CPEC reviews customer engagement with Red Hat and spots opportunities to reduce escalation and case volume.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Preemptive</div>
+      <div class="card-body">Phased Gates TSR uses AI to inspect OpenShift clusters and identify misconfigurations before they cause issues.</div>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:20px;">
+    <strong>Closed Loop:</strong> After every escalation, CAP runs a retrospective to identify root causes and drive systemic improvements across Red Hat — preventing the same issue from recurring.
+  </div>
 </section>
 
 <!-- KEY RESOURCES -->
