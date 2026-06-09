@@ -404,6 +404,51 @@
     .cs-vol-row { grid-template-columns: 1fr 1fr; }
   }
 
+  /* ── Global Secure Support (CSS) visuals ── */
+  .css-pillars {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid var(--border); border-radius: 4px;
+    overflow: hidden; margin-bottom: 4px;
+  }
+  .css-pillar {
+    padding: 18px 16px; background: var(--white);
+    border-right: 1px solid var(--border);
+    border-top: 3px solid var(--dark);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .css-pillar:last-child { border-right: none; }
+  .css-pillar-title { font-size: 12px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .css-pillar-body { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+  .css-why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 4px;
+  }
+  .css-why-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #F9F9F9; border-left: 3px solid var(--red);
+    padding: 16px 16px; border-radius: 0 4px 4px 0;
+  }
+  .css-why-icon { color: var(--red); font-size: 8px; padding-top: 5px; flex-shrink: 0; }
+  .css-why-title { font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .css-why-body { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+  .css-value-strip {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--dark); border-radius: 4px;
+    overflow: hidden; margin-top: 16px;
+  }
+  .css-value-item { flex: 1; padding: 14px 20px; }
+  .css-value-text { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .css-value-divider { width: 1px; background: rgba(255,255,255,0.15); margin: 12px 0; }
+
+  @media (max-width: 768px) {
+    .css-pillars { grid-template-columns: 1fr 1fr; }
+    .css-why-grid { grid-template-columns: 1fr; }
+    .css-value-strip { flex-direction: column; }
+    .css-value-divider { width: auto; height: 1px; margin: 0 12px; }
+  }
+
   /* XE badge — marks content outside CEE */
   .xe-badge {
     display: inline-block;
@@ -844,23 +889,81 @@
   <div class="section-header">
     <div class="breadcrumb" style="margin-bottom:6px;">CEE › Function 04</div>
     <h2>Global Secure Support (CSS)</h2>
-    <div class="sub">Regulated &amp; Government Customer Support</div>
+    <div class="sub">Red Hat Confirmed Sovereign Support — Regulated &amp; Government</div>
   </div>
-  <p class="lead secondary">Global Secure Support provides specialized support for customers in regulated industries and government sectors, with security and compliance requirements that go beyond standard support offerings.</p>
-  <hr>
-  <h3>When to route to Global Secure Support (CSS)</h3>
+
+  <!-- Proven foundation pillars — slide 10 -->
+  <div class="cs-section-label">A Proven Foundation, Not an Experiment</div>
+  <div class="css-pillars">
+    <div class="css-pillar">
+      <div class="css-pillar-title">Established Track Record</div>
+      <div class="css-pillar-body">Nearly a decade of Sovereign Support experience — years of operational perfection in the most demanding US sovereign environments.</div>
+    </div>
+    <div class="css-pillar">
+      <div class="css-pillar-title">Secure &amp; Compliant Infrastructure</div>
+      <div class="css-pillar-body">Built on a foundation of strict data residency with isolated environments designed for highly regulated industries.</div>
+    </div>
+    <div class="css-pillar">
+      <div class="css-pillar-title">Premium Dedicated Experience</div>
+      <div class="css-pillar-body">Sustained by dedicated, high-touch Support Engineers with deep knowledge of your environment.</div>
+    </div>
+    <div class="css-pillar">
+      <div class="css-pillar-title">Sovereign Identity &amp; Access</div>
+      <div class="css-pillar-body">Support Engineers are security vetted and background checked to meet strict jurisdictional standards.</div>
+    </div>
+  </div>
+
+  <!-- Why Red Hat CSS — slide 11 -->
+  <div class="cs-section-label" style="margin-top:32px;">Why Red Hat CSS</div>
+  <div class="css-why-grid">
+    <div class="css-why-card">
+      <div class="css-why-icon">&#9632;</div>
+      <div class="css-why-title">Data Residency &amp; Integrity</div>
+      <div class="css-why-body">Data protection at-rest, in-transit, and in-use — extending to AI workloads — ensuring all diagnostic data adheres to strict local residency and governance.</div>
+    </div>
+    <div class="css-why-card">
+      <div class="css-why-icon">&#9632;</div>
+      <div class="css-why-title">Transparent Foundation</div>
+      <div class="css-why-body">An open-source core providing the transparency, verification, and auditability required for a portable and flexible hybrid cloud strategy.</div>
+    </div>
+    <div class="css-why-card">
+      <div class="css-why-icon">&#9632;</div>
+      <div class="css-why-title">Sovereign Operational Isolation</div>
+      <div class="css-why-body">Secure, jurisdictional guardrails enhance security posture, workload protection, and policy enforcement via restricted identity and access management.</div>
+    </div>
+    <div class="css-why-card">
+      <div class="css-why-icon">&#9632;</div>
+      <div class="css-why-title">Vetted &amp; Trusted Personnel</div>
+      <div class="css-why-body">Mission-critical support delivered exclusively by regional citizens who have undergone rigorous background checks and security vetting.</div>
+    </div>
+  </div>
+
+  <!-- Strategic value strip -->
+  <div class="css-value-strip">
+    <div class="css-value-item">
+      <div class="css-value-text">Stay in lock step with your partner sovereign cloud</div>
+    </div>
+    <div class="css-value-divider"></div>
+    <div class="css-value-item">
+      <div class="css-value-text">Support rapid deployment of sovereign AI factories across borders</div>
+    </div>
+  </div>
+
+  <!-- Routing guidance -->
+  <h3 style="margin-top:28px;">When to route to CSS</h3>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Scenario</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Customer is in a regulated industry (government, defence, healthcare)</td><td>Compliance requirements may apply</td></tr>
         <tr><td>Support must meet specific security clearance or data handling requirements</td><td>Verify requirements before routing</td></tr>
-        <tr><td>FedRAMP or other regulatory framework is in scope</td><td>Coordinate with CSS lead</td></tr>
+        <tr><td>FedRAMP, EU27 or other regulatory framework is in scope</td><td>Coordinate with CSS lead</td></tr>
         <tr><td>Customer requires a secure, isolated support channel</td><td>CSS manages dedicated secure workflows</td></tr>
+        <tr><td>In-region engineers and data residency are contractual requirements</td><td>CSS-EU available for EU27 customers</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="callout info">For routing questions on regulated customer support, reach out via the internal CEE NotebookLM or the #cee-customer-service Slack channel.</div>
+  <div class="callout info">For routing questions on regulated customer support, reach out via the internal CEE NotebookLM or the <strong>#cee-customer-service</strong> Slack channel.</div>
 </section>
 
 <!-- SOLUTIONS SUPPORT DELIVERY / ESS -->
