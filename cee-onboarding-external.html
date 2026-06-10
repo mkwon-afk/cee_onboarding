@@ -346,30 +346,32 @@
   </div>
 
   <!-- STEP 1 -->
-  <div class="fn-q-header">
-    <span class="fn-q-num">1</span>
-    Check your Order Fulfillment Notification email
-  </div>
-  <p class="secondary">You'll receive this automatically after purchase. <strong>Review it carefully</strong> — it has everything you need to access Red Hat services.</p>
-
-  <div class="grid grid-2" style="margin: 16px 0;">
-    <div class="card">
-      <div class="card-header">Account Number</div>
-      <div class="card-body">The account number associated with your purchase — provided to Red Hat or your reseller. You'll need this to link your login to the right account.</div>
+  <div style="border:2px solid #cc0000; border-radius:12px; overflow:hidden; margin-bottom:20px;">
+    <div style="background:#cc0000; padding:12px 20px; display:flex; align-items:center; gap:14px;">
+      <div style="background:#fff; color:#cc0000; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+      <div>
+        <div style="color:#fff; font-weight:800; font-size:15px;">Check your Order Fulfillment Notification Email</div>
+        <div style="color:rgba(255,255,255,0.8); font-size:12px; margin-top:2px;">Sent automatically after purchase — review it before anything else</div>
+      </div>
+      <span style="font-size:26px; margin-left:auto;">📧</span>
     </div>
-    <div class="card">
-      <div class="card-header">Contract Number</div>
-      <div class="card-body">The number tied to your order. Keep it safe — it may be required for subscription renewals and future support requests.</div>
-    </div>
-  </div>
-
-  <details style="margin: 16px 0;">
-    <summary style="cursor:pointer; font-size:13px; font-weight:600; color: var(--red); padding: 6px 0;">View a sample order fulfillment email ▾</summary>
-    <div style="margin-top:12px; background:#f8f8f8; border:1px solid var(--border); border-radius:8px; padding:18px 22px; font-size:13px; font-family: monospace; white-space: pre-wrap; color:#333; line-height:1.6;">Subject: Your Red Hat order has been processed
+    <div style="padding:20px;">
+      <p class="secondary" style="margin-bottom:16px;">This email contains your <strong>Account Number</strong> and <strong>Contract Number</strong> — both required to link your login and activate support.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div style="background:#fff5f5; border:1px solid #f5c6c6; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#cc0000; margin-bottom:4px;">📋 Account Number</div>
+          <div style="font-size:13px; color:#444;">Links your login to the right organization. Provided by Red Hat or your reseller at purchase.</div>
+        </div>
+        <div style="background:#fff5f5; border:1px solid #f5c6c6; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#cc0000; margin-bottom:4px;">📄 Contract Number</div>
+          <div style="font-size:13px; color:#444;">Tied to your order. Keep it safe — needed for renewals and future support requests.</div>
+        </div>
+      </div>
+      <details>
+        <summary style="cursor:pointer; font-size:13px; font-weight:600; color:var(--red); padding:4px 0;">View a sample order fulfillment email ▾</summary>
+        <div style="margin-top:10px; background:#f8f8f8; border:1px solid var(--border); border-radius:8px; padding:16px 20px; font-size:12px; font-family:monospace; white-space:pre-wrap; color:#333; line-height:1.6;">Subject: Your Red Hat order has been processed
 
 Dear Red Hat Customer,
-
-Thank you for purchasing your Red Hat subscription. We have received and processed the order below.
 
 Purchase Order # xxxx
 Account Number: XXXXXX
@@ -377,50 +379,47 @@ Reseller Name: XXX (if purchased via reseller)
 
 Order Details:
   Product Name:    Red Hat Enterprise Linux for Virtual Datacenters with Satellite, Standard
-  Product Number:  RH00007
   Contract Number: XXXXXXX
   Service Period:  20YY/MM/DD – 20YY/MM/DD
   Quantity:        1
 
-→ Get started with your subscription: http://www.redhat.com/start
-→ See subscription details &amp; web support:  http://access.redhat.com/subscriptions
-→ Contact us: http://www.redhat.com/contact
-→ Enterprise agreement terms: https://www.redhat.com/en/about/licenses
-
-Note: For questions about order details, contact your reseller or distributor.
-If you purchased directly from Red Hat, contact Customer Service:
-https://access.redhat.com/support/customer-service</div>
-  </details>
-
-  <div class="callout info" style="margin-top:8px;">
-    <strong>Purchased through a reseller?</strong> For questions about the order itself, contact your reseller or distributor directly. For product or service questions, contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
+→ Get started: http://www.redhat.com/start
+→ Customer Portal: http://access.redhat.com/subscriptions</div>
+      </details>
+      <div style="margin-top:14px; background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:10px 14px; font-size:13px;">
+        <strong>Purchased through a reseller?</strong> Contact your reseller for order questions. For product or service questions, contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
+      </div>
+    </div>
   </div>
-
-  <hr>
 
   <!-- STEP 2 -->
-  <div class="fn-q-header">
-    <span class="fn-q-num">2</span>
-    Log in to the Customer Portal
-  </div>
-  <p class="secondary">Log in at <a href="https://access.redhat.com" target="_blank"><strong>access.redhat.com</strong> ↗</a> using your account number from the fulfillment email. If no login exists yet, you'll get a separate <strong>Login Creation email</strong> — that's the only way to create a login tied to your account.</p>
-
-  <div class="grid grid-2" style="margin: 16px 0;">
-    <div class="card">
-      <div class="card-header">Didn't receive a Login Creation email?</div>
-      <div class="card-body">A login ID is likely already linked to the account. Use <a href="https://access.redhat.com" target="_blank">account recovery ↗</a> to find your login ID or reset your password.<br><br><span class="secondary" style="font-size:12px;">Note: when resetting a password, enter your <em>login ID</em> — not your email address.</span></div>
+  <div style="border:2px solid #1a6dc5; border-radius:12px; overflow:hidden; margin-bottom:24px;">
+    <div style="background:#1a6dc5; padding:12px 20px; display:flex; align-items:center; gap:14px;">
+      <div style="background:#fff; color:#1a6dc5; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+      <div>
+        <div style="color:#fff; font-weight:800; font-size:15px;">Log in to the Customer Portal</div>
+        <div style="color:rgba(255,255,255,0.8); font-size:12px; margin-top:2px;">access.redhat.com — your hub for cases, subscriptions, and tools</div>
+      </div>
+      <span style="font-size:26px; margin-left:auto;">🌐</span>
     </div>
-    <div class="card">
-      <div class="card-header">Corporate or shared account?</div>
-      <div class="card-body">Contact your organization administrator to request access. If your org has enabled <strong>Auto-User Registration</strong>, new users can connect their individual Red Hat accounts automatically via an org-specific registration link.</div>
+    <div style="padding:20px;">
+      <p class="secondary" style="margin-bottom:16px;">Use your account number from the fulfillment email to log in. If no login exists yet, watch for a separate <strong>Login Creation email</strong> — that's the only way to create a login linked to your account.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#1a6dc5; margin-bottom:4px;">❓ No Login Creation email?</div>
+          <div style="font-size:13px; color:#444;">A login is likely already linked. Use <a href="https://access.redhat.com" target="_blank">account recovery ↗</a> to find your ID or reset your password.<br><span style="font-size:11px; color:#888; margin-top:4px; display:block;">Enter your login ID — not your email — when resetting a password.</span></div>
+        </div>
+        <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#1a6dc5; margin-bottom:4px;">🏢 Corporate or shared account?</div>
+          <div style="font-size:13px; color:#444;">Contact your org administrator to request access. If <strong>Auto-User Registration</strong> is enabled, you can self-connect via an org-specific link.</div>
+        </div>
+      </div>
+      <div style="background:#fff8e6; border:1px solid #f5d87a; border-radius:8px; padding:10px 14px; font-size:13px;">
+        <strong>✅ Confirm you're on the right account:</strong> After logging in, click the Avatar icon (top-right) and verify your login ID matches the account number in your fulfillment email. Need help? <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>
+      </div>
     </div>
   </div>
 
-  <div class="callout info">
-    <strong>Confirm you're on the right account:</strong> After logging in, select the Avatar icon (top-right) and verify your login ID is associated with the account number from your fulfillment email. If you need help, contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
-  </div>
-
-  <hr>
   <h3>What the Customer Portal does for you</h3>
   <div class="grid grid-3">
     <div class="card">
