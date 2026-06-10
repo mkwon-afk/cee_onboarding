@@ -8,21 +8,21 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --red: #EE0000;
-    --dark: #151515;
-    --mid: #3C3F42;
-    --muted: #6A6E73;
-    --border: #D2D2D2;
-    --bg: #F5F5F5;
+    --red: #EE0000;           /* red-50 */
+    --dark: #151515;          /* gray-95 / ux black */
+    --mid: #383838;           /* gray-70 */
+    --muted: #707070;         /* gray-50 */
+    --border: #C7C7C7;        /* gray-30 */
+    --bg: #F2F2F2;            /* gray-10 */
     --white: #FFFFFF;
-    --info-bg: #EDF8FF;
-    --info-border: #73BCF7;
-    --warn-bg: #FFF8E1;
-    --warn-border: #F6D173;
-    --danger-bg: #FDECEA;
-    --danger-border: #C9190B;
-    --success-bg: #F3FAF2;
-    --success-border: #5BA352;
+    --info-bg: #E0F0FF;       /* interaction-blue-10 */
+    --info-border: #B9DAFC;   /* interaction-blue-20 */
+    --warn-bg: #FFF4CC;       /* yellow-10 */
+    --warn-border: #FFCC17;   /* yellow-30 */
+    --danger-bg: #FFE3D9;     /* danger-orange-10 */
+    --danger-border: #F0561D; /* danger-orange-50 */
+    --success-bg: #E9F7DF;    /* success-green-10 */
+    --success-border: #63993D;/* success-green-50 */
     --nav-width: 220px;
     --accent: #EE0000;
   }
@@ -81,7 +81,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #6A6E73;
+    color: #707070; /* gray-50 */
     padding: 0 20px 10px;
   }
   nav a {
@@ -157,9 +157,9 @@
   tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--dark); vertical-align: top; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover td { background: #FAFAFA; }
-  tbody tr.row-danger td { background: #FFF5F5; }
-  tbody tr.row-warn td { background: #FFFDF0; }
-  tbody tr.row-success td { background: #F3FAF2; }
+  tbody tr.row-danger td { background: #FEF0F0; }  /* red-05 */
+  tbody tr.row-warn td { background: #FFF4CC; }    /* yellow-10 */
+  tbody tr.row-success td { background: #E9F7DF; } /* success-green-10 */
 
   /* ── Callouts ── */
   .callout {
@@ -170,10 +170,10 @@
     border-left: 4px solid;
     line-height: 1.5;
   }
-  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: #004080; }
-  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: #603000; }
-  .callout.danger { background: var(--danger-bg); border-color: var(--danger-border); color: #7D1007; }
-  .callout.success { background: var(--success-bg); border-color: var(--success-border); color: #1E4620; }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: #004d99; }     /* interaction-blue-60 */
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: #732e00; }    /* orange-70 */
+  .callout.danger { background: var(--danger-bg); border-color: var(--danger-border); color: #731f00; } /* danger-orange-70 */
+  .callout.success { background: var(--success-bg); border-color: var(--success-border); color: #204d00; } /* success-green-70 */
 
   /* ── Pills ── */
   .pill {
@@ -186,10 +186,10 @@
     letter-spacing: 0.05em;
     margin-left: auto;
   }
-  .pill-success { background: #E6F4E6; color: #1E4620; }
-  .pill-info { background: #EDF8FF; color: #004080; }
-  .pill-warn { background: #FFF8E1; color: #603000; }
-  .pill-default { background: #F0F0F0; color: var(--mid); }
+  .pill-success { background: #E9F7DF; color: #204d00; }  /* success-green-10 / 70 */
+  .pill-info { background: #E0F0FF; color: #004d99; }     /* interaction-blue-10 / 60 */
+  .pill-warn { background: #FFF4CC; color: #732e00; }     /* yellow-10 / orange-70 */
+  .pill-default { background: #F2F2F2; color: var(--mid); } /* gray-10 */
 
   /* ── Divider ── */
   hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
@@ -329,14 +329,14 @@
     <div class="sub">Two prerequisites before you can use any support</div>
   </div>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px;">
-    <div style="border:2px solid #cc0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
+    <div style="border:2px solid #ee0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
       <span style="font-size:32px; line-height:1;">🔑</span>
       <div>
         <div style="font-weight:800; font-size:15px; color:var(--red); margin-bottom:4px;">Active Login</div>
         <div style="font-size:13px; color:#444;">A verified Red Hat account linked to your org's account number. Required to open cases and access entitlements.</div>
       </div>
     </div>
-    <div style="border:2px solid #cc0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
+    <div style="border:2px solid #ee0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
       <span style="font-size:32px; line-height:1;">✅</span>
       <div>
         <div style="font-weight:800; font-size:15px; color:var(--red); margin-bottom:4px;">Active Subscription</div>
@@ -346,9 +346,9 @@
   </div>
 
   <!-- STEP 1 -->
-  <div style="border:2px solid #cc0000; border-radius:12px; overflow:hidden; margin-bottom:20px;">
-    <div style="background:#cc0000; padding:12px 20px; display:flex; align-items:center; gap:14px;">
-      <div style="background:#fff; color:#cc0000; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+  <div style="border:2px solid #ee0000; border-radius:12px; overflow:hidden; margin-bottom:20px;">
+    <div style="background:#ee0000; padding:12px 20px; display:flex; align-items:center; gap:14px;">
+      <div style="background:#fff; color:#ee0000; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
       <div>
         <div style="color:#fff; font-weight:800; font-size:15px;">Check your Order Fulfillment Notification Email</div>
         <div style="color:rgba(255,255,255,0.8); font-size:12px; margin-top:2px;">Sent automatically after purchase — review it before anything else</div>
@@ -358,12 +358,12 @@
     <div style="padding:20px;">
       <p class="secondary" style="margin-bottom:16px;">This email contains your <strong>Account Number</strong> and <strong>Contract Number</strong> — both required to link your login and activate support.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
-        <div style="background:#fff5f5; border:1px solid #f5c6c6; border-radius:8px; padding:14px 16px;">
-          <div style="font-weight:700; font-size:13px; color:#cc0000; margin-bottom:4px;">📋 Account Number</div>
+        <div style="background:#fef0f0; border:1px solid #fce3e3; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#ee0000; margin-bottom:4px;">📋 Account Number</div>
           <div style="font-size:13px; color:#444;">Links your login to the right organization. Provided by Red Hat or your reseller at purchase.</div>
         </div>
-        <div style="background:#fff5f5; border:1px solid #f5c6c6; border-radius:8px; padding:14px 16px;">
-          <div style="font-weight:700; font-size:13px; color:#cc0000; margin-bottom:4px;">📄 Contract Number</div>
+        <div style="background:#fef0f0; border:1px solid #fce3e3; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#ee0000; margin-bottom:4px;">📄 Contract Number</div>
           <div style="font-size:13px; color:#444;">Tied to your order. Keep it safe — needed for renewals and future support requests.</div>
         </div>
       </div>
@@ -386,16 +386,16 @@ Order Details:
 → Get started: http://www.redhat.com/start
 → Customer Portal: http://access.redhat.com/subscriptions</div>
       </details>
-      <div style="margin-top:14px; background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:10px 14px; font-size:13px;">
+      <div style="margin-top:14px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
         <strong>Purchased through a reseller?</strong> Contact your reseller for order questions. For product or service questions, contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
       </div>
     </div>
   </div>
 
   <!-- STEP 2 -->
-  <div style="border:2px solid #1a6dc5; border-radius:12px; overflow:hidden; margin-bottom:24px;">
-    <div style="background:#1a6dc5; padding:12px 20px; display:flex; align-items:center; gap:14px;">
-      <div style="background:#fff; color:#1a6dc5; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+  <div style="border:2px solid #0066cc; border-radius:12px; overflow:hidden; margin-bottom:24px;">
+    <div style="background:#0066cc; padding:12px 20px; display:flex; align-items:center; gap:14px;">
+      <div style="background:#fff; color:#0066cc; font-weight:900; font-size:16px; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
       <div>
         <div style="color:#fff; font-weight:800; font-size:15px;">Log in to the Customer Portal</div>
         <div style="color:rgba(255,255,255,0.8); font-size:12px; margin-top:2px;">access.redhat.com — your hub for cases, subscriptions, and tools</div>
@@ -405,16 +405,16 @@ Order Details:
     <div style="padding:20px;">
       <p class="secondary" style="margin-bottom:16px;">Use your account number from the fulfillment email to log in. If no login exists yet, watch for a separate <strong>Login Creation email</strong> — that's the only way to create a login linked to your account.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
-        <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:14px 16px;">
-          <div style="font-weight:700; font-size:13px; color:#1a6dc5; margin-bottom:4px;">❓ No Login Creation email?</div>
+        <div style="background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#0066cc; margin-bottom:4px;">❓ No Login Creation email?</div>
           <div style="font-size:13px; color:#444;">A login is likely already linked. Use <a href="https://access.redhat.com" target="_blank">account recovery ↗</a> to find your ID or reset your password.<br><span style="font-size:11px; color:#888; margin-top:4px; display:block;">Enter your login ID — not your email — when resetting a password.</span></div>
         </div>
-        <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:14px 16px;">
-          <div style="font-weight:700; font-size:13px; color:#1a6dc5; margin-bottom:4px;">🏢 Corporate or shared account?</div>
+        <div style="background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:14px 16px;">
+          <div style="font-weight:700; font-size:13px; color:#0066cc; margin-bottom:4px;">🏢 Corporate or shared account?</div>
           <div style="font-size:13px; color:#444;">Contact your org administrator to request access. If <strong>Auto-User Registration</strong> is enabled, you can self-connect via an org-specific link.</div>
         </div>
       </div>
-      <div style="background:#fff8e6; border:1px solid #f5d87a; border-radius:8px; padding:10px 14px; font-size:13px;">
+      <div style="background:#fff4cc; border:1px solid #ffcc17; border-radius:8px; padding:10px 14px; font-size:13px;">
         <strong>✅ Confirm you're on the right account:</strong> After logging in, click the Avatar icon (top-right) and verify your login ID matches the account number in your fulfillment email. Need help? <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>
       </div>
     </div>
@@ -653,7 +653,7 @@ Order Details:
         <span style="font-size:16px;">⬆️</span> How to Upload
       </div>
       <div style="padding:14px 16px; display:flex; flex-direction:column; gap:12px; font-size:13px;">
-        <div style="display:flex; align-items:center; gap:10px; background:#eefaf0; border-radius:6px; padding:10px 12px;">
+        <div style="display:flex; align-items:center; gap:10px; background:#e9f7df; border-radius:6px; padding:10px 12px;">
           <span style="font-size:18px;">🌐</span>
           <div><strong>Portal</strong> — attach directly to your case<br><span style="color:#666; font-size:12px;">access.redhat.com/support/cases</span></div>
         </div>
@@ -661,7 +661,7 @@ Order Details:
           <span style="font-size:18px;">📤</span>
           <div><strong>FTP</strong> — for large files that don't fit the portal<br><span style="color:#666; font-size:12px;">access.redhat.com/solutions/2112</span></div>
         </div>
-        <div style="font-size:12px; color:#cc0000; font-weight:600;">⚠ Attachments cannot be submitted via email.</div>
+        <div style="font-size:12px; color:#ee0000; font-weight:600;">⚠ Attachments cannot be submitted via email.</div>
       </div>
     </div>
 
@@ -702,36 +702,36 @@ Order Details:
     <div class="sub">Match your severity to your business impact — it determines who responds and how fast</div>
   </div>
   <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0;">
-    <div style="background:#fff2f2; border:2px solid #cc0000; border-radius:12px; padding:20px 16px; text-align:center;">
+    <div style="background:#fef0f0; border:2px solid #ee0000; border-radius:12px; padding:20px 16px; text-align:center;">
       <div style="font-size:30px; line-height:1;">🔴</div>
-      <div style="font-size:22px; font-weight:900; color:#cc0000; margin:6px 0 2px;">SEV 1</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#cc0000; margin-bottom:10px;">Urgent</div>
-      <div style="font-size:13px; color:#333; line-height:1.5;">Production is <strong>completely down</strong>. Business-critical operations actively interrupted.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#cc0000; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⚡ Immediate &nbsp;·&nbsp; 24×7</div>
+      <div style="font-size:22px; font-weight:900; color:#ee0000; margin:6px 0 2px;">SEV 1</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#a60000; margin-bottom:10px;">Urgent</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Production is <strong>completely down</strong>. Business-critical operations actively interrupted.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#ee0000; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⚡ Immediate &nbsp;·&nbsp; 24×7</div>
     </div>
-    <div style="background:#fff8ee; border:2px solid #e07b00; border-radius:12px; padding:20px 16px; text-align:center;">
+    <div style="background:#ffe8cc; border:2px solid #f5921b; border-radius:12px; padding:20px 16px; text-align:center;">
       <div style="font-size:30px; line-height:1;">🟠</div>
-      <div style="font-size:22px; font-weight:900; color:#e07b00; margin:6px 0 2px;">SEV 2</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#e07b00; margin-bottom:10px;">High</div>
-      <div style="font-size:13px; color:#333; line-height:1.5;">Service is <strong>partially functional</strong>. Actively impacting business operations on a critical system.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#e07b00; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⏩ Accelerated</div>
+      <div style="font-size:22px; font-weight:900; color:#ca6c0f; margin:6px 0 2px;">SEV 2</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#9e4a06; margin-bottom:10px;">High</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Service is <strong>partially functional</strong>. Actively impacting business operations on a critical system.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#f5921b; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⏩ Accelerated</div>
     </div>
-    <div style="background:#fffef0; border:2px solid #b8a000; border-radius:12px; padding:20px 16px; text-align:center;">
+    <div style="background:#fff4cc; border:2px solid #dca614; border-radius:12px; padding:20px 16px; text-align:center;">
       <div style="font-size:30px; line-height:1;">🟡</div>
-      <div style="font-size:22px; font-weight:900; color:#9a8600; margin:6px 0 2px;">SEV 3</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#9a8600; margin-bottom:10px;">Medium</div>
-      <div style="font-size:13px; color:#333; line-height:1.5;">Currently working, but you've <strong>seen degradation</strong> or are monitoring early warning signs.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#9a8600; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">📋 Normal queue</div>
+      <div style="font-size:22px; font-weight:900; color:#b98412; margin:6px 0 2px;">SEV 3</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#96640f; margin-bottom:10px;">Medium</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Currently working, but you've <strong>seen degradation</strong> or are monitoring early warning signs.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#b98412; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">📋 Normal queue</div>
     </div>
-    <div style="background:#f5f5f5; border:2px solid #999; border-radius:12px; padding:20px 16px; text-align:center;">
+    <div style="background:#f2f2f2; border:2px solid #707070; border-radius:12px; padding:20px 16px; text-align:center;">
       <div style="font-size:30px; line-height:1;">⚪</div>
-      <div style="font-size:22px; font-weight:900; color:#555; margin:6px 0 2px;">SEV 4</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#555; margin-bottom:10px;">Low</div>
-      <div style="font-size:13px; color:#333; line-height:1.5;"><strong>Non-urgent</strong> question or request. No interruption to business-critical operations.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#777; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">💬 General query</div>
+      <div style="font-size:22px; font-weight:900; color:#4d4d4d; margin:6px 0 2px;">SEV 4</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#707070; margin-bottom:10px;">Low</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;"><strong>Non-urgent</strong> question or request. No interruption to business-critical operations.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#707070; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">💬 General query</div>
     </div>
   </div>
-  <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:12px 16px; font-size:13px; color:#333; margin-top:4px;">
+  <div style="background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:12px 16px; font-size:13px; color:#383838; margin-top:4px;">
     <strong>Severity can be changed any time</strong> — by you or by Red Hat — as business impact evolves. A Sev 3 monitoring a worrying issue can become Sev 1 if it develops into a critical outage. Keep it updated. &nbsp;<a href="https://access.redhat.com/support/policy/severity" target="_blank" style="color:var(--red);">Official policy ↗</a>
   </div>
   <div class="callout info" style="margin-top:8px;">Need coverage outside business hours? See <a href="#engage">24×7 After-Hours Coverage ↑</a> — Sev 1 included by default, Sev 2 by request.</div>
