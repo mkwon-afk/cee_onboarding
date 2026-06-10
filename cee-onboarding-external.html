@@ -246,6 +246,23 @@
     .grid-2 { grid-template-columns: 1fr; }
     .stats { flex-direction: column; }
   }
+  .working-doc-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; border-radius: 6px;
+    background: #fffbf0; border: 1px dashed #e8c84a;
+    margin-bottom: 24px; font-size: 13px;
+  }
+  .working-doc-icon { font-size: 15px; }
+  .working-doc-label {
+    font-weight: 700; color: #7a6000; flex: 1;
+    text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px;
+  }
+  .working-doc-link {
+    color: var(--red); font-weight: 600; text-decoration: none;
+    padding: 4px 10px; border: 1px solid var(--red);
+    border-radius: 20px; font-size: 12px; white-space: nowrap;
+  }
+  .working-doc-link:hover { background: var(--red); color: #fff; }
 </style>
 </head>
 <body>
@@ -527,40 +544,76 @@
 <!-- MANAGED SERVICES -->
 <section class="section" id="managed">
   <div class="section-header">
-    <h2>Managed Services</h2>
-    <div class="sub">ARO &amp; ROSA</div>
+    <h2>Managed Cloud Services</h2>
+    <div class="sub">Azure Red Hat OpenShift (ARO) &amp; Red Hat OpenShift Service on AWS (ROSA)</div>
   </div>
-  <p class="lead secondary">If you are running a managed OpenShift environment on a major cloud provider, your support model is a joint responsibility between Red Hat and the cloud provider.</p>
-  <hr>
-  <h3>Azure Red Hat OpenShift (ARO)</h3>
-  <div class="grid grid-3">
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.npez32lim38d" target="_blank">Open Working Doc ↗</a>
+  </div>
+
+  <p class="lead secondary">For organisations using a managed OpenShift environment, the support model operates under a framework of joint responsibility shared between Red Hat and its strategic partners — Microsoft or Amazon Web Services.</p>
+
+  <!-- ARO -->
+  <h3 style="margin-top:28px;">Azure Red Hat OpenShift (ARO)</h3>
+
+  <div class="grid grid-2" style="margin-bottom:20px;">
     <div class="card">
       <div class="card-header">What is ARO?</div>
-      <div class="card-body">A jointly managed OpenShift cluster on Azure, operated by Microsoft and Red Hat together</div>
+      <div class="card-body">Azure Red Hat OpenShift is a fully managed, turnkey application development platform — jointly engineered, operated and supported by Microsoft and Red Hat as a first-party native Azure service, with seamless integration with Azure native tools. Billed directly through Microsoft.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Getting Started</div>
+      <div class="card-body">Begin with the <strong>Get Started guide</strong> to review resources available for Azure Red Hat OpenShift (ARO).</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Responsibility Matrix</div>
+      <div class="card-body">The <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">Responsibility Matrix ↗</a> defines how Microsoft, Red Hat, and customers share responsibilities for the ARO cluster. See also the <strong>Azure Red Hat OpenShift Service Definition</strong> for more on components.</div>
     </div>
     <div class="card">
       <div class="card-header">SLA &amp; Severity Levels</div>
-      <div class="card-body">Review the Service Level Agreement; severity levels align with Azure and Red Hat policies</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Case Handling</div>
-      <div class="card-body">Cases may be filed on either the Azure portal or the Red Hat Customer Portal; teams coordinate internally</div>
-    </div>
-  </div>
-  <hr>
-  <h3>Red Hat OpenShift Service on AWS (ROSA)</h3>
-  <div class="grid grid-3">
-    <div class="card">
-      <div class="card-header">ROSA Lifecycle</div>
-      <div class="card-body">Full cluster lifecycle support — from provisioning through decommissioning</div>
+      <div class="card-body">ARO is entitled for <strong>Premium support</strong>. Consult the Service Level Agreement and Severity Level definitions — severity is determined by impact on business-critical operations.</div>
     </div>
     <div class="card">
       <div class="card-header">Support Process</div>
-      <div class="card-body">Open cases via the Red Hat Customer Portal; Red Hat and AWS coordinate for platform-level issues</div>
+      <div class="card-body">ARO is jointly supported by Microsoft and Red Hat. Open tickets through either organisation. Microsoft maintains primary responsibility for the underlying Azure infrastructure; both provide support for OpenShift-specific issues.<br><br>To access the Red Hat Knowledge Base and manage tickets via the Red Hat Customer Portal, create a Red Hat account and register your ARO cluster in OCM.</div>
     </div>
     <div class="card">
       <div class="card-header">Escalation Best Practices</div>
-      <div class="card-body">Document impact clearly and follow the standard escalation path when SLAs are at risk</div>
+      <div class="card-body">If a support case requires heightened oversight, follow the escalation procedures to ensure the matter is addressed with the necessary priority.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ROSA -->
+  <h3 style="margin-top:28px;">Red Hat OpenShift Service on AWS (ROSA)</h3>
+
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">What is ROSA?</div>
+      <div class="card-body">ROSA is a fully managed, turnkey application platform that allows you to focus on delivering value to your customers by building and deploying applications. It provides seamless integration with a wide range of AWS services — jointly engineered, operated, and supported by Red Hat and AWS.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Getting Started</div>
+      <div class="card-body">Ensure your AWS account meets prerequisites and you have a Red Hat account ready, then follow the procedures in <strong>Getting started with Red Hat OpenShift Service on AWS</strong>.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Responsibility Matrix</div>
+      <div class="card-body">Visit the <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA Responsibility Matrix ↗</a> to understand Red Hat's, AWS's, and the customer's responsibilities for the ROSA managed service.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">SLA &amp; Severity Levels</div>
+      <div class="card-body">ROSA is entitled for <strong>Premium support</strong>. Consult the Service Level Agreement and Severity Level definitions — severity is determined by impact on business-critical operations.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Support Process</div>
+      <div class="card-body">ROSA is jointly supported by Red Hat and AWS. Customers can contact either company for support. Red Hat triages and resolves OpenShift-specific issues; AWS handles AWS infrastructure-related concerns.<br><br>Visit the <strong>Getting support page</strong> to search the knowledge base, submit a support case, and use remote health monitoring tools in the Customer Portal.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Escalation Best Practices</div>
+      <div class="card-body">If a support case requires heightened oversight, follow the escalation procedures to ensure the matter is addressed with the necessary priority.</div>
     </div>
   </div>
 </section>
