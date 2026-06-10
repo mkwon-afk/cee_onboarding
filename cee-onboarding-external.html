@@ -749,67 +749,115 @@ Order Details:
     <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.npez32lim38d" target="_blank">Open Working Doc ↗</a>
   </div>
 
-  <p class="lead secondary">For organisations using a managed OpenShift environment, the support model operates under a framework of joint responsibility shared between Red Hat and its strategic partners — Microsoft or Amazon Web Services.</p>
+  <!-- Joint model intro -->
+  <div style="display:flex; align-items:center; justify-content:center; gap:0; margin:20px 0 28px; text-align:center;">
+    <div style="background:#fef0f0; border:1px solid #fbc5c5; border-radius:10px; padding:14px 20px; flex:1;">
+      <div style="font-size:22px;">🧑‍💼</div>
+      <div style="font-weight:700; font-size:13px; margin-top:4px;">You</div>
+      <div style="font-size:12px; color:#4d4d4d;">Open tickets via Red Hat or cloud partner portal</div>
+    </div>
+    <div style="font-size:22px; color:#c7c7c7; padding:0 8px;">⟷</div>
+    <div style="background:#fef0f0; border:1px solid #fbc5c5; border-radius:10px; padding:14px 20px; flex:1;">
+      <div style="font-size:22px;">🔴</div>
+      <div style="font-weight:700; font-size:13px; margin-top:4px;">Red Hat</div>
+      <div style="font-size:12px; color:#4d4d4d;">OpenShift-specific issues &amp; cluster support</div>
+    </div>
+    <div style="font-size:22px; color:#c7c7c7; padding:0 8px;">⟷</div>
+    <div style="background:#fef0f0; border:1px solid #fbc5c5; border-radius:10px; padding:14px 20px; flex:1;">
+      <div style="font-size:22px;">☁️</div>
+      <div style="font-weight:700; font-size:13px; margin-top:4px;">Cloud Partner</div>
+      <div style="font-size:12px; color:#4d4d4d;">Underlying cloud infrastructure (Azure or AWS)</div>
+    </div>
+  </div>
+  <div class="callout info" style="margin-bottom:28px;">You can open a ticket through <strong>either Red Hat or your cloud partner</strong> — both are valid entry points. The teams coordinate behind the scenes.</div>
 
   <!-- ARO -->
-  <h3 style="margin-top:28px;">Azure Red Hat OpenShift (ARO)</h3>
+  <div style="border:1px solid #fbc5c5; border-radius:12px; overflow:hidden; margin-bottom:24px;">
+    <div style="background:#fce3e3; padding:14px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #fbc5c5;">
+      <span style="font-size:28px; line-height:1;">🟦</span>
+      <div>
+        <div style="font-weight:800; font-size:16px; color:#5f0000;">Azure Red Hat OpenShift (ARO)</div>
+        <div style="font-size:12px; color:#a60000; margin-top:2px;">Jointly engineered · Operated &amp; billed through Microsoft · Native Azure service</div>
+      </div>
+      <span class="pill pill-success" style="margin-left:auto;">Premium SLA</span>
+    </div>
+    <div style="padding:20px; display:flex; flex-direction:column; gap:12px;">
 
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-header">What is ARO?</div>
-      <div class="card-body">Azure Red Hat OpenShift is a fully managed, turnkey application development platform — jointly engineered, operated and supported by Microsoft and Red Hat as a first-party native Azure service, with seamless integration with Azure native tools. Billed directly through Microsoft.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Getting Started</div>
-      <div class="card-body">Begin with the <a href="https://learn.microsoft.com/en-us/azure/openshift/intro-openshift" target="_blank" style="color:var(--red);font-weight:600;">Get Started guide ↗</a> to review resources available for Azure Red Hat OpenShift (ARO).</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Responsibility Matrix</div>
-      <div class="card-body">The <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">Responsibility Matrix ↗</a> defines how Microsoft, Red Hat, and customers share responsibilities for the ARO cluster. See also the <strong>Azure Red Hat OpenShift Service Definition</strong> for more on components.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">SLA &amp; Severity Levels</div>
-      <div class="card-body">ARO is entitled for <strong>Premium support</strong>. Consult the Service Level Agreement and Severity Level definitions — severity is determined by impact on business-critical operations.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Support Process</div>
-      <div class="card-body">ARO is jointly supported by Microsoft and Red Hat. Open tickets through either organisation. Microsoft maintains primary responsibility for the underlying Azure infrastructure; both provide support for OpenShift-specific issues.<br><br>To access the Red Hat Knowledge Base and manage tickets via the Red Hat Customer Portal, create a Red Hat account and register your ARO cluster in OCM.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Escalation Best Practices</div>
-      <div class="card-body">If a support case requires heightened oversight, follow the <a href="#escalate" style="color:var(--red);font-weight:600;">escalation procedures ↓</a> to ensure the matter is addressed with the necessary priority.</div>
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🚀</span>
+        <div><strong style="font-size:13px;">Getting Started</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">New to ARO? Review all setup resources in the <a href="https://learn.microsoft.com/en-us/azure/openshift/intro-openshift" target="_blank" style="color:var(--red);">Get Started guide ↗</a></span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">⚖️</span>
+        <div><strong style="font-size:13px;">Who is responsible for what?</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">See the <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">ARO Responsibility Matrix ↗</a> — defines boundaries between Microsoft, Red Hat, and you.</span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🎫</span>
+        <div><strong style="font-size:13px;">How to get support</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Open a ticket via Microsoft <em>or</em> Red Hat. To use the Red Hat Customer Portal, create a Red Hat account and register your ARO cluster in OCM.</span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🛡️</span>
+        <div><strong style="font-size:13px;">SLA &amp; Severity</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Entitled for <strong>Premium support</strong>. Severity is determined by impact on business-critical operations. <a href="#severity" style="color:var(--red);">See Severity Levels ↑</a></span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">📈</span>
+        <div><strong style="font-size:13px;">Need to escalate?</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Follow the <a href="#escalate" style="color:var(--red);">escalation procedures ↓</a> in this guide to ensure your case gets the right priority.</span></div>
+      </div>
+
     </div>
   </div>
 
-  <hr>
-
   <!-- ROSA -->
-  <h3 style="margin-top:28px;">Red Hat OpenShift Service on AWS (ROSA)</h3>
+  <div style="border:1px solid #fbc5c5; border-radius:12px; overflow:hidden; margin-bottom:20px;">
+    <div style="background:#fce3e3; padding:14px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #fbc5c5;">
+      <span style="font-size:28px; line-height:1;">🟧</span>
+      <div>
+        <div style="font-weight:800; font-size:16px; color:#5f0000;">Red Hat OpenShift Service on AWS (ROSA)</div>
+        <div style="font-size:12px; color:#a60000; margin-top:2px;">Jointly engineered · Operated by Red Hat &amp; AWS · Seamless AWS integration</div>
+      </div>
+      <span class="pill pill-success" style="margin-left:auto;">Premium SLA</span>
+    </div>
+    <div style="padding:20px; display:flex; flex-direction:column; gap:12px;">
 
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-header">What is ROSA?</div>
-      <div class="card-body">ROSA is a fully managed, turnkey application platform that allows you to focus on delivering value to your customers by building and deploying applications. It provides seamless integration with a wide range of AWS services — jointly engineered, operated, and supported by Red Hat and AWS.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Getting Started</div>
-      <div class="card-body">Ensure your AWS account meets prerequisites and you have a Red Hat account ready, then follow the <a href="https://docs.openshift.com/rosa/rosa_getting_started/rosa-getting-started.html" target="_blank" style="color:var(--red);font-weight:600;">Getting started with ROSA ↗</a> procedures.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Responsibility Matrix</div>
-      <div class="card-body">Visit the <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA Responsibility Matrix ↗</a> to understand Red Hat's, AWS's, and the customer's responsibilities for the ROSA managed service.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">SLA &amp; Severity Levels</div>
-      <div class="card-body">ROSA is entitled for <strong>Premium support</strong>. Consult the Service Level Agreement and Severity Level definitions — severity is determined by impact on business-critical operations.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Support Process</div>
-      <div class="card-body">ROSA is jointly supported by Red Hat and AWS. Customers can contact either company for support. Red Hat triages and resolves OpenShift-specific issues; AWS handles AWS infrastructure-related concerns.<br><br>Visit the <a href="https://docs.openshift.com/rosa/rosa_support/rosa-getting-support.html" target="_blank" style="color:var(--red);font-weight:600;">Getting support page ↗</a> to search the knowledge base, submit a support case, and use remote health monitoring tools in the Customer Portal.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Escalation Best Practices</div>
-      <div class="card-body">If a support case requires heightened oversight, follow the <a href="#escalate" style="color:var(--red);font-weight:600;">escalation procedures ↓</a> to ensure the matter is addressed with the necessary priority.</div>
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🚀</span>
+        <div><strong style="font-size:13px;">Getting Started</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Ensure your AWS account meets prerequisites, have your Red Hat account ready, then follow the <a href="https://docs.openshift.com/rosa/rosa_getting_started/rosa-getting-started.html" target="_blank" style="color:var(--red);">Getting started with ROSA ↗</a></span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">⚖️</span>
+        <div><strong style="font-size:13px;">Who is responsible for what?</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">See the <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA Responsibility Matrix ↗</a> — defines boundaries between Red Hat, AWS, and you.</span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🎫</span>
+        <div><strong style="font-size:13px;">How to get support</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Contact Red Hat <em>or</em> AWS — both are valid entry points. Red Hat resolves OpenShift issues; AWS handles the underlying infrastructure. Visit the <a href="https://docs.openshift.com/rosa/rosa_support/rosa-getting-support.html" target="_blank" style="color:var(--red);">Getting support page ↗</a> to open a case via the Customer Portal.</span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">🛡️</span>
+        <div><strong style="font-size:13px;">SLA &amp; Severity</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Entitled for <strong>Premium support</strong>. Severity is determined by impact on business-critical operations. <a href="#severity" style="color:var(--red);">See Severity Levels ↑</a></span></div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <span style="font-size:18px; min-width:26px;">📈</span>
+        <div><strong style="font-size:13px;">Need to escalate?</strong><br>
+        <span style="font-size:13px; color:#4d4d4d;">Follow the <a href="#escalate" style="color:var(--red);">escalation procedures ↓</a> in this guide to ensure your case gets the right priority.</span></div>
+      </div>
+
     </div>
   </div>
 </section>
