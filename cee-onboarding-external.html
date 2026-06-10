@@ -328,34 +328,29 @@
     <h2>Getting Started</h2>
     <div class="sub">Two prerequisites before you can use any support</div>
   </div>
-  <div class="callout warn" style="margin-bottom: 20px;">
-    <strong>Before anything else — you need two things:</strong>
-    <div style="display:flex; gap: 24px; margin-top: 12px; flex-wrap: wrap;">
-      <div style="display:flex; align-items:flex-start; gap:10px; flex:1; min-width:200px;">
-        <span style="font-size:22px; line-height:1;">🔑</span>
-        <div>
-          <div style="font-weight:700; margin-bottom:2px;">Active Login</div>
-          <div style="font-size:13px;">A verified Red Hat account linked to your organization's account number. Without this, you cannot open cases or access your entitlements.</div>
-        </div>
-      </div>
-      <div style="display:flex; align-items:flex-start; gap:10px; flex:1; min-width:200px;">
-        <span style="font-size:22px; line-height:1;">✅</span>
-        <div>
-          <div style="font-weight:700; margin-bottom:2px;">Active Subscription</div>
-          <div style="font-size:13px;">A valid, unexpired Red Hat subscription. Support entitlements — including case creation, SLA coverage, and portal tools — are only available with an active subscription.</div>
-        </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px;">
+    <div style="border:2px solid #cc0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
+      <span style="font-size:32px; line-height:1;">🔑</span>
+      <div>
+        <div style="font-weight:800; font-size:15px; color:var(--red); margin-bottom:4px;">Active Login</div>
+        <div style="font-size:13px; color:#444;">A verified Red Hat account linked to your org's account number. Required to open cases and access entitlements.</div>
       </div>
     </div>
-    <p style="margin-top:12px; font-size:13px;">Both are required to leverage the full value of your Red Hat support. The steps below walk you through how to confirm and set up each one.</p>
+    <div style="border:2px solid #cc0000; border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px;">
+      <span style="font-size:32px; line-height:1;">✅</span>
+      <div>
+        <div style="font-weight:800; font-size:15px; color:var(--red); margin-bottom:4px;">Active Subscription</div>
+        <div style="font-size:13px; color:#444;">A valid, unexpired Red Hat subscription. All support entitlements — cases, SLA, portal tools — require an active subscription.</div>
+      </div>
+    </div>
   </div>
-  <p class="lead secondary">Complete these two steps once and you'll have everything you need to open cases, access your entitlements, and get help fast — any time.</p>
 
   <!-- STEP 1 -->
   <div class="fn-q-header">
     <span class="fn-q-num">1</span>
     Check your Order Fulfillment Notification email
   </div>
-  <p class="secondary">After purchasing your subscription, an automated order fulfillment notification email is sent to the address provided at the time of purchase. <strong>Review it carefully</strong> — it contains everything you need to access Red Hat services.</p>
+  <p class="secondary">You'll receive this automatically after purchase. <strong>Review it carefully</strong> — it has everything you need to access Red Hat services.</p>
 
   <div class="grid grid-2" style="margin: 16px 0;">
     <div class="card">
@@ -408,7 +403,7 @@ https://access.redhat.com/support/customer-service</div>
     <span class="fn-q-num">2</span>
     Log in to the Customer Portal
   </div>
-  <p class="secondary">Once you have your account number from the fulfillment email, log in at <a href="https://access.redhat.com" target="_blank"><strong>access.redhat.com</strong> ↗</a>. If a login hasn't been created for your account yet, you'll receive a separate <strong>Login Creation email</strong> with instructions — this is the only way to create a login tied to your account.</p>
+  <p class="secondary">Log in at <a href="https://access.redhat.com" target="_blank"><strong>access.redhat.com</strong> ↗</a> using your account number from the fulfillment email. If no login exists yet, you'll get a separate <strong>Login Creation email</strong> — that's the only way to create a login tied to your account.</p>
 
   <div class="grid grid-2" style="margin: 16px 0;">
     <div class="card">
@@ -452,21 +447,40 @@ https://access.redhat.com/support/customer-service</div>
     <h2>Resolve It Yourself — Faster</h2>
     <div class="sub">Self-service tools available 24/7 with no wait time</div>
   </div>
-  <div class="callout info">Many issues are already solved in the portal — no case needed, no hold music. These tools work around the clock and often get you to an answer faster than opening a ticket.</div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Ask Red Hat (Agent AI)</strong></td><td>AI-powered assistant in the portal — answers questions, guides troubleshooting</td></tr>
-        <tr><td><strong>Knowledge Base</strong></td><td>Search thousands of articles and solution documents</td></tr>
-        <tr><td><strong>Solution Engine</strong></td><td>Guided, step-by-step troubleshooting workflows</td></tr>
-        <tr><td><strong>Portal Labs</strong></td><td>Diagnostic and configuration tools you run against your environment</td></tr>
-        <tr><td><strong>Community Forum</strong></td><td>Peer-to-peer discussion, tips, and experience sharing</td></tr>
-        <tr><td><strong>Status Page</strong></td><td>Real-time Red Hat service health and known incidents</td></tr>
-      </tbody>
-    </table>
+  <div class="callout info" style="margin-bottom:20px;">Many issues are already solved in the portal — no case needed, no hold music. These tools work around the clock and often get you to an answer faster than opening a ticket.</div>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px;">
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">🤖</div>
+      <div style="font-weight:700; font-size:14px;">Ask Red Hat (AI)</div>
+      <div style="font-size:13px; color:#555;">AI assistant — answers questions and guides troubleshooting instantly</div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">📚</div>
+      <div style="font-weight:700; font-size:14px;">Knowledge Base</div>
+      <div style="font-size:13px; color:#555;">Search thousands of articles and solution documents</div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">🔧</div>
+      <div style="font-weight:700; font-size:14px;">Solution Engine</div>
+      <div style="font-size:13px; color:#555;">Guided, step-by-step troubleshooting workflows</div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">🧪</div>
+      <div style="font-weight:700; font-size:14px;">Portal Labs</div>
+      <div style="font-size:13px; color:#555;">Diagnostic and configuration tools you run against your own environment</div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">💬</div>
+      <div style="font-weight:700; font-size:14px;">Community Forum</div>
+      <div style="font-size:13px; color:#555;">Peer-to-peer discussion, tips, and experience sharing</div>
+    </div>
+    <div style="border:1px solid var(--border); border-radius:10px; padding:18px 16px; display:flex; flex-direction:column; gap:6px;">
+      <div style="font-size:26px;">📡</div>
+      <div style="font-weight:700; font-size:14px;">Status Page</div>
+      <div style="font-size:13px; color:#555;">Real-time Red Hat service health and known incidents</div>
+    </div>
   </div>
-  <p class="secondary small">If none of these resolve your issue, proceed to open a support case.</p>
+  <p class="secondary small">If none of these resolve your issue, proceed to <a href="#opencase">open a support case ↓</a>.</p>
 </section>
 
 <!-- HOW TO OPEN A CASE -->
@@ -567,51 +581,93 @@ https://access.redhat.com/support/customer-service</div>
     <h2>Case Details</h2>
     <div class="sub">The more context you share, the faster your case moves</div>
   </div>
-  <p class="lead secondary">Engineers spend the most time on cases that arrive with incomplete information. A complete case upfront means no back-and-forth, no delays — just faster resolution for you.</p>
-  <h3>Environment Details</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Field</th><th>Examples</th></tr></thead>
-      <tbody>
-        <tr><td>Platform version</td><td>RHEL 9.2, OpenShift 4.14, Satellite 6.12</td></tr>
-        <tr><td>Product version</td><td>JBoss EAP 7.4, Ansible Automation Platform 2.4</td></tr>
-        <tr><td>Third-party products</td><td>Any vendor software involved in the issue</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <hr>
-  <h3>Issue Details</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Field</th><th>What to provide</th></tr></thead>
-      <tbody>
-        <tr><td>Timestamps</td><td>When the issue first appeared and any recurrence pattern</td></tr>
-        <tr><td>Error messages</td><td>Exact text — copy/paste, not paraphrased</td></tr>
-        <tr><td>Steps to reproduce</td><td>A numbered sequence that reliably triggers the issue</td></tr>
-        <tr><td>Multi-vendor details</td><td>Vendor name, their case number, and vendor contact email if applicable</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <hr>
-  <h3>Attachments</h3>
-  <div class="grid grid-2">
-    <div class="card">
-      <div class="card-header">Recommended Files</div>
-      <div class="card-body">
-        <p>SOSreport — system state snapshot for RHEL</p>
-        <p>vmcore — kernel crash dump (required for panic RCA)</p>
-        <p>Log files — application and system logs around the incident window</p>
+  <p class="lead secondary">A complete case upfront = no back-and-forth, no delays. Here's exactly what to include.</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0;">
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f5f5f5; padding:10px 16px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border);">
+        <span style="font-size:16px;">🖥️</span> Environment
+      </div>
+      <div style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Platform version</strong><br><span style="font-size:12px; color:#666;">e.g. RHEL 9.2, OpenShift 4.14, Satellite 6.12</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Product version</strong><br><span style="font-size:12px; color:#666;">e.g. JBoss EAP 7.4, Ansible AAP 2.4</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Third-party products</strong><br><span style="font-size:12px; color:#666;">Any vendor software involved</span></div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header">Uploading Large Files</div>
-      <div class="card-body">
-        <p>Attach files directly to your case on the portal.</p>
-        <p class="secondary" style="margin-top:6px">If the file cannot be attached via the portal, use the Red Hat FTP site: <strong>access.redhat.com/solutions/2112</strong></p>
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f5f5f5; padding:10px 16px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border);">
+        <span style="font-size:16px;">🐛</span> Issue Details
+      </div>
+      <div style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Timestamps</strong><br><span style="font-size:12px; color:#666;">When it first appeared + any recurrence pattern</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Error messages</strong><br><span style="font-size:12px; color:#666;">Exact text — copy/paste, not paraphrased</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Steps to reproduce</strong><br><span style="font-size:12px; color:#666;">Numbered sequence that reliably triggers the issue</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:#888; font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">+</span>
+          <div><strong style="font-size:13px;">Multi-vendor details</strong><br><span style="font-size:12px; color:#666;">Vendor name, their case #, and contact email</span></div>
+        </div>
       </div>
     </div>
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f5f5f5; padding:10px 16px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border);">
+        <span style="font-size:16px;">📎</span> Attachments
+      </div>
+      <div style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">SOSreport</strong><br><span style="font-size:12px; color:#666;">System state snapshot for RHEL</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">vmcore</strong><br><span style="font-size:12px; color:#666;">Kernel crash dump — required for panic RCA</span></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:var(--red); font-weight:800; font-size:12px; min-width:18px; margin-top:1px;">✓</span>
+          <div><strong style="font-size:13px;">Log files</strong><br><span style="font-size:12px; color:#666;">App + system logs around the incident window</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f5f5f5; padding:10px 16px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border);">
+        <span style="font-size:16px;">⬆️</span> How to Upload
+      </div>
+      <div style="padding:14px 16px; display:flex; flex-direction:column; gap:12px; font-size:13px;">
+        <div style="display:flex; align-items:center; gap:10px; background:#eefaf0; border-radius:6px; padding:10px 12px;">
+          <span style="font-size:18px;">🌐</span>
+          <div><strong>Portal</strong> — attach directly to your case<br><span style="color:#666; font-size:12px;">access.redhat.com/support/cases</span></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; background:#f5f5f5; border-radius:6px; padding:10px 12px;">
+          <span style="font-size:18px;">📤</span>
+          <div><strong>FTP</strong> — for large files that don't fit the portal<br><span style="color:#666; font-size:12px;">access.redhat.com/solutions/2112</span></div>
+        </div>
+        <div style="font-size:12px; color:#cc0000; font-weight:600;">⚠ Attachments cannot be submitted via email.</div>
+      </div>
+    </div>
+
   </div>
-  <div class="callout info">Respond promptly to any follow-up requests from your support engineer — additional details are often needed to avoid delays.</div>
+  <div class="callout info">Respond promptly to follow-up requests from your engineer — additional context is often the only thing standing between you and resolution.</div>
 </section>
 
 <!-- DIAGNOSTICS -->
@@ -646,20 +702,40 @@ https://access.redhat.com/support/customer-service</div>
     <h2>Severity Levels</h2>
     <div class="sub">Match your severity to your business impact — it determines who responds and how fast</div>
   </div>
-  <div class="callout warn"><strong>Set it accurately:</strong> Severity can be updated at any time — by you or by Red Hat — as business impact changes. Match it to your actual situation and you'll reach the right engineer faster. Source: <a href="https://access.redhat.com/support/policy/severity" target="_blank">access.redhat.com/support/policy/severity ↗</a></div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Severity</th><th>Your situation</th><th>Official definition</th></tr></thead>
-      <tbody>
-        <tr class="row-danger"><td><strong>1 — Urgent</strong></td><td>Business-critical operations actively interrupted — significant risk to your business</td><td>An issue actively causing serious interruptions to your business critical operations. Requires immediate attention.</td></tr>
-        <tr class="row-warn"><td><strong>2 — High</strong></td><td>Service partially functional, actively impacting business operations on a critical system</td><td>Product or service is partially functional (e.g. degraded but still available) and actively impacting your business operations. Requires accelerated attention.</td></tr>
-        <tr><td><strong>3 — Medium</strong></td><td>Currently functioning, but you recently saw degradation or are monitoring indicators of a potential problem</td><td>Currently functioning as expected, but you recently experienced degradation you are monitoring, seeking root cause for, or seeing early warning signs of potential loss of functionality.</td></tr>
-        <tr><td><strong>4 — Low</strong></td><td>Non-urgent query — no interruption to business-critical operations</td><td>A non-urgent query that does not involve any interruption to your business critical operations.</td></tr>
-      </tbody>
-    </table>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0;">
+    <div style="background:#fff2f2; border:2px solid #cc0000; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:30px; line-height:1;">🔴</div>
+      <div style="font-size:22px; font-weight:900; color:#cc0000; margin:6px 0 2px;">SEV 1</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#cc0000; margin-bottom:10px;">Urgent</div>
+      <div style="font-size:13px; color:#333; line-height:1.5;">Production is <strong>completely down</strong>. Business-critical operations actively interrupted.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#cc0000; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⚡ Immediate &nbsp;·&nbsp; 24×7</div>
+    </div>
+    <div style="background:#fff8ee; border:2px solid #e07b00; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:30px; line-height:1;">🟠</div>
+      <div style="font-size:22px; font-weight:900; color:#e07b00; margin:6px 0 2px;">SEV 2</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#e07b00; margin-bottom:10px;">High</div>
+      <div style="font-size:13px; color:#333; line-height:1.5;">Service is <strong>partially functional</strong>. Actively impacting business operations on a critical system.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#e07b00; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">⏩ Accelerated</div>
+    </div>
+    <div style="background:#fffef0; border:2px solid #b8a000; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:30px; line-height:1;">🟡</div>
+      <div style="font-size:22px; font-weight:900; color:#9a8600; margin:6px 0 2px;">SEV 3</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#9a8600; margin-bottom:10px;">Medium</div>
+      <div style="font-size:13px; color:#333; line-height:1.5;">Currently working, but you've <strong>seen degradation</strong> or are monitoring early warning signs.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#9a8600; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">📋 Normal queue</div>
+    </div>
+    <div style="background:#f5f5f5; border:2px solid #999; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:30px; line-height:1;">⚪</div>
+      <div style="font-size:22px; font-weight:900; color:#555; margin:6px 0 2px;">SEV 4</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#555; margin-bottom:10px;">Low</div>
+      <div style="font-size:13px; color:#333; line-height:1.5;"><strong>Non-urgent</strong> question or request. No interruption to business-critical operations.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#777; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">💬 General query</div>
+    </div>
   </div>
-  <div class="callout info" style="margin-top:16px;"><strong>Severity can be changed:</strong> A case opened as Sev 3 (monitoring a non-critical issue) can be escalated to Sev 1 by either you or Red Hat if it develops into a critical outage. Keep your case updated as impact changes.</div>
-  <div class="callout info" style="margin-top:8px;">Need coverage outside business hours or over weekends? See <a href="#engage">24×7 After-Hours Coverage ↑</a> in Engaging with Support — available for Sev 1 by default and Sev 2 on request.</div>
+  <div style="background:#f0f7ff; border:1px solid #aad4f5; border-radius:8px; padding:12px 16px; font-size:13px; color:#333; margin-top:4px;">
+    <strong>Severity can be changed any time</strong> — by you or by Red Hat — as business impact evolves. A Sev 3 monitoring a worrying issue can become Sev 1 if it develops into a critical outage. Keep it updated. &nbsp;<a href="https://access.redhat.com/support/policy/severity" target="_blank" style="color:var(--red);">Official policy ↗</a>
+  </div>
+  <div class="callout info" style="margin-top:8px;">Need coverage outside business hours? See <a href="#engage">24×7 After-Hours Coverage ↑</a> — Sev 1 included by default, Sev 2 by request.</div>
 </section>
 
 <!-- MANAGED SERVICES -->
