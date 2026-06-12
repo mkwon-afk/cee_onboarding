@@ -292,15 +292,15 @@
   <div class="nav-label">Sections</div>
   <a href="#welcome" class="active">Welcome</a>
   <a href="#start">Getting Started</a>
-  <a href="#selfservice">Self-Service First</a>
   <a href="#opencase">How to Open a Case</a>
   <a href="#engage">Engaging with Support</a>
   <a href="#casedetails">Case Details</a>
   <a href="#diagnostics">Diagnostics</a>
-  <a href="#severity">Severity Levels</a>
   <a href="#managed">Managed Services</a>
+  <a href="#managed-matrix" style="padding-left:32px; font-size:13px;">Responsibility Matrix</a>
+  <a href="#confirmed-stateside" style="padding-left:32px; font-size:13px;">Confirmed Stateside</a>
+  <a href="#ess-managed" style="padding-left:32px; font-size:13px;">Enhanced Solution Support</a>
   <a href="#escalate">Escalation</a>
-  <a href="#renew">Renewal</a>
   <a href="#resources">Key Resources</a>
 </nav>
 
@@ -517,51 +517,10 @@ Order Details:
   </div>
 </section>
 
-<!-- SELF SERVICE -->
-<section class="section" id="selfservice">
-  <div class="section-header">
-    <h2>Resolve It Yourself — Faster</h2>
-    <div class="sub">Self-service tools available 24/7 with no wait time</div>
-  </div>
-  <div class="working-doc-bar">
-    <span class="working-doc-icon">✏️</span>
-    <span class="working-doc-label">Working Document</span>
-    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
-  </div>
-  <div class="callout info" style="margin-bottom:20px;">Many issues are already solved in the portal — no case needed, no hold music. These tools work around the clock and often get you to an answer faster than opening a ticket.</div>
-  <div style="display:flex; flex-direction:column; gap:2px; margin-bottom:16px; border:1px solid var(--border); border-radius:8px; overflow:hidden;">
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Ask Red Hat (AI)</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— AI assistant that answers questions and guides troubleshooting instantly</span></div>
-    </div>
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Knowledge Base</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— Search thousands of articles and solution documents</span></div>
-    </div>
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Solution Engine</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— Guided, step-by-step troubleshooting workflows</span></div>
-    </div>
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Portal Labs</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— Diagnostic and configuration tools you run against your own environment</span></div>
-    </div>
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Community Forum</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— Peer-to-peer discussion, tips, and experience sharing</span></div>
-    </div>
-    <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px;">
-      <div style="width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px;"></div>
-      <div><strong style="font-size:14px;">Status Page</strong> <span style="color:#4d4d4d; font-size:13px; margin-left:6px;">— Real-time Red Hat service health and known incidents</span></div>
-    </div>
-  </div>
-  <p class="secondary small">If none of these resolve your issue, proceed to <a href="#opencase">open a support case ↓</a>.</p>
-</section>
-
 <!-- HOW TO OPEN A CASE -->
 <section class="section" id="opencase">
   <div class="section-header">
-    <h2>How to Open a Case</h2>
+    <h2>How to Open a Case <span style="font-size:13px; font-weight:500; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:2px 8px; vertical-align:middle;">WIP</span></h2>
     <div class="sub">Three ways to reach us — pick what works for your situation</div>
   </div>
   <div class="working-doc-bar">
@@ -658,6 +617,39 @@ Order Details:
       <div class="card-body">If your case isn't moving — use the <strong>"Request Management Escalation"</strong> button inside your case on the portal, or see the full <a href="#escalate">Escalation section ↓</a> in this guide.</div>
     </div>
   </div>
+
+  <h3 id="severity">Severity Levels</h3>
+  <p class="secondary small" style="margin-bottom:16px;">Match your severity to your business impact — it determines who responds and how fast.</p>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0;">
+    <div style="background:#fef0f0; border:2px solid #ee0000; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:22px; font-weight:900; color:#ee0000; margin-bottom:2px;">SEV 1</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#a60000; margin-bottom:10px;">Urgent</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Production is <strong>completely down</strong>. Business-critical operations actively interrupted.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#ee0000; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Immediate &nbsp;·&nbsp; 24×7</div>
+    </div>
+    <div style="background:#ffe8cc; border:2px solid #f5921b; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:22px; font-weight:900; color:#ca6c0f; margin-bottom:2px;">SEV 2</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#9e4a06; margin-bottom:10px;">High</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Service is <strong>partially functional</strong>. Actively impacting business operations on a critical system.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#f5921b; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Accelerated</div>
+    </div>
+    <div style="background:#fff4cc; border:2px solid #dca614; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:22px; font-weight:900; color:#b98412; margin-bottom:2px;">SEV 3</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#96640f; margin-bottom:10px;">Medium</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;">Currently working, but you've <strong>seen degradation</strong> or are monitoring early warning signs.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#b98412; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Normal queue</div>
+    </div>
+    <div style="background:#f2f2f2; border:2px solid #707070; border-radius:12px; padding:20px 16px; text-align:center;">
+      <div style="font-size:22px; font-weight:900; color:#4d4d4d; margin-bottom:2px;">SEV 4</div>
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#707070; margin-bottom:10px;">Low</div>
+      <div style="font-size:13px; color:#383838; line-height:1.5;"><strong>Non-urgent</strong> question or request. No interruption to business-critical operations.</div>
+      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#707070; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">General query</div>
+    </div>
+  </div>
+  <div style="background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:12px 16px; font-size:13px; color:#383838; margin-top:4px;">
+    <strong>Severity can be changed any time</strong> — by you or by Red Hat — as business impact evolves. A Sev 3 monitoring a worrying issue can become Sev 1 if it develops into a critical outage. Keep it updated. &nbsp;<a href="https://access.redhat.com/support/policy/severity" target="_blank" style="color:var(--red);">Official policy ↗</a>
+  </div>
+  <div class="callout info" style="margin-top:8px;">Need coverage outside business hours? See 24×7 After-Hours Coverage above — Sev 1 included by default, Sev 2 by request.</div>
 </section>
 
 <!-- CASE DETAILS -->
@@ -789,49 +781,6 @@ Order Details:
   <div class="callout info" style="margin-top:16px;">Need an engineer to look at your environment directly? See <a href="#engage">Remote Support Sessions ↑</a> in the Engaging with Support section.</div>
 </section>
 
-<!-- SEVERITY -->
-<section class="section" id="severity">
-  <div class="section-header">
-    <h2>Severity Levels</h2>
-    <div class="sub">Match your severity to your business impact — it determines who responds and how fast</div>
-  </div>
-  <div class="working-doc-bar">
-    <span class="working-doc-icon">✏️</span>
-    <span class="working-doc-label">Working Document</span>
-    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
-  </div>
-  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0;">
-    <div style="background:#fef0f0; border:2px solid #ee0000; border-radius:12px; padding:20px 16px; text-align:center;">
-      <div style="font-size:22px; font-weight:900; color:#ee0000; margin-bottom:2px;">SEV 1</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#a60000; margin-bottom:10px;">Urgent</div>
-      <div style="font-size:13px; color:#383838; line-height:1.5;">Production is <strong>completely down</strong>. Business-critical operations actively interrupted.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#ee0000; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Immediate &nbsp;·&nbsp; 24×7</div>
-    </div>
-    <div style="background:#ffe8cc; border:2px solid #f5921b; border-radius:12px; padding:20px 16px; text-align:center;">
-      <div style="font-size:22px; font-weight:900; color:#ca6c0f; margin-bottom:2px;">SEV 2</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#9e4a06; margin-bottom:10px;">High</div>
-      <div style="font-size:13px; color:#383838; line-height:1.5;">Service is <strong>partially functional</strong>. Actively impacting business operations on a critical system.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#f5921b; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Accelerated</div>
-    </div>
-    <div style="background:#fff4cc; border:2px solid #dca614; border-radius:12px; padding:20px 16px; text-align:center;">
-      <div style="font-size:22px; font-weight:900; color:#b98412; margin-bottom:2px;">SEV 3</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#96640f; margin-bottom:10px;">Medium</div>
-      <div style="font-size:13px; color:#383838; line-height:1.5;">Currently working, but you've <strong>seen degradation</strong> or are monitoring early warning signs.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#b98412; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">Normal queue</div>
-    </div>
-    <div style="background:#f2f2f2; border:2px solid #707070; border-radius:12px; padding:20px 16px; text-align:center;">
-      <div style="font-size:22px; font-weight:900; color:#4d4d4d; margin-bottom:2px;">SEV 4</div>
-      <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#707070; margin-bottom:10px;">Low</div>
-      <div style="font-size:13px; color:#383838; line-height:1.5;"><strong>Non-urgent</strong> question or request. No interruption to business-critical operations.</div>
-      <div style="margin-top:12px; display:inline-flex; align-items:center; gap:5px; background:#707070; color:#fff; border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700;">General query</div>
-    </div>
-  </div>
-  <div style="background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:12px 16px; font-size:13px; color:#383838; margin-top:4px;">
-    <strong>Severity can be changed any time</strong> — by you or by Red Hat — as business impact evolves. A Sev 3 monitoring a worrying issue can become Sev 1 if it develops into a critical outage. Keep it updated. &nbsp;<a href="https://access.redhat.com/support/policy/severity" target="_blank" style="color:var(--red);">Official policy ↗</a>
-  </div>
-  <div class="callout info" style="margin-top:8px;">Need coverage outside business hours? See <a href="#engage">24×7 After-Hours Coverage ↑</a> — Sev 1 included by default, Sev 2 by request.</div>
-</section>
-
 <!-- MANAGED SERVICES -->
 <section class="section" id="managed">
   <div class="section-header">
@@ -950,6 +899,50 @@ Order Details:
 
     </div>
   </div>
+
+  <!-- MANAGED CLOUD RESPONSIBILITY MATRIX -->
+  <h3 id="managed-matrix">Managed Cloud Responsibility Matrix</h3>
+  <p class="secondary small" style="margin-bottom:16px;">Both ARO and ROSA use a shared responsibility model — understanding the boundary between you, Red Hat, and your cloud provider prevents routing delays when issues arise.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Layer</th><th>ARO (Azure)</th><th>ROSA (AWS)</th><th>Responsible party</th></tr></thead>
+      <tbody>
+        <tr><td>Underlying cloud infrastructure</td><td>Microsoft Azure</td><td>Amazon Web Services</td><td>Cloud provider</td></tr>
+        <tr><td>OpenShift cluster platform</td><td>Red Hat + Microsoft</td><td>Red Hat + AWS</td><td>Red Hat (primary)</td></tr>
+        <tr><td>Application workloads</td><td>Customer</td><td>Customer</td><td>Customer</td></tr>
+        <tr><td>Identity &amp; access management</td><td>Customer / Microsoft Entra</td><td>Customer / AWS IAM</td><td>Shared</td></tr>
+        <tr><td>Cluster upgrades</td><td>Red Hat managed</td><td>Red Hat managed</td><td>Red Hat</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-header">ARO Responsibility Matrix</div>
+      <div class="card-body">Full breakdown of Microsoft vs. Red Hat vs. customer responsibilities for ARO. <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">docs.microsoft.com ↗</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">ROSA Responsibility Matrix</div>
+      <div class="card-body">Full breakdown of Red Hat vs. AWS vs. customer responsibilities for ROSA. <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">docs.redhat.com ↗</a></div>
+    </div>
+  </div>
+
+  <!-- CONFIRMED STATESIDE -->
+  <h3 id="confirmed-stateside">Confirmed Stateside Customers</h3>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
+  <div class="callout info" style="margin-bottom:16px;">Content coming from working document — this section covers support considerations for customers with data sovereignty or residency requirements under a Confirmed Stateside arrangement.</div>
+
+  <!-- ESS -->
+  <h3 id="ess-managed">Enhanced Solution Support for Faster Response and Restoration</h3>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
+  <div class="callout info" style="margin-bottom:16px;">Content coming from working document — this section covers Enhanced Solution Support (ESS) options available to managed cloud customers with Premium entitlements, including proactive engagement and faster restoration SLAs.</div>
 </section>
 
 <!-- ESCALATION -->
@@ -1067,180 +1060,79 @@ Order Details:
   </div>
 </section>
 
-<!-- RENEWAL -->
-<section class="section" id="renew">
-  <div class="section-header">
-    <h2>Renewal</h2>
-    <div class="sub">The path depends on how you purchased — know it before your subscription expires</div>
-  </div>
-  <div class="working-doc-bar">
-    <span class="working-doc-icon">✏️</span>
-    <span class="working-doc-label">Working Document</span>
-    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
-  </div>
-
-  <p class="lead secondary">Renewal is not a single process — it follows the same channel your subscription came through. Whether you purchased directly, through a reseller, via an OEM hardware bundle, or through a cloud marketplace, the steps and the people you contact are different. This section maps each path clearly so nothing falls through the cracks at the end of your contract cycle.</p>
-
-  <div class="callout warn" style="margin-bottom:28px;">
-    <strong>Start early.</strong> Begin renewal conversations at least 90 days before your contract end date. Check your expiry date at any time under <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.
-  </div>
-
-  <!-- RENEWAL PATHWAYS -->
-  <h3>Renewal pathways by purchase channel</h3>
-  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:28px;">
-
-    <!-- Direct -->
-    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
-      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
-        <div style="font-weight:800; font-size:14px; color:var(--dark);">Direct — Purchased from Red Hat</div>
-        <span style="margin-left:auto; background:#e9f7df; color:#204d00; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with Red Hat</span>
-      </div>
-      <div style="padding:18px 20px;">
-        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
-          <li>Log in to <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a> and note your contract end date.</li>
-          <li>Contact your Red Hat sales representative or account team to discuss renewal terms.</li>
-          <li>Confirm the renewed contract — a new Order Fulfillment email with an updated Contract Number will be sent.</li>
-          <li>Verify the refreshed subscription appears in your portal dashboard.</li>
-        </ol>
-        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
-          Some subscription types can also be renewed self-service at <a href="https://access.redhat.com" target="_blank">access.redhat.com ↗</a> without contacting a sales rep.
-        </div>
-      </div>
-    </div>
-
-    <!-- Reseller -->
-    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
-      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
-        <div style="font-weight:800; font-size:14px; color:var(--dark);">Reseller — Purchased through a channel partner</div>
-        <span style="margin-left:auto; background:#e0f0ff; color:#004d99; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with your reseller</span>
-      </div>
-      <div style="padding:18px 20px;">
-        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
-          <li>Log in to the Customer Portal and note your Account Number, Contract Number, and end date.</li>
-          <li>Contact your reseller — provide your Account Number and Contract Number.</li>
-          <li>Your reseller places the renewal order with Red Hat on your behalf.</li>
-          <li>Watch for a new Order Fulfillment email from Red Hat with the updated contract details.</li>
-          <li>Confirm the refreshed subscription is visible at <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.</li>
-        </ol>
-        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
-          <strong>Billing questions after renewal?</strong> Contact your reseller. <strong>Access or activation issues?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
-        </div>
-      </div>
-    </div>
-
-    <!-- OEM -->
-    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
-      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
-        <div style="font-weight:800; font-size:14px; color:var(--dark);">OEM — Bundled with hardware (e.g. Dell, HP, Lenovo)</div>
-        <span style="margin-left:auto; background:#fff4cc; color:#732e00; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with your OEM</span>
-      </div>
-      <div style="padding:18px 20px;">
-        <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">Your Red Hat subscription was bundled with your hardware purchase. Renewal follows the same procurement channel as the original hardware order — not through Red Hat directly.</p>
-        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
-          <li>Check your subscription expiry at <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.</li>
-          <li>Contact your OEM vendor's account team — provide your Account Number, Contract Number, and hardware details if required.</li>
-          <li>The OEM places the renewal with Red Hat under your existing account number.</li>
-          <li>Watch for an updated Order Fulfillment email and verify the subscription is refreshed in the portal.</li>
-        </ol>
-        <div style="margin-top:10px; background:#ffe3d9; border:1px solid #f0561d; border-radius:8px; padding:10px 14px; font-size:13px;">
-          <strong>OEM unresponsive or subscription lapsing?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a> with your Account Number and Contract Number to discuss options.
-        </div>
-      </div>
-    </div>
-
-    <!-- Cloud Marketplace -->
-    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
-      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
-        <div style="font-weight:800; font-size:14px; color:var(--dark);">Cloud Marketplace — ROSA (AWS) or ARO (Azure)</div>
-        <span style="margin-left:auto; background:#f2f2f2; color:var(--mid); font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em; border:1px solid var(--border);">Renew via cloud provider</span>
-      </div>
-      <div style="padding:18px 20px;">
-        <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">For ROSA and ARO, billing and subscription lifecycle are managed through your cloud provider's marketplace — not through Red Hat's subscription portal.</p>
-        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
-          <li>Log in to your AWS or Azure console and review your marketplace subscription status.</li>
-          <li>Renew or modify through the AWS Marketplace or Azure Marketplace directly.</li>
-          <li>Ensure your Red Hat account in OpenShift Cluster Manager (OCM) remains linked to your cluster.</li>
-          <li>Verify continued access to the Red Hat Customer Portal for technical support.</li>
-        </ol>
-        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
-          <strong>Billing questions</strong> go to AWS or Azure. <strong>Technical issues</strong> with your OpenShift cluster go to <a href="https://access.redhat.com/support" target="_blank">Red Hat Support ↗</a>.
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- WHAT HAPPENS IF LAPSED -->
-  <h3>What happens if your subscription lapses</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Impact</th><th>Detail</th></tr></thead>
-      <tbody>
-        <tr class="row-danger"><td>Support cases blocked</td><td>You cannot open new support cases without an active subscription. Existing open cases may be placed on hold.</td></tr>
-        <tr class="row-warn"><td>Portal tools restricted</td><td>Some Customer Portal tools, entitlements, and gated content become unavailable.</td></tr>
-        <tr class="row-warn"><td>Software access affected</td><td>Access to gated downloads, errata, and security patches may be restricted.</td></tr>
-        <tr class="row-danger"><td>SLA no longer applies</td><td>Response time commitments are only valid under an active, in-term contract.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout info" style="margin-top:16px;">
-    <strong>Already lapsed?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a> immediately. Depending on how recently the contract expired, reinstatement options may be available.
-  </div>
-
-</section>
-
 <!-- KEY RESOURCES -->
 <section class="section" id="resources">
   <div class="section-header">
     <h2>Key Resources</h2>
-    <div class="sub">Curated Customer Portal reading list</div>
+    <div class="sub">Curated reading list — Customer Portal, support process, managed cloud, diagnostics, and partners</div>
   </div>
   <div class="working-doc-bar">
     <span class="working-doc-icon">✏️</span>
     <span class="working-doc-label">Working Document</span>
     <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
-  <p class="lead secondary">These Customer Portal articles are your onboarding reading list. All links require your Red Hat subscription login unless marked Public.</p>
+  <p class="lead secondary">All links require your Red Hat subscription login unless marked Public.</p>
 
-  <h3>Before your first support case</h3>
+  <h3>Customer Portal &amp; Account Management</h3>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <thead><tr><th>Resource</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
       <tbody>
         <tr><td>How to engage Red Hat Support</td><td>access.redhat.com/start/how-to-engage-red-hat-support</td><td>Step-by-step walkthrough of opening, managing, and closing a case on the portal</td><td><span class="pill pill-success">Public</span></td></tr>
         <tr><td>Guidelines for a Successful Support Engagement</td><td>access.redhat.com/articles/7126161</td><td>Collaborative support model and the one-issue-per-ticket rule</td><td><span class="pill pill-default">Subscription</span></td></tr>
-        <tr><td>Severity level definitions &amp; SLA</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA table — use this when a customer disputes severity or timing</td><td><span class="pill pill-success">Public</span></td></tr>
-        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>When and how to request management escalation, what the Delivery Manager role does</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Red Hat Customer Portal — Get Started</td><td>access.redhat.com/start</td><td>Step-by-step learning paths to get value from your subscription</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Customer Service webform</td><td>access.redhat.com/support/customer-service</td><td>For subscription, access, order, and account management issues — not technical cases</td><td><span class="pill pill-success">Public</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <h3>If you run into a technical issue</h3>
+  <h3>Support Channels &amp; Process</h3>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <thead><tr><th>Resource</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>Severity level definitions &amp; SLA</td><td>access.redhat.com/support/offerings/production/sla</td><td>Official SLA table — use this when a customer disputes severity or timing</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Management escalation policy</td><td>access.redhat.com/support/policy/mgt_escalation</td><td>When and how to request management escalation, what the Delivery Manager role does</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Production Support Scope of Coverage</td><td>access.redhat.com/support/policy/support_process</td><td>What is and isn't covered by your subscription — confirm before opening a case</td><td><span class="pill pill-success">Public</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Managed Cloud (ARO / ROSA)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Resource</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td>ARO support responsibility matrix</td><td>docs.microsoft.com/en-us/azure/openshift/responsibility-matrix</td><td>Defines the Red Hat vs Microsoft responsibility boundary — critical for case routing</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>ROSA responsibility matrix</td><td>docs.redhat.com — ROSA Introduction</td><td>Defines Red Hat vs AWS vs customer responsibilities for ROSA clusters</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>Getting support for ROSA</td><td>docs.openshift.com/rosa/rosa_support/rosa-getting-support.html</td><td>How to open a case via the Customer Portal for ROSA</td><td><span class="pill pill-success">Public</span></td></tr>
+        <tr><td>ARO Get Started guide</td><td>learn.microsoft.com/en-us/azure/openshift/intro-openshift</td><td>All setup resources for new ARO customers</td><td><span class="pill pill-success">Public</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Diagnostics &amp; Troubleshooting</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Resource</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
       <tbody>
         <tr><td>How to collect a SOSreport (RHEL)</td><td>access.redhat.com/solutions/3592</td><td>Most common first attachment requested for RHEL cases</td><td><span class="pill pill-default">Subscription</span></td></tr>
         <tr><td>How to capture a vmcore (kernel panic)</td><td>access.redhat.com/solutions/6038</td><td>Required for any kernel crash case — without this, root cause analysis is not possible</td><td><span class="pill pill-default">Subscription</span></td></tr>
-        <tr><td>Remote support session guide</td><td>access.redhat.com/articles/255443</td><td>How to initiate and participate in a remote session</td><td><span class="pill pill-default">Subscription</span></td></tr>
+        <tr><td>Remote support session guide</td><td>access.redhat.com/articles/255443</td><td>How to initiate and participate in a remote session with a Red Hat engineer</td><td><span class="pill pill-default">Subscription</span></td></tr>
         <tr><td>Upload files to Red Hat FTP</td><td>access.redhat.com/solutions/2112</td><td>Use when attachments are too large for the portal case</td><td><span class="pill pill-default">Subscription</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <h3>For managed cloud customers (ARO / ROSA)</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Article</th><th>URL</th><th>Why read it</th><th>Access</th></tr></thead>
-      <tbody>
-        <tr><td>ARO support responsibility matrix</td><td>docs.microsoft.com/azure/openshift</td><td>Defines the Red Hat vs Microsoft responsibility boundary — critical for case routing</td><td><span class="pill pill-success">Public</span></td></tr>
-        <tr><td>ROSA Pre-Foundational Readiness Course</td><td>Available in LMS</td><td>The managed cloud workflow is only documented in LMS training — not in the general guide</td><td><span class="pill pill-warn">LMS login</span></td></tr>
-      </tbody>
-    </table>
+  <h3>Partners &amp; Other</h3>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
+  <div class="callout info">Content coming from working document — this section covers partner-specific support resources, reseller guidance, and OEM support paths.</div>
 
-  <div class="callout info"><strong>Strategy note:</strong> This guide curates; the Portal delivers. Article content is never duplicated here — it is owned by the Portal team and updated independently. If a link breaks, notify your section owner to update it.</div>
+  <div class="callout info" style="margin-top:16px;"><strong>Note:</strong> This guide curates; the Portal delivers. Article content is never duplicated here — it is owned by the Portal team and updated independently. If a link breaks, notify your section owner to update it.</div>
 </section>
 
 </main>
