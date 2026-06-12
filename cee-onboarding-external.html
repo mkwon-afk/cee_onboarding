@@ -246,6 +246,18 @@
     .grid-2 { grid-template-columns: 1fr; }
     .stats { flex-direction: column; }
   }
+  .fn-q-header {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 700; color: var(--dark);
+    margin: 28px 0 14px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .fn-q-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    font-size: 11px; font-weight: 800; flex-shrink: 0;
+  }
   .working-doc-bar {
     display: flex; align-items: center; gap: 10px;
     padding: 8px 14px; border-radius: 6px;
@@ -288,6 +300,7 @@
   <a href="#severity">Severity Levels</a>
   <a href="#managed">Managed Services</a>
   <a href="#escalate">Escalation</a>
+  <a href="#renew">Renewal</a>
   <a href="#resources">Key Resources</a>
 </nav>
 
@@ -297,14 +310,63 @@
 <section class="section" id="welcome">
   <div class="section-header">
     <h2>Welcome</h2>
-    <div class="sub">Get more from your Red Hat subscription</div>
+    <div class="sub">Your full subscription journey — from purchase to renewal</div>
   </div>
   <div class="working-doc-bar">
     <span class="working-doc-icon">✏️</span>
     <span class="working-doc-label">Working Document</span>
     <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
-  <p class="lead">Your Red Hat subscription gives you access to expert engineers, 24/7 coverage, and a full library of self-service tools. This guide shows you exactly how to use them — so issues get resolved faster and your team loses less time.</p>
+
+  <p class="lead">We've observed gaps throughout the Red Hat customer journey — from presale and setting up accounts, to locating and managing subscriptions, finding the right support venue when it matters, and navigating the right renewal path at the end of a contract cycle. These gaps affect customers regardless of how they purchased. This guide captures the key touchpoints across the full lifecycle so every Red Hat customer can move forward with confidence at every stage.</p>
+
+  <!-- LIFECYCLE VISUAL -->
+  <div style="margin:28px 0 32px;">
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:10px;">Customer Subscription Lifecycle</div>
+    <div style="display:flex; align-items:stretch; gap:0; border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+
+      <a href="#start" style="flex:1; display:flex; flex-direction:column; gap:5px; background:#fff; padding:16px 14px; text-decoration:none; border-right:1px solid var(--border); transition:background .15s;" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background='#fff'">
+        <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--red);">01</div>
+        <div style="font-size:13px; font-weight:700; color:var(--dark);">Purchase</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.4;">Direct · Reseller · OEM · Cloud</div>
+      </a>
+
+      <div style="display:flex; align-items:center; background:#f2f2f2; border-right:1px solid var(--border); padding:0 6px; color:#c7c7c7; font-size:18px; flex-shrink:0;">›</div>
+
+      <a href="#start" style="flex:1; display:flex; flex-direction:column; gap:5px; background:#fff; padding:16px 14px; text-decoration:none; border-right:1px solid var(--border); transition:background .15s;" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background='#fff'">
+        <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--red);">02</div>
+        <div style="font-size:13px; font-weight:700; color:var(--dark);">Activate</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.4;">Portal login · Subscription</div>
+      </a>
+
+      <div style="display:flex; align-items:center; background:#f2f2f2; border-right:1px solid var(--border); padding:0 6px; color:#c7c7c7; font-size:18px; flex-shrink:0;">›</div>
+
+      <a href="#selfservice" style="flex:1; display:flex; flex-direction:column; gap:5px; background:#fff; padding:16px 14px; text-decoration:none; border-right:1px solid var(--border); transition:background .15s;" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background='#fff'">
+        <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--red);">03</div>
+        <div style="font-size:13px; font-weight:700; color:var(--dark);">Onboard</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.4;">Self-service · Coverage · SLA</div>
+      </a>
+
+      <div style="display:flex; align-items:center; background:#f2f2f2; border-right:1px solid var(--border); padding:0 6px; color:#c7c7c7; font-size:18px; flex-shrink:0;">›</div>
+
+      <a href="#opencase" style="flex:1; display:flex; flex-direction:column; gap:5px; background:#fff; padding:16px 14px; text-decoration:none; border-right:1px solid var(--border); transition:background .15s;" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background='#fff'">
+        <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--red);">04</div>
+        <div style="font-size:13px; font-weight:700; color:var(--dark);">Use Support</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.4;">Cases · Severity · Escalation</div>
+      </a>
+
+      <div style="display:flex; align-items:center; background:#f2f2f2; padding:0 6px; color:#c7c7c7; font-size:18px; flex-shrink:0;">›</div>
+
+      <a href="#renew" style="flex:1; display:flex; flex-direction:column; gap:5px; background:#151515; padding:16px 14px; text-decoration:none; transition:background .15s;" onmouseover="this.style.background='#1e1e1e'" onmouseout="this.style.background='#151515'">
+        <div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--red);">05</div>
+        <div style="font-size:13px; font-weight:700; color:#fff;">Renewal</div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.5); line-height:1.4;">Direct · Reseller · OEM · Cloud</div>
+      </a>
+
+    </div>
+    <div style="font-size:11px; color:var(--muted); margin-top:8px;">Select a phase to jump to that section of this guide.</div>
+  </div>
+
   <hr>
   <h3>What you have access to</h3>
   <div class="grid grid-2">
@@ -332,6 +394,11 @@
   <div class="section-header">
     <h2>Getting Started</h2>
     <div class="sub">Two prerequisites before you can use any support</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px;">
     <div style="border:1px solid #fbc5c5; background:#fff; border-radius:12px; padding:18px 20px;">
@@ -456,6 +523,11 @@ Order Details:
     <h2>Resolve It Yourself — Faster</h2>
     <div class="sub">Self-service tools available 24/7 with no wait time</div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
   <div class="callout info" style="margin-bottom:20px;">Many issues are already solved in the portal — no case needed, no hold music. These tools work around the clock and often get you to an answer faster than opening a ticket.</div>
   <div style="display:flex; flex-direction:column; gap:2px; margin-bottom:16px; border:1px solid var(--border); border-radius:8px; overflow:hidden;">
     <div style="display:flex; align-items:baseline; gap:12px; padding:11px 16px; border-bottom:1px solid var(--border);">
@@ -491,6 +563,11 @@ Order Details:
   <div class="section-header">
     <h2>How to Open a Case</h2>
     <div class="sub">Three ways to reach us — pick what works for your situation</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <div class="grid grid-3">
     <div class="card">
@@ -536,6 +613,11 @@ Order Details:
   <div class="section-header">
     <h2>How to Engage with Support</h2>
     <div class="sub">Make every interaction count</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <p class="lead secondary">Knowing what you're covered for — and what tools are available to you — means faster resolutions and more control when it matters most.</p>
 
@@ -583,6 +665,11 @@ Order Details:
   <div class="section-header">
     <h2>Case Details</h2>
     <div class="sub">The more context you share, the faster your case moves</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <p class="lead secondary">A complete case upfront = no back-and-forth, no delays. Here's exactly what to include.</p>
 
@@ -677,6 +764,11 @@ Order Details:
     <h2>Diagnostics</h2>
     <div class="sub">Collect this once — avoid days of back-and-forth</div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
   <p class="lead secondary">Collecting the right diagnostic data before (or immediately after) opening a case dramatically reduces back-and-forth. Match your situation to the correct tool.</p>
   <div class="tbl-wrap">
     <table>
@@ -702,6 +794,11 @@ Order Details:
   <div class="section-header">
     <h2>Severity Levels</h2>
     <div class="sub">Match your severity to your business impact — it determines who responds and how fast</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0;">
     <div style="background:#fef0f0; border:2px solid #ee0000; border-radius:12px; padding:20px 16px; text-align:center;">
@@ -861,6 +958,11 @@ Order Details:
     <h2>Escalation</h2>
     <div class="sub">If something isn't moving — use this</div>
   </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
   <p class="lead">Escalation is a feature, not a failure. If your case stalls, business impact grows, or you need more visibility, Red Hat's Escalation Management Team steps in — pulling in the right people, aligning on a plan, and driving your issue to resolution. You should use it when you need it.</p>
 
   <!-- When to escalate -->
@@ -965,11 +1067,139 @@ Order Details:
   </div>
 </section>
 
+<!-- RENEWAL -->
+<section class="section" id="renew">
+  <div class="section-header">
+    <h2>Renewal</h2>
+    <div class="sub">The path depends on how you purchased — know it before your subscription expires</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
+  </div>
+
+  <p class="lead secondary">Renewal is not a single process — it follows the same channel your subscription came through. Whether you purchased directly, through a reseller, via an OEM hardware bundle, or through a cloud marketplace, the steps and the people you contact are different. This section maps each path clearly so nothing falls through the cracks at the end of your contract cycle.</p>
+
+  <div class="callout warn" style="margin-bottom:28px;">
+    <strong>Start early.</strong> Begin renewal conversations at least 90 days before your contract end date. Check your expiry date at any time under <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.
+  </div>
+
+  <!-- RENEWAL PATHWAYS -->
+  <h3>Renewal pathways by purchase channel</h3>
+  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:28px;">
+
+    <!-- Direct -->
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
+        <div style="font-weight:800; font-size:14px; color:var(--dark);">Direct — Purchased from Red Hat</div>
+        <span style="margin-left:auto; background:#e9f7df; color:#204d00; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with Red Hat</span>
+      </div>
+      <div style="padding:18px 20px;">
+        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
+          <li>Log in to <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a> and note your contract end date.</li>
+          <li>Contact your Red Hat sales representative or account team to discuss renewal terms.</li>
+          <li>Confirm the renewed contract — a new Order Fulfillment email with an updated Contract Number will be sent.</li>
+          <li>Verify the refreshed subscription appears in your portal dashboard.</li>
+        </ol>
+        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
+          Some subscription types can also be renewed self-service at <a href="https://access.redhat.com" target="_blank">access.redhat.com ↗</a> without contacting a sales rep.
+        </div>
+      </div>
+    </div>
+
+    <!-- Reseller -->
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
+        <div style="font-weight:800; font-size:14px; color:var(--dark);">Reseller — Purchased through a channel partner</div>
+        <span style="margin-left:auto; background:#e0f0ff; color:#004d99; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with your reseller</span>
+      </div>
+      <div style="padding:18px 20px;">
+        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
+          <li>Log in to the Customer Portal and note your Account Number, Contract Number, and end date.</li>
+          <li>Contact your reseller — provide your Account Number and Contract Number.</li>
+          <li>Your reseller places the renewal order with Red Hat on your behalf.</li>
+          <li>Watch for a new Order Fulfillment email from Red Hat with the updated contract details.</li>
+          <li>Confirm the refreshed subscription is visible at <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.</li>
+        </ol>
+        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong>Billing questions after renewal?</strong> Contact your reseller. <strong>Access or activation issues?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a>.
+        </div>
+      </div>
+    </div>
+
+    <!-- OEM -->
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
+        <div style="font-weight:800; font-size:14px; color:var(--dark);">OEM — Bundled with hardware (e.g. Dell, HP, Lenovo)</div>
+        <span style="margin-left:auto; background:#fff4cc; color:#732e00; font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em;">Renew with your OEM</span>
+      </div>
+      <div style="padding:18px 20px;">
+        <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">Your Red Hat subscription was bundled with your hardware purchase. Renewal follows the same procurement channel as the original hardware order — not through Red Hat directly.</p>
+        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
+          <li>Check your subscription expiry at <a href="https://access.redhat.com/subscriptions" target="_blank">access.redhat.com/subscriptions ↗</a>.</li>
+          <li>Contact your OEM vendor's account team — provide your Account Number, Contract Number, and hardware details if required.</li>
+          <li>The OEM places the renewal with Red Hat under your existing account number.</li>
+          <li>Watch for an updated Order Fulfillment email and verify the subscription is refreshed in the portal.</li>
+        </ol>
+        <div style="margin-top:10px; background:#ffe3d9; border:1px solid #f0561d; border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong>OEM unresponsive or subscription lapsing?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a> with your Account Number and Contract Number to discuss options.
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloud Marketplace -->
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div style="background:#f2f2f2; padding:12px 20px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border);">
+        <div style="font-weight:800; font-size:14px; color:var(--dark);">Cloud Marketplace — ROSA (AWS) or ARO (Azure)</div>
+        <span style="margin-left:auto; background:#f2f2f2; color:var(--mid); font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.05em; border:1px solid var(--border);">Renew via cloud provider</span>
+      </div>
+      <div style="padding:18px 20px;">
+        <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">For ROSA and ARO, billing and subscription lifecycle are managed through your cloud provider's marketplace — not through Red Hat's subscription portal.</p>
+        <ol style="padding-left:18px; font-size:14px; color:var(--muted); line-height:2;">
+          <li>Log in to your AWS or Azure console and review your marketplace subscription status.</li>
+          <li>Renew or modify through the AWS Marketplace or Azure Marketplace directly.</li>
+          <li>Ensure your Red Hat account in OpenShift Cluster Manager (OCM) remains linked to your cluster.</li>
+          <li>Verify continued access to the Red Hat Customer Portal for technical support.</li>
+        </ol>
+        <div style="margin-top:10px; background:#e0f0ff; border:1px solid #b9dafc; border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong>Billing questions</strong> go to AWS or Azure. <strong>Technical issues</strong> with your OpenShift cluster go to <a href="https://access.redhat.com/support" target="_blank">Red Hat Support ↗</a>.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT HAPPENS IF LAPSED -->
+  <h3>What happens if your subscription lapses</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Impact</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr class="row-danger"><td>Support cases blocked</td><td>You cannot open new support cases without an active subscription. Existing open cases may be placed on hold.</td></tr>
+        <tr class="row-warn"><td>Portal tools restricted</td><td>Some Customer Portal tools, entitlements, and gated content become unavailable.</td></tr>
+        <tr class="row-warn"><td>Software access affected</td><td>Access to gated downloads, errata, and security patches may be restricted.</td></tr>
+        <tr class="row-danger"><td>SLA no longer applies</td><td>Response time commitments are only valid under an active, in-term contract.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout info" style="margin-top:16px;">
+    <strong>Already lapsed?</strong> Contact <a href="https://access.redhat.com/support/customer-service" target="_blank">Red Hat Customer Service ↗</a> immediately. Depending on how recently the contract expired, reinstatement options may be available.
+  </div>
+
+</section>
+
 <!-- KEY RESOURCES -->
 <section class="section" id="resources">
   <div class="section-header">
     <h2>Key Resources</h2>
     <div class="sub">Curated Customer Portal reading list</div>
+  </div>
+  <div class="working-doc-bar">
+    <span class="working-doc-icon">✏️</span>
+    <span class="working-doc-label">Working Document</span>
+    <a class="working-doc-link" href="https://docs.google.com/document/d/1ym8oEB5diVbuRpz1cnoY8ntttRIfgZVlBG_bekIcUVE/edit?tab=t.4zn7pd7qb4wy" target="_blank">Open Working Doc ↗</a>
   </div>
   <p class="lead secondary">These Customer Portal articles are your onboarding reading list. All links require your Red Hat subscription login unless marked Public.</p>
 
