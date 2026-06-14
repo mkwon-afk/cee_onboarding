@@ -511,39 +511,76 @@ Order Details:
 <section class="section" id="opencase">
   <div class="section-header">
     <h2>How to Open a Case</h2>
-    <div class="sub">Three ways to reach us — pick what works for your situation</div>
+    <div class="sub">Technical Support · Customer Service · Chat</div>
   </div>
   <div class="working-doc-bar">
     <span class="working-doc-icon">✏️</span>
     <span class="working-doc-label">Working Document</span>
     <a class="working-doc-link" href="#" onclick="return false;">+ Add link to working doc</a>
   </div>
-  <div class="grid grid-3">
-    <div class="card">
-      <div class="card-header">Portal <span class="pill pill-success" style="margin-left:auto">Recommended</span></div>
-      <div class="card-body">
-        <p>Go to <strong>access.redhat.com/support/cases</strong> → Open a New Case</p>
-        <p class="secondary" style="margin-top:6px">Fastest routing, full case history, and file attachments in one place — you're in control.</p>
-      </div>
+
+  <!-- TECHNICAL SUPPORT -->
+  <h3>Technical Support</h3>
+  <p class="secondary small" style="margin-bottom:16px;">Go to the new case page or from the Customer Portal homepage — three paths lead to the same place:</p>
+
+  <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--bg); padding:9px 16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid var(--border);">Path A</div>
+      <ol style="margin:0; padding:14px 16px 14px 32px; font-size:14px; color:var(--dark); line-height:2;">
+        <li>Select <strong>Support</strong> from the main navigation.</li>
+        <li>Select <strong>Contact Red Hat Support</strong>.</li>
+        <li>Click <strong>"Open a new case"</strong>.</li>
+      </ol>
     </div>
-    <div class="card">
-      <div class="card-header">Phone — for Severity 1</div>
-      <div class="card-body">
-        <p>Call your regional support hotline. Open a portal case first, then call with your case number for the fastest handoff.</p>
-        <p class="secondary" style="margin-top:6px">Use when your environment is down and every minute counts.</p>
-      </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--bg); padding:9px 16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid var(--border);">Path B</div>
+      <ol style="margin:0; padding:14px 16px 14px 32px; font-size:14px; color:var(--dark); line-height:2;">
+        <li>Select <strong>Support</strong> from the main navigation.</li>
+        <li>Select <strong>Support Cases</strong>.</li>
+        <li>Click <strong>"Get Support"</strong> on the right-hand side.</li>
+      </ol>
     </div>
-    <div class="card">
-      <div class="card-header">Chat — quick questions</div>
-      <div class="card-body">
-        <p>Live chat in English via the Customer Portal — no phone needed.</p>
-        <p class="secondary" style="margin-top:6px">Great for quick clarifications or when you need to stay heads-down in your browser.</p>
-      </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--bg); padding:9px 16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid var(--border);">Path C</div>
+      <ol style="margin:0; padding:14px 16px 14px 32px; font-size:14px; color:var(--dark); line-height:2;">
+        <li>Select <strong>Get Support</strong> from the header.</li>
+        <li>Click <strong>"Open new case"</strong> under the Support cases section.</li>
+      </ol>
     </div>
+
   </div>
-  <hr>
+
+  <!-- CUSTOMER SERVICE -->
+  <h3>Customer Service</h3>
+  <p class="secondary small" style="margin-bottom:16px;">For subscription, access, order, and account management issues — not technical cases.</p>
+
+  <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+
+    <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+      <div style="background:var(--bg); padding:9px 16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid var(--border);">Webform <span style="font-weight:400; text-transform:none; letter-spacing:0;">&nbsp;— recommended</span></div>
+      <ol style="margin:0; padding:14px 16px 14px 32px; font-size:14px; color:var(--dark); line-height:2;">
+        <li>Select <strong>Support</strong> from the main navigation.</li>
+        <li>Select <strong>Contact Red Hat Support</strong>.</li>
+        <li>Click <strong>"Contact Customer Service"</strong>.</li>
+      </ol>
+    </div>
+
+    <div style="border:1px solid var(--border); border-radius:8px; padding:14px 16px; font-size:14px; color:var(--dark);">
+      <strong>Phone</strong> — find the dedicated number for your region and language in the table below.
+    </div>
+
+  </div>
+
+  <!-- CHAT -->
+  <h3>Chat</h3>
+  <p class="secondary small" style="margin-bottom:24px;">Live chat in English is available directly from the Customer Portal — no phone needed. Use for quick clarifications or low-urgency questions.</p>
+
+  <!-- REGIONAL PHONE NUMBERS -->
   <h3>Regional Phone Numbers</h3>
-  <div class="tbl-wrap">
+  <div class="tbl-wrap" style="margin-bottom:20px;">
     <table>
       <thead><tr><th>Region</th><th>Phone</th><th>Email</th></tr></thead>
       <tbody>
@@ -554,7 +591,20 @@ Order Details:
       </tbody>
     </table>
   </div>
-  <div class="callout warn">Open <strong>one case per issue</strong> using an <strong>individual Customer Portal account</strong> — group accounts are not supported. For account management issues (subscriptions, user access, orders), use the <strong>Customer Service Webform</strong> instead.</div>
+
+  <!-- PHONE SUPPORT NOTE -->
+  <div class="callout warn" style="margin-bottom:16px;">
+    <strong>Important — phone support:</strong> You can speak with a technical support engineer by phone <strong>only if you already have an open technical case</strong> (case number required). If you call without an open case, you will be connected to Customer Service instead.
+  </div>
+
+  <!-- LANGUAGE SUPPORT HOURS -->
+  <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+    <div style="background:var(--bg); padding:10px 16px; font-size:13px; font-weight:700; color:var(--dark); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px;">
+      CEE Language Support Hours
+      <span style="font-size:11px; font-weight:600; background:#fff4cc; color:#732e00; border:1px solid #ffcc17; border-radius:4px; padding:1px 7px; text-transform:uppercase; letter-spacing:.04em;">WIP</span>
+    </div>
+    <div style="padding:14px 16px; font-size:14px; color:var(--muted);">Customer-facing language support hours — content coming soon.</div>
+  </div>
 </section>
 
 <!-- HOW TO ENGAGE -->
