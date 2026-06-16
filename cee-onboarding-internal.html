@@ -723,6 +723,28 @@
     letter-spacing: 0.04em;
   }
 
+  /* Internal-only banner */
+  .internal-banner {
+    position: fixed;
+    top: 56px;
+    left: 0; right: 0;
+    z-index: 99;
+    background: #1a0a00;
+    border-bottom: 2px solid #EE0000;
+    padding: 7px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #ffcfcf;
+  }
+  .internal-banner strong { color: #EE0000; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .internal-banner a { color: #ffcfcf; text-decoration: underline; text-underline-offset: 2px; }
+  .internal-banner .ib-sep { color: #552200; margin: 0 4px; }
+
+  /* Push layout down to account for banner */
+  .layout { margin-top: calc(56px + 34px) !important; }
+
   footer { margin-left: var(--nav-width); padding: 24px 48px; border-top: 1px solid var(--border); font-size: 14px; color: var(--muted); background: var(--white); }
 
   @media (max-width: 768px) {
@@ -743,6 +765,14 @@
   <span class="title">CEE Goldendeck — Team Onboarding Guide</span>
   <span class="badge">Internal · Team</span>
 </header>
+
+<div class="internal-banner">
+  <strong>🔒 Internal</strong>
+  <span class="ib-sep">|</span>
+  <span>This guide is for <strong>Red Hat associates only</strong> — do not share directly with customers.</span>
+  <span class="ib-sep">|</span>
+  <span>For the customer-facing version, use the <a href="https://rh-cee.github.io/cee_onboarding/cee-onboarding-external.html" target="_blank">External Guide ↗</a></span>
+</div>
 
 <div class="layout">
 
