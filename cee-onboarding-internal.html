@@ -1239,24 +1239,32 @@
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">01</span> Who makes up MCS?</div>
-  <p class="secondary small" style="margin-bottom:16px;">A specialised team dedicated to supporting Red Hat's Public Cloud Platform as a Service (PaaS) and Software as a Service (SaaS) offerings — working jointly with cloud partners Microsoft and AWS.</p>
-  <div class="grid grid-2" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-header">Azure Red Hat OpenShift (ARO)</div>
-      <div class="card-body">Microsoft + Red Hat joint support model. Cases may originate on either portal.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Red Hat OpenShift on AWS (ROSA)</div>
-      <div class="card-body">AWS + Red Hat joint support. Full cluster lifecycle — from provisioning through decommission.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">OpenShift Dedicated (OSD)</div>
-      <div class="card-body">Fully managed OpenShift clusters hosted on public cloud infrastructure.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">FedRAMP</div>
-      <div class="card-body">Federal Risk and Authorization Management Program — MCS owns FedRAMP-regulated cloud support workflows.</div>
-    </div>
+  <p class="secondary small" style="margin-bottom:16px;">We are a specialised team dedicated to supporting Red Hat's Public Cloud Platform as a Service (PaaS) and Software as a Service (SaaS) offerings. Our group is composed of Support Delivery engineers from CEE who work in close partnership with various Site Reliability Engineering (SRE) teams from Service Delivery. This collaborative structure ensures that the entire Managed Cloud Services portfolio is fully supported by both CEE and Service Delivery, providing customers with comprehensive expertise across all hosted Red Hat products.</p>
+
+  <div class="tbl-wrap" style="margin-bottom:16px;">
+    <table>
+      <thead><tr><th>Product</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>ARO</strong> — Azure Red Hat OpenShift</td>
+          <td>A first-party Microsoft product that offers a managed OpenShift Container Platform (OCP) deployment on Azure jointly supported by Microsoft and Red Hat.<br><br>
+          Visit the <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">Responsibility Matrix ↗</a> to understand how Microsoft, Red Hat, and customers share responsibilities for the ARO cluster. For more information, see the <a href="https://docs.microsoft.com/en-us/azure/openshift/" target="_blank" style="color:var(--red);">Azure Red Hat OpenShift Service Definition ↗</a>.</td>
+        </tr>
+        <tr>
+          <td><strong>ROSA</strong> — Red Hat OpenShift on AWS</td>
+          <td>Jointly engineered, operated, and supported by both Red Hat and AWS.<br><br>
+          Visit the <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA responsibility documentation ↗</a> to understand Red Hat's, AWS's, and customer's responsibilities for this managed service.</td>
+        </tr>
+        <tr>
+          <td><strong>OSD</strong> — OpenShift Dedicated</td>
+          <td>A managed Red Hat OpenShift offering, available on Google Cloud.</td>
+        </tr>
+        <tr>
+          <td><strong>FedRAMP</strong></td>
+          <td>Federal Risk and Authorization Management Program — MCS owns regulated workflows.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="callout info" style="margin-bottom:20px;">Full team info: <a href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery" target="_blank" style="color:var(--red);font-weight:600;">MCS Source Page ↗</a></div>
 
@@ -1268,37 +1276,58 @@
         <tr>
           <td><strong>ARO</strong> — Azure Red Hat OpenShift</td>
           <td>
-            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D62453782" target="_blank" style="color:var(--red);">ARO Support Workflow (LMS) ↗</a><br>
-            <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">ARO Supportability Matrix ↗</a>
+            <p style="margin-bottom:8px;">Customers have the flexibility to open support tickets through either Microsoft or Red Hat. However, as a first-party Microsoft product, it is expected for Microsoft to provide initial support. If the issue requires Red Hat's assistance with OpenShift-specific issues, Microsoft will collaborate with Red Hat engineers with the customer's consent and vice versa.</p>
+            <p style="margin-bottom:8px;">ARO is entitled for <strong>Premium support</strong>. The severity of a support case is determined by the impact on business-critical operations.</p>
+            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D62453782" target="_blank" style="color:var(--red);">Support Workflow (LMS) ↗</a>&nbsp;&nbsp;
+            <a href="https://docs.microsoft.com/en-us/azure/openshift/responsibility-matrix" target="_blank" style="color:var(--red);">Supportability Matrix ↗</a>
           </td>
         </tr>
         <tr>
           <td><strong>ROSA</strong> — Red Hat OpenShift on AWS</td>
           <td>
-            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D73154594" target="_blank" style="color:var(--red);">ROSA Support Workflow (LMS) ↗</a><br>
-            <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition#rosa-policy-responsibility-matrix" target="_blank" style="color:var(--red);">ROSA Supportability Matrix ↗</a>
+            <p style="margin-bottom:8px;">ROSA is a managed service jointly supported by Red Hat and AWS. Customers can contact either company for support. Red Hat triages and resolves OpenShift-specific issues, while AWS handles AWS infrastructure-related concerns.</p>
+            <p style="margin-bottom:8px;">ROSA is entitled for <strong>Premium support</strong>. The severity of a support case is determined by the impact on business-critical operations.</p>
+            <a href="https://training-lms.redhat.com/sso/saml/auth/rhlpint?RelayState=deeplinkoffering%3D73154594" target="_blank" style="color:var(--red);">Support Workflow (LMS) ↗</a>&nbsp;&nbsp;
+            <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws_classic_architecture/4/html/introduction_to_rosa/policies-and-service-definition" target="_blank" style="color:var(--red);">Supportability Matrix ↗</a>
           </td>
         </tr>
-        <tr><td><strong>OSD</strong> — OpenShift Dedicated</td><td>Reach out via <strong>#mcs-global</strong></td></tr>
-        <tr><td><strong>FedRAMP</strong> — regulated cloud environments</td><td>MCS owns FedRAMP support workflows</td></tr>
+        <tr>
+          <td><strong>OSD</strong> — OpenShift Dedicated</td>
+          <td>OpenShift Dedicated is professionally managed by Red Hat and hosted on AWS or Google Cloud. Each cluster includes a fully managed control plane, application nodes, installation and management by Red Hat SRE, premium Red Hat Support, and cluster services such as logging, metrics, monitoring, notifications portal, and a cluster portal.</td>
+        </tr>
+        <tr>
+          <td><strong>FedRAMP</strong></td>
+          <td>MCS owns FedRAMP support workflows.</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <div class="fn-q-header"><span class="fn-q-num">03</span> How do I reach out to MCS?</div>
-  <div class="grid grid-3" style="margin-bottom:20px;">
-    <div class="card">
-      <div class="card-header">Slack</div>
-      <div class="card-body"><strong>#mcs-global</strong> — for Q&amp;A and collaboration on MCS topics.</div>
-    </div>
-    <div class="card">
-      <div class="card-header">Management Escalation</div>
-      <div class="card-body"><a href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery/managed_cloud_services_support_delivery_wiki/for_stakeholders_cee_managed_cloud_services_mcs_escalation_path" target="_blank" style="color:var(--red);font-weight:600;">MCS Escalation Path ↗</a></div>
-    </div>
-    <div class="card">
-      <div class="card-header">ACE</div>
-      <div class="card-body"><a href="https://docs.google.com/presentation/d/1YxF8CsPJSSkb5gTYXbzHbEh-Tcg7hUMwfdRoKJTfo3o/edit?slide=id.g152f0dbd431_7_0#slide=id.g152f0dbd431_7_0" target="_blank" style="color:var(--red);font-weight:600;">ACE Guide ↗</a> — Active Customer Escalation tool.</div>
-    </div>
+  <div class="tbl-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead><tr><th>Channel</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Collaboration Request</strong><br><span style="font-size:13px; color:var(--muted);">#mcs-global</span></td>
+          <td>
+            <strong>#mcs-global</strong> is the primary interface to the Managed Cloud Services team.<br>
+            Select the <strong>"Request MCS Support"</strong> workflow button in <strong>#mcs-global</strong> to initiate awareness and seek assistance.<br>
+            For more information about MCS processes, select the <strong>"MCS Getting Started Guide"</strong> workflow button in <strong>#mcs-global</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Support Ticket Escalation</strong></td>
+          <td>
+            A support ticket is required for assistance with any Managed OpenShift customer issues.<br>
+            Select the <strong>"Request MCS Support"</strong> workflow button in <strong>#mcs-global</strong> to initiate awareness and seek assistance.<br><br>
+            For complex support tickets requiring additional heightened assistance, create an <strong>Active Customer Escalation (ACE)</strong> submission to seek Escalation Management support.<br>
+            <a href="https://docs.google.com/presentation/d/1YxF8CsPJSSkb5gTYXbzHbEh-Tcg7hUMwfdRoKJTfo3o/edit?slide=id.g152f0dbd431_7_0" target="_blank" style="color:var(--red);">ACE Guide ↗</a> &nbsp;·&nbsp;
+            <a href="https://source.redhat.com/departments/products_and_global_engineering/managed_cloud_services_support_delivery/managed_cloud_services_support_delivery_wiki/for_stakeholders_cee_managed_cloud_services_mcs_escalation_path" target="_blank" style="color:var(--red);">MCS Escalation Path ↗</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="fn-q-header" style="margin-top:28px;"><span class="fn-q-num">04</span> How do I escalate?</div>
